@@ -1,0 +1,25 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: railway-config
+  namespace: railway-system
+data:
+  NODE_ENV: "production"
+  PORT: "8000"
+  API_VERSION: "v1"
+  REDIS_HOST: "railway-redis-service"
+  REDIS_PORT: "6379"
+  REDIS_DB: "0"
+  JWT_ACCESS_EXPIRY: "15m"
+  JWT_REFRESH_EXPIRY: "7d"
+  BCRYPT_ROUNDS: "12"
+  RATE_LIMIT_WINDOW_MS: "900000"
+  RATE_LIMIT_MAX_REQUESTS: "100"
+  CORS_ORIGIN: "http://localhost:3000"
+  PROMETHEUS_PORT: "9090"
+  LOG_LEVEL: "info"
+  DUTY_ALERT_8HR: "8"
+  DUTY_ALERT_9HR: "9"
+  DUTY_ALERT_11HR: "11"
+  DUTY_ALERT_12HR: "12"
+  DUTY_ALERT_14HR: "14"

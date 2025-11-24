@@ -1,0 +1,132 @@
+[dotenv@17.2.3] injecting env (25) from .env -- tip: 👥 sync secrets across teammates & machines: https://dotenvx.com/ops
+2025-11-23 01:50:37 [[32minfo[39m]: Prisma Info: Starting a sqlite pool with 9 connections.
+2025-11-23 01:50:37 [[32minfo[39m]: Prisma Info: Starting a sqlite pool with 9 connections.
+2025-11-23 01:50:37 [[32minfo[39m]: Database connected successfully
+2025-11-23 01:50:37 [[32minfo[39m]: Database connected successfully
+2025-11-23 01:50:37 [[32minfo[39m]: 🌱 Starting database seed...
+2025-11-23 01:50:37 [[32minfo[39m]: 🌱 Starting database seed...
+2025-11-23 01:50:37 [[32minfo[39m]: ✅ Super admin already exists
+2025-11-23 01:50:37 [[32minfo[39m]: ✅ Super admin already exists
+2025-11-23 01:50:37 [[32minfo[39m]:  Redis disabled - running without cache
+2025-11-23 01:50:37 [[32minfo[39m]:  Redis disabled - running without cache
+2025-11-23 01:50:37 [[32minfo[39m]: ==================================================
+2025-11-23 01:50:37 [[32minfo[39m]: ==================================================
+2025-11-23 01:50:37 [[32minfo[39m]: Railway Shift Management System
+2025-11-23 01:50:37 [[32minfo[39m]: Railway Shift Management System
+2025-11-23 01:50:37 [[32minfo[39m]: ==================================================
+2025-11-23 01:50:37 [[32minfo[39m]: ==================================================
+2025-11-23 01:50:37 [[32minfo[39m]: Environment: development
+2025-11-23 01:50:37 [[32minfo[39m]: Environment: development
+2025-11-23 01:50:37 [[32minfo[39m]: Server running on port: 8080
+2025-11-23 01:50:37 [[32minfo[39m]: Server running on port: 8080
+2025-11-23 01:50:37 [[32minfo[39m]: API URL: http://localhost:8080/api/v1
+2025-11-23 01:50:37 [[32minfo[39m]: API URL: http://localhost:8080/api/v1
+2025-11-23 01:50:37 [[32minfo[39m]:  Health Check: http://localhost:8080/health
+2025-11-23 01:50:37 [[32minfo[39m]:  Health Check: http://localhost:8080/health
+2025-11-23 01:50:37 [[32minfo[39m]: Metrics: http://localhost:8080/metrics
+2025-11-23 01:50:37 [[32minfo[39m]: Metrics: http://localhost:8080/metrics
+2025-11-23 01:50:37 [[32minfo[39m]:  Socket.io enabled on port: 8080
+2025-11-23 01:50:37 [[32minfo[39m]:  Socket.io enabled on port: 8080
+2025-11-23 01:50:37 [[32minfo[39m]: ==================================================
+2025-11-23 01:50:37 [[32minfo[39m]: ==================================================
+2025-11-23 01:50:37 [[32minfo[39m]: Starting background jobs...
+2025-11-23 01:50:37 [[32minfo[39m]: Starting background jobs...
+2025-11-23 01:50:37 [[32minfo[39m]: 🚀 Starting shift monitor background job...
+2025-11-23 01:50:37 [[32minfo[39m]: 🚀 Starting shift monitor background job...
+2025-11-23 01:50:37 [[32minfo[39m]: ✅ Shift monitor job started (checking every 60s)
+2025-11-23 01:50:37 [[32minfo[39m]: ✅ Shift monitor job started (checking every 60s)
+2025-11-23 01:50:37 [[32minfo[39m]: ✅ Background jobs started
+2025-11-23 01:50:37 [[32minfo[39m]: ✅ Background jobs started
+2025-11-23 02:00:20 [[32minfo[39m]: User logged in: admin@railway.com
+2025-11-23 02:00:20 [[32minfo[39m]: User logged in: admin@railway.com
+[0mPOST /api/v1/auth/login [32m200[0m 1217.696 ms - 831[0m
+2025-11-23 02:00:20 [[32minfo[39m]: POST /login 200 - 1.227s
+2025-11-23 02:00:20 [[32minfo[39m]: POST /login 200 - 1.227s
+2025-11-23 02:00:28 [[32minfo[39m]: Creating new locomotive: WAP-7 30356
+2025-11-23 02:00:28 [[32minfo[39m]: Creating new locomotive: WAP-7 30356
+2025-11-23 02:00:29 [[32minfo[39m]: ✅ Locomotive created: WAP-7 30356
+2025-11-23 02:00:29 [[32minfo[39m]: ✅ Locomotive created: WAP-7 30356
+2025-11-23 02:00:29 [[32minfo[39m]: Creating new staff: Rajesh Kumar (LP12345) - LOCO_PILOT
+2025-11-23 02:00:29 [[32minfo[39m]: Creating new staff: Rajesh Kumar (LP12345) - LOCO_PILOT
+2025-11-23 02:00:29 [[32minfo[39m]: ✅ Staff created: Rajesh Kumar (LP12345)
+2025-11-23 02:00:29 [[32minfo[39m]: ✅ Staff created: Rajesh Kumar (LP12345)
+2025-11-23 02:00:29 [[32minfo[39m]: Creating new staff: Amit Singh (TM67890) - TRAIN_MANAGER
+2025-11-23 02:00:29 [[32minfo[39m]: Creating new staff: Amit Singh (TM67890) - TRAIN_MANAGER
+2025-11-23 02:00:29 [[32minfo[39m]: ✅ Staff created: Amit Singh (TM67890)
+2025-11-23 02:00:29 [[32minfo[39m]: ✅ Staff created: Amit Singh (TM67890)
+2025-11-23 02:00:30 [[32minfo[39m]: Shift created successfully: 144d4aeb-11b7-4e0b-a832-17aa379ff501
+2025-11-23 02:00:30 [[32minfo[39m]: Shift created successfully: 144d4aeb-11b7-4e0b-a832-17aa379ff501
+[0mPOST /api/v1/shifts [32m201[0m 1451.038 ms - 1867[0m
+2025-11-23 02:00:30 [[32minfo[39m]: POST / 201 - 1.454s
+2025-11-23 02:00:30 [[32minfo[39m]: POST / 201 - 1.454s
+2025-11-23 02:05:05 [[31merror[39m]: Error: Token expired
+    at file:///home/ranap/Documents/RailwayProject/src/middleware/auth.js:70:13
+    at file:///home/ranap/Documents/RailwayProject/src/middleware/errorHandler.js:49:19
+    at Layer.handleRequest (/home/ranap/Documents/RailwayProject/node_modules/router/lib/layer.js:152:17)
+    at next (/home/ranap/Documents/RailwayProject/node_modules/router/lib/route.js:157:13)
+    at Route.dispatch (/home/ranap/Documents/RailwayProject/node_modules/router/lib/route.js:117:3)
+    at handle (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:435:11)
+    at Layer.handleRequest (/home/ranap/Documents/RailwayProject/node_modules/router/lib/layer.js:152:17)
+    at /home/ranap/Documents/RailwayProject/node_modules/router/index.js:295:15
+    at processParams (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:582:12)
+    at next (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:291:5)
+2025-11-23 02:05:05 [[31merror[39m]: Error: Token expired
+    at file:///home/ranap/Documents/RailwayProject/src/middleware/auth.js:70:13
+    at file:///home/ranap/Documents/RailwayProject/src/middleware/errorHandler.js:49:19
+    at Layer.handleRequest (/home/ranap/Documents/RailwayProject/node_modules/router/lib/layer.js:152:17)
+    at next (/home/ranap/Documents/RailwayProject/node_modules/router/lib/route.js:157:13)
+    at Route.dispatch (/home/ranap/Documents/RailwayProject/node_modules/router/lib/route.js:117:3)
+    at handle (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:435:11)
+    at Layer.handleRequest (/home/ranap/Documents/RailwayProject/node_modules/router/lib/layer.js:152:17)
+    at /home/ranap/Documents/RailwayProject/node_modules/router/index.js:295:15
+    at processParams (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:582:12)
+    at next (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:291:5)
+[0mPOST /api/v1/auth/logout [33m401[0m 28.003 ms - 1023[0m
+2025-11-23 02:05:05 [[32minfo[39m]: POST /logout 401 - 0.031s
+2025-11-23 02:05:05 [[32minfo[39m]: POST /logout 401 - 0.031s
+2025-11-23 02:05:05 [[32minfo[39m]:  Token refreshed for user: admin@railway.com
+2025-11-23 02:05:05 [[32minfo[39m]:  Token refreshed for user: admin@railway.com
+[0mPOST /api/v1/auth/refresh [32m200[0m 12.091 ms - 549[0m
+2025-11-23 02:05:05 [[32minfo[39m]: POST /refresh 200 - 0.013s
+2025-11-23 02:05:05 [[32minfo[39m]: POST /refresh 200 - 0.013s
+[0mPOST /api/v1/auth/logout [32m200[0m 5.433 ms - 46[0m
+2025-11-23 02:05:05 [[32minfo[39m]: POST /logout 200 - 0.006s
+2025-11-23 02:05:05 [[32minfo[39m]: POST /logout 200 - 0.006s
+2025-11-23 02:05:15 [[32minfo[39m]: User logged in: admin2@railway.com
+2025-11-23 02:05:15 [[32minfo[39m]: User logged in: admin2@railway.com
+[0mPOST /api/v1/auth/login [32m200[0m 766.053 ms - 821[0m
+2025-11-23 02:05:15 [[32minfo[39m]: POST /login 200 - 0.768s
+2025-11-23 02:05:15 [[32minfo[39m]: POST /login 200 - 0.768s
+2025-11-23 02:07:39 [[32minfo[39m]: Creating new locomotive: WAP-7 334401
+2025-11-23 02:07:39 [[32minfo[39m]: Creating new locomotive: WAP-7 334401
+2025-11-23 02:07:39 [[32minfo[39m]: ✅ Locomotive created: WAP-7 334401
+2025-11-23 02:07:39 [[32minfo[39m]: ✅ Locomotive created: WAP-7 334401
+2025-11-23 02:07:39 [[32minfo[39m]: Creating new staff: Rana Poddar (LP-114) - LOCO_PILOT
+2025-11-23 02:07:39 [[32minfo[39m]: Creating new staff: Rana Poddar (LP-114) - LOCO_PILOT
+2025-11-23 02:07:40 [[32minfo[39m]: ✅ Staff created: Rana Poddar (LP-114)
+2025-11-23 02:07:40 [[32minfo[39m]: ✅ Staff created: Rana Poddar (LP-114)
+2025-11-23 02:07:40 [[32minfo[39m]: Creating new staff: Ranojit Das (TM-115) - TRAIN_MANAGER
+2025-11-23 02:07:40 [[32minfo[39m]: Creating new staff: Ranojit Das (TM-115) - TRAIN_MANAGER
+2025-11-23 02:07:40 [[32minfo[39m]: ✅ Staff created: Ranojit Das (TM-115)
+2025-11-23 02:07:40 [[32minfo[39m]: ✅ Staff created: Ranojit Das (TM-115)
+2025-11-23 02:07:41 [[32minfo[39m]: Shift created successfully: eb6bb5c2-55d2-4a26-8188-8f321f821108
+2025-11-23 02:07:41 [[32minfo[39m]: Shift created successfully: eb6bb5c2-55d2-4a26-8188-8f321f821108
+[0mPOST /api/v1/shifts [32m201[0m 1524.782 ms - -[0m
+2025-11-23 02:07:41 [[32minfo[39m]: POST / 201 - 1.590s
+2025-11-23 02:07:41 [[32minfo[39m]: POST / 201 - 1.590s
+2025-11-23 02:10:16 [[32minfo[39m]: 
+SIGTERM received. Starting graceful shutdown...
+2025-11-23 02:10:16 [[32minfo[39m]: 
+SIGTERM received. Starting graceful shutdown...
+2025-11-23 02:10:16 [[32minfo[39m]: 🛑 Shift monitor job stopped
+2025-11-23 02:10:16 [[32minfo[39m]: 🛑 Shift monitor job stopped
+2025-11-23 02:10:16 [[32minfo[39m]: Background jobs stopped
+2025-11-23 02:10:16 [[32minfo[39m]: Background jobs stopped
+2025-11-23 02:10:16 [[32minfo[39m]: HTTP server closed
+2025-11-23 02:10:16 [[32minfo[39m]: HTTP server closed
+2025-11-23 02:10:17 [[32minfo[39m]: Database disconnected
+2025-11-23 02:10:17 [[32minfo[39m]: Database disconnected
+2025-11-23 02:10:17 [[32minfo[39m]: Redis disconnected
+2025-11-23 02:10:17 [[32minfo[39m]: Redis disconnected
+2025-11-23 02:10:17 [[32minfo[39m]: Graceful shutdown completed
+2025-11-23 02:10:17 [[32minfo[39m]: Graceful shutdown completed
