@@ -12,6 +12,41 @@ const logFormat = printf(({ level, message, timestamp, stack }) => {
   return `${timestamp} [${level}]: ${stack || message}`;
 });
 
+// Use /tmp for logs in production (required for Render), local logs directory otherwise
+const logDir = process.env.NODE_ENV === 'production' 
+  ? '/tmp' 
+  : path.join(__dirname, '../../logs');
+
+// Create transports array based on environment
+const transports = [];
+
+// Always add console in production for Render logs
+if (process.env.NODE_ENV === 'production') {
+  transports.push(
+    new winston.transports.Console({
+      format: combine(
+        timestamp({ format: 'YYYY-MM-DD HH:mm:ss' }),
+        logFormat
+      ),
+    })
+  );
+} else {
+  // In development, add file transports
+  transports.push(
+    new winston.transports.File({
+      filename: path.join(logDir, 'error.log'),
+      level: 'error',
+      maxsize: 5242880, // 5MB
+      maxFiles: 5,
+    }),
+    new winston.transports.File({
+      filename: path.join(logDir, 'combined.log'),
+      maxsize: 5242880, // 5MB
+      maxFiles: 5,
+    })
+  );
+}
+
 // Create logger instance
 const logger = winston.createLogger({
   level: process.env.LOG_LEVEL || 'info',
@@ -20,30 +55,13 @@ const logger = winston.createLogger({
     errors({ stack: true }),
     logFormat
   ),
-  transports: [
-    // Write all logs to file
-    new winston.transports.File({
-      filename: path.join(__dirname, '../../logs/error.log'),
-      level: 'error',
-      maxsize: 5242880, // 5MB
-      maxFiles: 5,
-    }),
-    new winston.transports.File({
-      filename: path.join(__dirname, '../../logs/combined.log'),
-      maxsize: 5242880, // 5MB
-      maxFiles: 5,
-    }),
-  ],
-  exceptionHandlers: [
-    new winston.transports.File({
-      filename: path.join(__dirname, '../../logs/exceptions.log'),
-    }),
-  ],
-  rejectionHandlers: [
-    new winston.transports.File({
-      filename: path.join(__dirname, '../../logs/rejections.log'),
-    }),
-  ],
+  transports,
+  exceptionHandlers: process.env.NODE_ENV === 'production' 
+    ? [new winston.transports.Console()]
+    : [new winston.transports.File({ filename: path.join(logDir, 'exceptions.log') })],
+  rejectionHandlers: process.env.NODE_ENV === 'production'
+    ? [new winston.transports.Console()]
+    : [new winston.transports.File({ filename: path.join(logDir, 'rejections.log') })],
 });
 
 // If not in production, log to console with colorized output
