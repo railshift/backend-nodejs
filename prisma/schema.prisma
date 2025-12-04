@@ -34,7 +34,20 @@ model User {
   phone         String?
   password      String
   role          UserRole    @default(USER)
-  status        UserStatus  @default(ACTIVE)
+  status        UserStatus  @default(INACTIVE)
+  
+  // Verification & Approval
+  isVerified    Boolean     @default(false)
+  verifiedAt    DateTime?
+  verifiedBy    String?     // Employee ID of SUPERADMIN who approved
+  rejectedAt    DateTime?
+  rejectedBy    String?     // Employee ID of SUPERADMIN who rejected
+  rejectionReason String?
+  
+  // Additional Info
+  division      String?     // Railway division/department
+  designation   String?     // Job designation
+  
   createdAt     DateTime    @default(now())
   updatedAt     DateTime    @updatedAt
   lastLogin     DateTime?
@@ -45,6 +58,8 @@ model User {
   
   @@index([employeeId])
   @@index([email])
+  @@index([isVerified])
+  @@index([status])
   @@map("users")
 }
 
@@ -144,17 +159,15 @@ model Shift {
   trainManager      Staff         @relation("TrainManager", fields: [trainManagerId], references: [id])
   trainManagerId    String
   
-  // Time Tracking
-  trainArrivalDate  DateTime
-  trainArrivalTime  DateTime
-  signOnTime        DateTime
-  timeOfTO          DateTime?     // Time of Take Over
-  departureTime     DateTime?
-  signOffDate       DateTime?
-  signOffTime       DateTime?
+  // Time Tracking (DateTime stores both date and time)
+  trainArrivalDateTime  DateTime      // Train arrival date + time
+  signOnDateTime        DateTime      // Sign on date + time
+  timeOfTO              DateTime?     // Time of Take Over
+  departureDateTime     DateTime?     // Departure date + time
+  signOffDateTime       DateTime?     // Sign off date + time
 
-  signOnStation     String
-  signOffStation    String?
+  signOnStation         String
+  signOffStation        String?
 
   section           String
   
@@ -163,9 +176,26 @@ model Shift {
   dutyHours         Float?        // Calculated duty hours , after end of the shift
   
   // Status
-  lobbySignOn       Boolean?
-  lobbySignOff      Boolean?
   status            ShiftStatus   @default(SCHEDULED)
+  
+  // Alert Tracking
+  alert7HrSent      Boolean       @default(false)
+  alert7HrSentAt    DateTime?
+  alert8HrSent      Boolean       @default(false)
+  alert8HrSentAt    DateTime?
+  alert8HrResponse  String?       // "PLAN_RELIEF" or "RELIEF_NOT_REQUIRED"
+  alert9HrSent      Boolean       @default(false)
+  alert9HrSentAt    DateTime?
+  alert9HrResponse  String?       // "CREW_RELIEVED" or "CREW_NOT_BOOKED"
+  alert10HrSent     Boolean       @default(false)
+  alert10HrSentAt   DateTime?
+  alert10HrResponse String?       // To be decided
+  alert11HrSent     Boolean       @default(false)
+  alert11HrSentAt   DateTime?
+  alert11HrResponse String?       // "KEEP_ON" or "CREW_ALREADY_RELIEVED"
+  alert14HrSent     Boolean       @default(false)
+  alert14HrSentAt   DateTime?
+  alert14HrResponse String?       // To be decided
   
   // Relief Information
   reliefRequired    Boolean       @default(false)
@@ -189,8 +219,8 @@ model Shift {
   @@index([locoPilotId])
   @@index([trainManagerId])
   @@index([status])
-  @@index([signOnTime])
-  @@index([trainArrivalDate])
+  @@index([signOnDateTime])
+  @@index([trainArrivalDateTime])
   @@map("shifts")
 }
 
@@ -202,13 +232,18 @@ enum DutyLogType {
   TAKE_OVER
   DEPARTURE
   MILESTONE
+  ALERT_7HR
   ALERT_8HR
   ALERT_9HR
+  ALERT_10HR
   ALERT_11HR
-  ALERT_12HR
   ALERT_14HR
   RELIEF_PLANNED
   RELIEF_NOT_REQUIRED
+  CREW_RELIEVED
+  CREW_NOT_BOOKED
+  KEEP_ON_DUTY
+  CREW_ALREADY_RELIEVED
   RELEASE
 }
 

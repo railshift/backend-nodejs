@@ -1,10 +1,23 @@
 import { asyncHandler } from '../middleware/errorHandler.js';
 import authService from '../services/auth.service.js';
 
+// Register
+export const register = asyncHandler(async (req, res) => {
+  const userData = req.body;
+  const result = await authService.register(userData);
+
+  res.status(201).json({
+    success: true,
+    message: 'Registration successful. Your account is pending approval by administrator.',
+    data: result,
+  });
+});
+
 // Login
 export const login = asyncHandler(async (req, res) => {
   const { email, password } = req.body;
-
+  
+  
   const result = await authService.login(email, password);
 
   res.status(200).json({
@@ -17,9 +30,7 @@ export const login = asyncHandler(async (req, res) => {
 // Refresh token
 export const refreshToken = asyncHandler(async (req, res) => {
   const { refreshToken } = req.body;
-
   const tokens = await authService.refreshToken(refreshToken);
-
   res.status(200).json({
     success: true,
     message: 'Token refreshed successfully',

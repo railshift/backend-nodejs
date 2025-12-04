@@ -18,7 +18,7 @@ class RedisClient {
         retryStrategy: (times) => {
           // Stop retrying after 3 attempts
           if (times > 3) {
-            logger.warn('❌ Redis connection failed after 3 attempts. Running without Redis.');
+            logger.warn('Redis connection failed after 3 attempts. Running without Redis.');
             return null; // Stop retrying
           }
           const delay = Math.min(times * 1000, 3000);
@@ -32,14 +32,14 @@ class RedisClient {
 
       this.client.on('connect', () => {
         this.isConnected = true;
-        logger.info('✅ Redis connected successfully');
+        logger.info('Redis connected successfully');
       });
 
       this.client.on('error', (error) => {
         this.isConnected = false;
         // Only log once, not continuously
         if (!this.errorLogged) {
-          logger.warn('⚠️  Redis not available - running without cache');
+          logger.warn('Redis not available - running without cache');
           this.errorLogged = true;
         }
       });

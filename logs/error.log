@@ -1622,3 +1622,1936 @@ The column `main.shifts.section` does not exist in the current database.
     at /home/ranap/Documents/RailwayProject/node_modules/router/index.js:295:15
     at processParams (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:582:12)
     at next (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:291:5)
+2025-11-24 20:26:18 [error]: Error: Token expired
+    at file:///home/ranap/Documents/RailwayProject/src/middleware/auth.js:70:13
+    at file:///home/ranap/Documents/RailwayProject/src/middleware/errorHandler.js:49:19
+    at Layer.handleRequest (/home/ranap/Documents/RailwayProject/node_modules/router/lib/layer.js:152:17)
+    at next (/home/ranap/Documents/RailwayProject/node_modules/router/lib/route.js:157:13)
+    at Route.dispatch (/home/ranap/Documents/RailwayProject/node_modules/router/lib/route.js:117:3)
+    at handle (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:435:11)
+    at Layer.handleRequest (/home/ranap/Documents/RailwayProject/node_modules/router/lib/layer.js:152:17)
+    at /home/ranap/Documents/RailwayProject/node_modules/router/index.js:295:15
+    at processParams (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:582:12)
+    at next (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:291:5)
+2025-11-24 20:26:20 [error]: Error: Invalid refresh token
+    at AuthService.refreshToken (file:///home/ranap/Documents/RailwayProject/src/services/auth.service.js:90:15)
+    at async file:///home/ranap/Documents/RailwayProject/src/controllers/auth.controller.js:21:18
+2025-11-24 20:26:20 [error]: Error: Invalid refresh token
+    at AuthService.refreshToken (file:///home/ranap/Documents/RailwayProject/src/services/auth.service.js:100:13)
+    at async file:///home/ranap/Documents/RailwayProject/src/controllers/auth.controller.js:21:18
+2025-11-24 20:32:43 [error]: Prisma Error: Error in PostgreSQL connection: Error { kind: Closed, cause: None }
+2025-11-24 20:32:43 [error]: Prisma Error: Error in PostgreSQL connection: Error { kind: Closed, cause: None }
+2025-11-24 20:32:43 [error]: Prisma Error: Error in PostgreSQL connection: Error { kind: Closed, cause: None }
+2025-11-24 20:32:43 [error]: Prisma Error: Error in PostgreSQL connection: Error { kind: Closed, cause: None }
+2025-11-26 15:13:01 [error]: Prisma Error: Error in PostgreSQL connection: Error { kind: Closed, cause: None }
+2025-11-26 15:13:01 [error]: Prisma Error: Error in PostgreSQL connection: Error { kind: Closed, cause: None }
+2025-11-26 15:13:01 [error]: Prisma Error: Error in PostgreSQL connection: Error { kind: Closed, cause: None }
+2025-11-26 15:13:01 [error]: Prisma Error: Error in PostgreSQL connection: Error { kind: Closed, cause: None }
+2025-11-27 19:12:14 [error]: Prisma Error: Error in PostgreSQL connection: Error { kind: Closed, cause: None }
+2025-11-27 19:18:56 [error]: Error: Route /api/v1/users not found
+    at notFound (file:///home/ranap/Documents/RailwayProject/src/middleware/errorHandler.js:43:17)
+    at Layer.handleRequest (/home/ranap/Documents/RailwayProject/node_modules/router/lib/layer.js:152:17)
+    at trimPrefix (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:342:13)
+    at /home/ranap/Documents/RailwayProject/node_modules/router/index.js:297:9
+    at processParams (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:582:12)
+    at next (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:291:5)
+    at file:///home/ranap/Documents/RailwayProject/node_modules/express-rate-limit/dist/index.mjs:913:7
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///home/ranap/Documents/RailwayProject/node_modules/express-rate-limit/dist/index.mjs:796:5
+2025-11-27 19:18:56 [error]: Error: Route /api/v1/users not found
+    at notFound (file:///home/ranap/Documents/RailwayProject/src/middleware/errorHandler.js:43:17)
+    at Layer.handleRequest (/home/ranap/Documents/RailwayProject/node_modules/router/lib/layer.js:152:17)
+    at trimPrefix (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:342:13)
+    at /home/ranap/Documents/RailwayProject/node_modules/router/index.js:297:9
+    at processParams (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:582:12)
+    at next (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:291:5)
+    at file:///home/ranap/Documents/RailwayProject/node_modules/express-rate-limit/dist/index.mjs:913:7
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///home/ranap/Documents/RailwayProject/node_modules/express-rate-limit/dist/index.mjs:796:5
+2025-11-27 19:18:56 [error]: Error: Route /api/v1/users/pending-requests not found
+    at notFound (file:///home/ranap/Documents/RailwayProject/src/middleware/errorHandler.js:43:17)
+    at Layer.handleRequest (/home/ranap/Documents/RailwayProject/node_modules/router/lib/layer.js:152:17)
+    at trimPrefix (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:342:13)
+    at /home/ranap/Documents/RailwayProject/node_modules/router/index.js:297:9
+    at processParams (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:582:12)
+    at next (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:291:5)
+    at file:///home/ranap/Documents/RailwayProject/node_modules/express-rate-limit/dist/index.mjs:913:7
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///home/ranap/Documents/RailwayProject/node_modules/express-rate-limit/dist/index.mjs:796:5
+2025-11-27 19:18:56 [error]: Error: Route /api/v1/users/pending-requests not found
+    at notFound (file:///home/ranap/Documents/RailwayProject/src/middleware/errorHandler.js:43:17)
+    at Layer.handleRequest (/home/ranap/Documents/RailwayProject/node_modules/router/lib/layer.js:152:17)
+    at trimPrefix (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:342:13)
+    at /home/ranap/Documents/RailwayProject/node_modules/router/index.js:297:9
+    at processParams (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:582:12)
+    at next (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:291:5)
+    at file:///home/ranap/Documents/RailwayProject/node_modules/express-rate-limit/dist/index.mjs:913:7
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///home/ranap/Documents/RailwayProject/node_modules/express-rate-limit/dist/index.mjs:796:5
+2025-11-27 19:21:33 [error]: Prisma Error: Error in PostgreSQL connection: Error { kind: Closed, cause: None }
+2025-11-27 19:21:33 [error]: Prisma Error: Error in PostgreSQL connection: Error { kind: Closed, cause: None }
+2025-11-27 19:39:25 [error]: Error: Token expired
+    at file:///home/ranap/Documents/RailwayProject/src/middleware/auth.js:70:13
+    at file:///home/ranap/Documents/RailwayProject/src/middleware/errorHandler.js:49:19
+    at Layer.handleRequest (/home/ranap/Documents/RailwayProject/node_modules/router/lib/layer.js:152:17)
+    at next (/home/ranap/Documents/RailwayProject/node_modules/router/lib/route.js:157:13)
+    at Route.dispatch (/home/ranap/Documents/RailwayProject/node_modules/router/lib/route.js:117:3)
+    at handle (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:435:11)
+    at Layer.handleRequest (/home/ranap/Documents/RailwayProject/node_modules/router/lib/layer.js:152:17)
+    at /home/ranap/Documents/RailwayProject/node_modules/router/index.js:295:15
+    at processParams (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:582:12)
+    at next (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:291:5)
+2025-11-27 19:39:38 [error]: Error: Route /api/v1/users not found
+    at notFound (file:///home/ranap/Documents/RailwayProject/src/middleware/errorHandler.js:43:17)
+    at Layer.handleRequest (/home/ranap/Documents/RailwayProject/node_modules/router/lib/layer.js:152:17)
+    at trimPrefix (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:342:13)
+    at /home/ranap/Documents/RailwayProject/node_modules/router/index.js:297:9
+    at processParams (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:582:12)
+    at next (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:291:5)
+    at file:///home/ranap/Documents/RailwayProject/node_modules/express-rate-limit/dist/index.mjs:913:7
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///home/ranap/Documents/RailwayProject/node_modules/express-rate-limit/dist/index.mjs:796:5
+2025-11-27 19:39:38 [error]: Error: Route /api/v1/users/pending-requests not found
+    at notFound (file:///home/ranap/Documents/RailwayProject/src/middleware/errorHandler.js:43:17)
+    at Layer.handleRequest (/home/ranap/Documents/RailwayProject/node_modules/router/lib/layer.js:152:17)
+    at trimPrefix (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:342:13)
+    at /home/ranap/Documents/RailwayProject/node_modules/router/index.js:297:9
+    at processParams (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:582:12)
+    at next (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:291:5)
+    at file:///home/ranap/Documents/RailwayProject/node_modules/express-rate-limit/dist/index.mjs:913:7
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///home/ranap/Documents/RailwayProject/node_modules/express-rate-limit/dist/index.mjs:796:5
+2025-11-27 19:39:38 [error]: Error: Route /api/v1/users not found
+    at notFound (file:///home/ranap/Documents/RailwayProject/src/middleware/errorHandler.js:43:17)
+    at Layer.handleRequest (/home/ranap/Documents/RailwayProject/node_modules/router/lib/layer.js:152:17)
+    at trimPrefix (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:342:13)
+    at /home/ranap/Documents/RailwayProject/node_modules/router/index.js:297:9
+    at processParams (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:582:12)
+    at next (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:291:5)
+    at file:///home/ranap/Documents/RailwayProject/node_modules/express-rate-limit/dist/index.mjs:913:7
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///home/ranap/Documents/RailwayProject/node_modules/express-rate-limit/dist/index.mjs:796:5
+2025-11-27 19:39:38 [error]: Error: Route /api/v1/users/pending-requests not found
+    at notFound (file:///home/ranap/Documents/RailwayProject/src/middleware/errorHandler.js:43:17)
+    at Layer.handleRequest (/home/ranap/Documents/RailwayProject/node_modules/router/lib/layer.js:152:17)
+    at trimPrefix (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:342:13)
+    at /home/ranap/Documents/RailwayProject/node_modules/router/index.js:297:9
+    at processParams (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:582:12)
+    at next (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:291:5)
+    at file:///home/ranap/Documents/RailwayProject/node_modules/express-rate-limit/dist/index.mjs:913:7
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///home/ranap/Documents/RailwayProject/node_modules/express-rate-limit/dist/index.mjs:796:5
+2025-11-27 19:39:51 [error]: Error: Route /api/v1/users not found
+    at notFound (file:///home/ranap/Documents/RailwayProject/src/middleware/errorHandler.js:43:17)
+    at Layer.handleRequest (/home/ranap/Documents/RailwayProject/node_modules/router/lib/layer.js:152:17)
+    at trimPrefix (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:342:13)
+    at /home/ranap/Documents/RailwayProject/node_modules/router/index.js:297:9
+    at processParams (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:582:12)
+    at next (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:291:5)
+    at file:///home/ranap/Documents/RailwayProject/node_modules/express-rate-limit/dist/index.mjs:913:7
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///home/ranap/Documents/RailwayProject/node_modules/express-rate-limit/dist/index.mjs:796:5
+2025-11-27 19:39:51 [error]: Error: Route /api/v1/users not found
+    at notFound (file:///home/ranap/Documents/RailwayProject/src/middleware/errorHandler.js:43:17)
+    at Layer.handleRequest (/home/ranap/Documents/RailwayProject/node_modules/router/lib/layer.js:152:17)
+    at trimPrefix (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:342:13)
+    at /home/ranap/Documents/RailwayProject/node_modules/router/index.js:297:9
+    at processParams (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:582:12)
+    at next (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:291:5)
+    at file:///home/ranap/Documents/RailwayProject/node_modules/express-rate-limit/dist/index.mjs:913:7
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///home/ranap/Documents/RailwayProject/node_modules/express-rate-limit/dist/index.mjs:796:5
+2025-11-27 19:39:51 [error]: Error: Route /api/v1/users/pending-requests not found
+    at notFound (file:///home/ranap/Documents/RailwayProject/src/middleware/errorHandler.js:43:17)
+    at Layer.handleRequest (/home/ranap/Documents/RailwayProject/node_modules/router/lib/layer.js:152:17)
+    at trimPrefix (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:342:13)
+    at /home/ranap/Documents/RailwayProject/node_modules/router/index.js:297:9
+    at processParams (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:582:12)
+    at next (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:291:5)
+    at file:///home/ranap/Documents/RailwayProject/node_modules/express-rate-limit/dist/index.mjs:913:7
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///home/ranap/Documents/RailwayProject/node_modules/express-rate-limit/dist/index.mjs:796:5
+2025-11-27 19:39:51 [error]: Error: Route /api/v1/users/pending-requests not found
+    at notFound (file:///home/ranap/Documents/RailwayProject/src/middleware/errorHandler.js:43:17)
+    at Layer.handleRequest (/home/ranap/Documents/RailwayProject/node_modules/router/lib/layer.js:152:17)
+    at trimPrefix (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:342:13)
+    at /home/ranap/Documents/RailwayProject/node_modules/router/index.js:297:9
+    at processParams (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:582:12)
+    at next (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:291:5)
+    at file:///home/ranap/Documents/RailwayProject/node_modules/express-rate-limit/dist/index.mjs:913:7
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///home/ranap/Documents/RailwayProject/node_modules/express-rate-limit/dist/index.mjs:796:5
+2025-11-27 19:43:14 [error]: Error: Route /api/v1/users not found
+    at notFound (file:///home/ranap/Documents/RailwayProject/src/middleware/errorHandler.js:43:17)
+    at Layer.handleRequest (/home/ranap/Documents/RailwayProject/node_modules/router/lib/layer.js:152:17)
+    at trimPrefix (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:342:13)
+    at /home/ranap/Documents/RailwayProject/node_modules/router/index.js:297:9
+    at processParams (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:582:12)
+    at next (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:291:5)
+    at file:///home/ranap/Documents/RailwayProject/node_modules/express-rate-limit/dist/index.mjs:913:7
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///home/ranap/Documents/RailwayProject/node_modules/express-rate-limit/dist/index.mjs:796:5
+2025-11-27 19:43:14 [error]: Error: Route /api/v1/users/pending-requests not found
+    at notFound (file:///home/ranap/Documents/RailwayProject/src/middleware/errorHandler.js:43:17)
+    at Layer.handleRequest (/home/ranap/Documents/RailwayProject/node_modules/router/lib/layer.js:152:17)
+    at trimPrefix (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:342:13)
+    at /home/ranap/Documents/RailwayProject/node_modules/router/index.js:297:9
+    at processParams (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:582:12)
+    at next (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:291:5)
+    at file:///home/ranap/Documents/RailwayProject/node_modules/express-rate-limit/dist/index.mjs:913:7
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///home/ranap/Documents/RailwayProject/node_modules/express-rate-limit/dist/index.mjs:796:5
+2025-11-27 19:45:28 [error]: Error: Your account is pending approval by administrator
+    at AuthService.login (file:///home/ranap/Documents/RailwayProject/src/services/auth.service.js:111:15)
+    at async file:///home/ranap/Documents/RailwayProject/src/controllers/auth.controller.js:21:18
+2025-11-27 19:45:28 [error]: Error: Your account is pending approval by administrator
+    at AuthService.login (file:///home/ranap/Documents/RailwayProject/src/services/auth.service.js:111:15)
+    at async file:///home/ranap/Documents/RailwayProject/src/controllers/auth.controller.js:21:18
+2025-11-27 19:53:36 [error]: Error: Your account is pending approval by administrator
+    at AuthService.login (file:///home/ranap/Documents/RailwayProject/src/services/auth.service.js:111:15)
+    at async file:///home/ranap/Documents/RailwayProject/src/controllers/auth.controller.js:21:18
+2025-11-27 19:53:36 [error]: Error: Your account is pending approval by administrator
+    at AuthService.login (file:///home/ranap/Documents/RailwayProject/src/services/auth.service.js:111:15)
+    at async file:///home/ranap/Documents/RailwayProject/src/controllers/auth.controller.js:21:18
+2025-11-27 20:34:55 [error]: Error: Token expired
+    at file:///home/ranap/Documents/RailwayProject/src/middleware/auth.js:70:13
+    at file:///home/ranap/Documents/RailwayProject/src/middleware/errorHandler.js:49:19
+    at Layer.handleRequest (/home/ranap/Documents/RailwayProject/node_modules/router/lib/layer.js:152:17)
+    at trimPrefix (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:342:13)
+    at /home/ranap/Documents/RailwayProject/node_modules/router/index.js:297:9
+    at processParams (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:582:12)
+    at next (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:291:5)
+    at Function.handle (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:186:3)
+    at router (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:60:12)
+    at Layer.handleRequest (/home/ranap/Documents/RailwayProject/node_modules/router/lib/layer.js:152:17)
+2025-11-27 20:34:55 [error]: Error: Token expired
+    at file:///home/ranap/Documents/RailwayProject/src/middleware/auth.js:70:13
+    at file:///home/ranap/Documents/RailwayProject/src/middleware/errorHandler.js:49:19
+    at Layer.handleRequest (/home/ranap/Documents/RailwayProject/node_modules/router/lib/layer.js:152:17)
+    at trimPrefix (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:342:13)
+    at /home/ranap/Documents/RailwayProject/node_modules/router/index.js:297:9
+    at processParams (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:582:12)
+    at next (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:291:5)
+    at Function.handle (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:186:3)
+    at router (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:60:12)
+    at Layer.handleRequest (/home/ranap/Documents/RailwayProject/node_modules/router/lib/layer.js:152:17)
+2025-11-27 20:35:05 [error]: Prisma Error: 
+Invalid `prisma.user.findUnique()` invocation:
+
+
+Timed out fetching a new connection from the connection pool. More info: http://pris.ly/d/connection-pool (Current connection pool timeout: 10, connection limit: 9)
+2025-11-27 20:35:05 [error]: PrismaClientKnownRequestError: 
+Invalid `prisma.user.findUnique()` invocation:
+
+
+Timed out fetching a new connection from the connection pool. More info: http://pris.ly/d/connection-pool (Current connection pool timeout: 10, connection limit: 9)
+    at ei.handleRequestError (/home/ranap/Documents/RailwayProject/src/generated/prisma/runtime/library.js:125:7268)
+    at ei.handleAndLogRequestError (/home/ranap/Documents/RailwayProject/src/generated/prisma/runtime/library.js:125:6593)
+    at ei.request (/home/ranap/Documents/RailwayProject/src/generated/prisma/runtime/library.js:125:6300)
+    at async a (/home/ranap/Documents/RailwayProject/src/generated/prisma/runtime/library.js:134:9551)
+    at async AuthService.refreshToken (file:///home/ranap/Documents/RailwayProject/src/services/auth.service.js:155:20)
+    at async file:///home/ranap/Documents/RailwayProject/src/controllers/auth.controller.js:34:18
+2025-11-27 20:35:05 [error]: Error: Invalid refresh token
+    at AuthService.refreshToken (file:///home/ranap/Documents/RailwayProject/src/services/auth.service.js:170:13)
+    at async file:///home/ranap/Documents/RailwayProject/src/controllers/auth.controller.js:34:18
+2025-11-27 20:35:09 [error]: Prisma Error: 
+Invalid `prisma.shift.findMany()` invocation:
+
+
+Timed out fetching a new connection from the connection pool. More info: http://pris.ly/d/connection-pool (Current connection pool timeout: 10, connection limit: 9)
+2025-11-27 20:35:09 [error]: PrismaClientKnownRequestError: 
+Invalid `prisma.shift.findMany()` invocation:
+
+
+Timed out fetching a new connection from the connection pool. More info: http://pris.ly/d/connection-pool (Current connection pool timeout: 10, connection limit: 9)
+    at ei.handleRequestError (/home/ranap/Documents/RailwayProject/src/generated/prisma/runtime/library.js:125:7268)
+    at ei.handleAndLogRequestError (/home/ranap/Documents/RailwayProject/src/generated/prisma/runtime/library.js:125:6593)
+    at ei.request (/home/ranap/Documents/RailwayProject/src/generated/prisma/runtime/library.js:125:6300)
+    at async a (/home/ranap/Documents/RailwayProject/src/generated/prisma/runtime/library.js:134:9551)
+    at async Promise.all (index 0)
+    at async ShiftService.listShifts (file:///home/ranap/Documents/RailwayProject/src/services/shift.service.js:308:31)
+    at async file:///home/ranap/Documents/RailwayProject/src/controllers/shift.controller.js:55:18
+2025-11-27 20:35:09 [error]: PrismaClientKnownRequestError: 
+Invalid `prisma.shift.findMany()` invocation:
+
+
+Timed out fetching a new connection from the connection pool. More info: http://pris.ly/d/connection-pool (Current connection pool timeout: 10, connection limit: 9)
+    at ei.handleRequestError (/home/ranap/Documents/RailwayProject/src/generated/prisma/runtime/library.js:125:7268)
+    at ei.handleAndLogRequestError (/home/ranap/Documents/RailwayProject/src/generated/prisma/runtime/library.js:125:6593)
+    at ei.request (/home/ranap/Documents/RailwayProject/src/generated/prisma/runtime/library.js:125:6300)
+    at async a (/home/ranap/Documents/RailwayProject/src/generated/prisma/runtime/library.js:134:9551)
+    at async Promise.all (index 0)
+    at async ShiftService.listShifts (file:///home/ranap/Documents/RailwayProject/src/services/shift.service.js:308:31)
+    at async file:///home/ranap/Documents/RailwayProject/src/controllers/shift.controller.js:55:18
+2025-11-27 20:36:48 [error]: Error: Not authorized, no token provided
+    at file:///home/ranap/Documents/RailwayProject/src/middleware/auth.js:21:11
+    at file:///home/ranap/Documents/RailwayProject/src/middleware/errorHandler.js:49:19
+    at Layer.handleRequest (/home/ranap/Documents/RailwayProject/node_modules/router/lib/layer.js:152:17)
+    at trimPrefix (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:342:13)
+    at /home/ranap/Documents/RailwayProject/node_modules/router/index.js:297:9
+    at processParams (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:582:12)
+    at next (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:291:5)
+    at Function.handle (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:186:3)
+    at router (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:60:12)
+    at Layer.handleRequest (/home/ranap/Documents/RailwayProject/node_modules/router/lib/layer.js:152:17)
+2025-11-27 20:36:48 [error]: Error: Not authorized, no token provided
+    at file:///home/ranap/Documents/RailwayProject/src/middleware/auth.js:21:11
+    at file:///home/ranap/Documents/RailwayProject/src/middleware/errorHandler.js:49:19
+    at Layer.handleRequest (/home/ranap/Documents/RailwayProject/node_modules/router/lib/layer.js:152:17)
+    at trimPrefix (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:342:13)
+    at /home/ranap/Documents/RailwayProject/node_modules/router/index.js:297:9
+    at processParams (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:582:12)
+    at next (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:291:5)
+    at Function.handle (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:186:3)
+    at router (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:60:12)
+    at Layer.handleRequest (/home/ranap/Documents/RailwayProject/node_modules/router/lib/layer.js:152:17)
+2025-11-27 20:36:53 [error]: Error: Not authorized, no token provided
+    at file:///home/ranap/Documents/RailwayProject/src/middleware/auth.js:21:11
+    at file:///home/ranap/Documents/RailwayProject/src/middleware/errorHandler.js:49:19
+    at Layer.handleRequest (/home/ranap/Documents/RailwayProject/node_modules/router/lib/layer.js:152:17)
+    at trimPrefix (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:342:13)
+    at /home/ranap/Documents/RailwayProject/node_modules/router/index.js:297:9
+    at processParams (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:582:12)
+    at next (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:291:5)
+    at Function.handle (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:186:3)
+    at router (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:60:12)
+    at Layer.handleRequest (/home/ranap/Documents/RailwayProject/node_modules/router/lib/layer.js:152:17)
+2025-11-27 20:36:53 [error]: Error: Not authorized, no token provided
+    at file:///home/ranap/Documents/RailwayProject/src/middleware/auth.js:21:11
+    at file:///home/ranap/Documents/RailwayProject/src/middleware/errorHandler.js:49:19
+    at Layer.handleRequest (/home/ranap/Documents/RailwayProject/node_modules/router/lib/layer.js:152:17)
+    at trimPrefix (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:342:13)
+    at /home/ranap/Documents/RailwayProject/node_modules/router/index.js:297:9
+    at processParams (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:582:12)
+    at next (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:291:5)
+    at Function.handle (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:186:3)
+    at router (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:60:12)
+    at Layer.handleRequest (/home/ranap/Documents/RailwayProject/node_modules/router/lib/layer.js:152:17)
+2025-11-27 20:37:02 [error]: Error: Not authorized, no token provided
+    at file:///home/ranap/Documents/RailwayProject/src/middleware/auth.js:21:11
+    at file:///home/ranap/Documents/RailwayProject/src/middleware/errorHandler.js:49:19
+    at Layer.handleRequest (/home/ranap/Documents/RailwayProject/node_modules/router/lib/layer.js:152:17)
+    at trimPrefix (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:342:13)
+    at /home/ranap/Documents/RailwayProject/node_modules/router/index.js:297:9
+    at processParams (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:582:12)
+    at next (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:291:5)
+    at Function.handle (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:186:3)
+    at router (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:60:12)
+    at Layer.handleRequest (/home/ranap/Documents/RailwayProject/node_modules/router/lib/layer.js:152:17)
+2025-11-27 20:37:02 [error]: Error: Not authorized, no token provided
+    at file:///home/ranap/Documents/RailwayProject/src/middleware/auth.js:21:11
+    at file:///home/ranap/Documents/RailwayProject/src/middleware/errorHandler.js:49:19
+    at Layer.handleRequest (/home/ranap/Documents/RailwayProject/node_modules/router/lib/layer.js:152:17)
+    at trimPrefix (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:342:13)
+    at /home/ranap/Documents/RailwayProject/node_modules/router/index.js:297:9
+    at processParams (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:582:12)
+    at next (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:291:5)
+    at Function.handle (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:186:3)
+    at router (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:60:12)
+    at Layer.handleRequest (/home/ranap/Documents/RailwayProject/node_modules/router/lib/layer.js:152:17)
+2025-11-27 20:37:08 [error]: Error: Not authorized, no token provided
+    at file:///home/ranap/Documents/RailwayProject/src/middleware/auth.js:21:11
+    at file:///home/ranap/Documents/RailwayProject/src/middleware/errorHandler.js:49:19
+    at Layer.handleRequest (/home/ranap/Documents/RailwayProject/node_modules/router/lib/layer.js:152:17)
+    at next (/home/ranap/Documents/RailwayProject/node_modules/router/lib/route.js:157:13)
+    at Route.dispatch (/home/ranap/Documents/RailwayProject/node_modules/router/lib/route.js:117:3)
+    at handle (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:435:11)
+    at Layer.handleRequest (/home/ranap/Documents/RailwayProject/node_modules/router/lib/layer.js:152:17)
+    at /home/ranap/Documents/RailwayProject/node_modules/router/index.js:295:15
+    at processParams (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:582:12)
+    at next (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:291:5)
+2025-11-27 20:47:58 [error]: Prisma Error: Error in PostgreSQL connection: Error { kind: Closed, cause: None }
+2025-11-27 20:47:58 [error]: Prisma Error: Error in PostgreSQL connection: Error { kind: Closed, cause: None }
+2025-11-27 20:47:58 [error]: Prisma Error: Error in PostgreSQL connection: Error { kind: Closed, cause: None }
+2025-11-27 20:47:58 [error]: Prisma Error: Error in PostgreSQL connection: Error { kind: Closed, cause: None }
+2025-11-27 20:47:58 [error]: Prisma Error: Error in PostgreSQL connection: Error { kind: Closed, cause: None }
+2025-11-27 20:51:34 [error]: Prisma Error: Error in PostgreSQL connection: Error { kind: Io, cause: Some(Os { code: 110, kind: TimedOut, message: "Connection timed out" }) }
+2025-11-27 20:51:46 [error]: Prisma Error: Error in PostgreSQL connection: Error { kind: Io, cause: Some(Os { code: 110, kind: TimedOut, message: "Connection timed out" }) }
+2025-11-27 21:10:32 [error]: Error: Token expired
+    at file:///home/ranap/Documents/RailwayProject/src/middleware/auth.js:70:13
+    at file:///home/ranap/Documents/RailwayProject/src/middleware/errorHandler.js:49:19
+    at Layer.handleRequest (/home/ranap/Documents/RailwayProject/node_modules/router/lib/layer.js:152:17)
+    at trimPrefix (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:342:13)
+    at /home/ranap/Documents/RailwayProject/node_modules/router/index.js:297:9
+    at processParams (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:582:12)
+    at next (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:291:5)
+    at Function.handle (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:186:3)
+    at router (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:60:12)
+    at Layer.handleRequest (/home/ranap/Documents/RailwayProject/node_modules/router/lib/layer.js:152:17)
+2025-11-27 21:10:32 [error]: Error: Token expired
+    at file:///home/ranap/Documents/RailwayProject/src/middleware/auth.js:70:13
+    at file:///home/ranap/Documents/RailwayProject/src/middleware/errorHandler.js:49:19
+    at Layer.handleRequest (/home/ranap/Documents/RailwayProject/node_modules/router/lib/layer.js:152:17)
+    at trimPrefix (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:342:13)
+    at /home/ranap/Documents/RailwayProject/node_modules/router/index.js:297:9
+    at processParams (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:582:12)
+    at next (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:291:5)
+    at Function.handle (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:186:3)
+    at router (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:60:12)
+    at Layer.handleRequest (/home/ranap/Documents/RailwayProject/node_modules/router/lib/layer.js:152:17)
+2025-11-27 21:17:17 [error]: Prisma Error: Error in PostgreSQL connection: Error { kind: Closed, cause: None }
+2025-11-27 21:17:17 [error]: Prisma Error: Error in PostgreSQL connection: Error { kind: Closed, cause: None }
+2025-11-27 21:17:17 [error]: Prisma Error: Error in PostgreSQL connection: Error { kind: Closed, cause: None }
+2025-11-27 21:17:17 [error]: Prisma Error: Error in PostgreSQL connection: Error { kind: Closed, cause: None }
+2025-11-27 23:48:56 [error]: Error: Token expired
+    at file:///home/ranap/Documents/RailwayProject/src/middleware/auth.js:70:13
+    at file:///home/ranap/Documents/RailwayProject/src/middleware/errorHandler.js:49:19
+    at Layer.handleRequest (/home/ranap/Documents/RailwayProject/node_modules/router/lib/layer.js:152:17)
+    at trimPrefix (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:342:13)
+    at /home/ranap/Documents/RailwayProject/node_modules/router/index.js:297:9
+    at processParams (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:582:12)
+    at next (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:291:5)
+    at Function.handle (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:186:3)
+    at router (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:60:12)
+    at Layer.handleRequest (/home/ranap/Documents/RailwayProject/node_modules/router/lib/layer.js:152:17)
+2025-11-27 23:48:56 [error]: Error: Token expired
+    at file:///home/ranap/Documents/RailwayProject/src/middleware/auth.js:70:13
+    at file:///home/ranap/Documents/RailwayProject/src/middleware/errorHandler.js:49:19
+    at Layer.handleRequest (/home/ranap/Documents/RailwayProject/node_modules/router/lib/layer.js:152:17)
+    at trimPrefix (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:342:13)
+    at /home/ranap/Documents/RailwayProject/node_modules/router/index.js:297:9
+    at processParams (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:582:12)
+    at next (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:291:5)
+    at Function.handle (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:186:3)
+    at router (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:60:12)
+    at Layer.handleRequest (/home/ranap/Documents/RailwayProject/node_modules/router/lib/layer.js:152:17)
+2025-11-28 00:04:44 [error]: Error: Token expired
+    at file:///home/ranap/Documents/RailwayProject/src/middleware/auth.js:70:13
+    at file:///home/ranap/Documents/RailwayProject/src/middleware/errorHandler.js:49:19
+    at Layer.handleRequest (/home/ranap/Documents/RailwayProject/node_modules/router/lib/layer.js:152:17)
+    at trimPrefix (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:342:13)
+    at /home/ranap/Documents/RailwayProject/node_modules/router/index.js:297:9
+    at processParams (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:582:12)
+    at next (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:291:5)
+    at Function.handle (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:186:3)
+    at router (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:60:12)
+    at Layer.handleRequest (/home/ranap/Documents/RailwayProject/node_modules/router/lib/layer.js:152:17)
+2025-11-28 00:23:36 [error]: TokenExpiredError: jwt expired
+    at /home/ranap/Documents/RailwayProject/node_modules/jsonwebtoken/verify.js:190:21
+    at getSecret (/home/ranap/Documents/RailwayProject/node_modules/jsonwebtoken/verify.js:97:14)
+    at module.exports [as verify] (/home/ranap/Documents/RailwayProject/node_modules/jsonwebtoken/verify.js:101:10)
+    at Array.<anonymous> (file:///home/ranap/Documents/RailwayProject/src/socket/index.js:19:27)
+    at run (/home/ranap/Documents/RailwayProject/node_modules/socket.io/dist/namespace.js:130:19)
+    at Namespace.run (/home/ranap/Documents/RailwayProject/node_modules/socket.io/dist/namespace.js:141:9)
+    at Namespace._add (/home/ranap/Documents/RailwayProject/node_modules/socket.io/dist/namespace.js:218:14)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-11-28 00:23:36 [error]: Error: Token expired
+    at file:///home/ranap/Documents/RailwayProject/src/middleware/auth.js:70:13
+    at file:///home/ranap/Documents/RailwayProject/src/middleware/errorHandler.js:49:19
+    at Layer.handleRequest (/home/ranap/Documents/RailwayProject/node_modules/router/lib/layer.js:152:17)
+    at trimPrefix (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:342:13)
+    at /home/ranap/Documents/RailwayProject/node_modules/router/index.js:297:9
+    at processParams (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:582:12)
+    at next (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:291:5)
+    at Function.handle (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:186:3)
+    at router (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:60:12)
+    at Layer.handleRequest (/home/ranap/Documents/RailwayProject/node_modules/router/lib/layer.js:152:17)
+2025-11-28 00:23:36 [error]: Error: Token expired
+    at file:///home/ranap/Documents/RailwayProject/src/middleware/auth.js:70:13
+    at file:///home/ranap/Documents/RailwayProject/src/middleware/errorHandler.js:49:19
+    at Layer.handleRequest (/home/ranap/Documents/RailwayProject/node_modules/router/lib/layer.js:152:17)
+    at trimPrefix (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:342:13)
+    at /home/ranap/Documents/RailwayProject/node_modules/router/index.js:297:9
+    at processParams (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:582:12)
+    at next (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:291:5)
+    at Function.handle (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:186:3)
+    at router (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:60:12)
+    at Layer.handleRequest (/home/ranap/Documents/RailwayProject/node_modules/router/lib/layer.js:152:17)
+2025-11-30 10:48:39 [error]: PrismaClientInitializationError: Can't reach database server at `ep-jolly-sky-ahjt6sc5-pooler.c-3.us-east-1.aws.neon.tech:5432`
+
+Please make sure your database server is running at `ep-jolly-sky-ahjt6sc5-pooler.c-3.us-east-1.aws.neon.tech:5432`.
+    at r (/home/ranap/Documents/RailwayProject/src/generated/prisma/runtime/library.js:116:2770)
+    at async connectDatabase (file:///home/ranap/Documents/RailwayProject/src/index.js:16:5)
+    at async startServer (file:///home/ranap/Documents/RailwayProject/src/index.js:55:5)
+2025-11-30 10:50:46 [error]: TokenExpiredError: jwt expired
+    at /home/ranap/Documents/RailwayProject/node_modules/jsonwebtoken/verify.js:190:21
+    at getSecret (/home/ranap/Documents/RailwayProject/node_modules/jsonwebtoken/verify.js:97:14)
+    at module.exports [as verify] (/home/ranap/Documents/RailwayProject/node_modules/jsonwebtoken/verify.js:101:10)
+    at Array.<anonymous> (file:///home/ranap/Documents/RailwayProject/src/socket/index.js:19:27)
+    at run (/home/ranap/Documents/RailwayProject/node_modules/socket.io/dist/namespace.js:130:19)
+    at Namespace.run (/home/ranap/Documents/RailwayProject/node_modules/socket.io/dist/namespace.js:141:9)
+    at Namespace._add (/home/ranap/Documents/RailwayProject/node_modules/socket.io/dist/namespace.js:218:14)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-11-30 10:50:55 [error]: Error: Token expired
+    at file:///home/ranap/Documents/RailwayProject/src/middleware/auth.js:70:13
+    at file:///home/ranap/Documents/RailwayProject/src/middleware/errorHandler.js:49:19
+    at Layer.handleRequest (/home/ranap/Documents/RailwayProject/node_modules/router/lib/layer.js:152:17)
+    at next (/home/ranap/Documents/RailwayProject/node_modules/router/lib/route.js:157:13)
+    at Route.dispatch (/home/ranap/Documents/RailwayProject/node_modules/router/lib/route.js:117:3)
+    at handle (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:435:11)
+    at Layer.handleRequest (/home/ranap/Documents/RailwayProject/node_modules/router/lib/layer.js:152:17)
+    at /home/ranap/Documents/RailwayProject/node_modules/router/index.js:295:15
+    at processParams (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:582:12)
+    at next (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:291:5)
+2025-11-30 10:55:22 [error]: Prisma Error: 
+Invalid `prisma.shift.findMany()` invocation:
+
+
+Can't reach database server at `ep-jolly-sky-ahjt6sc5-pooler.c-3.us-east-1.aws.neon.tech:5432`
+
+Please make sure your database server is running at `ep-jolly-sky-ahjt6sc5-pooler.c-3.us-east-1.aws.neon.tech:5432`.
+2025-11-30 10:55:22 [error]: PrismaClientKnownRequestError: 
+Invalid `prisma.shift.findMany()` invocation:
+
+
+Can't reach database server at `ep-jolly-sky-ahjt6sc5-pooler.c-3.us-east-1.aws.neon.tech:5432`
+
+Please make sure your database server is running at `ep-jolly-sky-ahjt6sc5-pooler.c-3.us-east-1.aws.neon.tech:5432`.
+    at ei.handleRequestError (/home/ranap/Documents/RailwayProject/src/generated/prisma/runtime/library.js:125:7268)
+    at ei.handleAndLogRequestError (/home/ranap/Documents/RailwayProject/src/generated/prisma/runtime/library.js:125:6593)
+    at ei.request (/home/ranap/Documents/RailwayProject/src/generated/prisma/runtime/library.js:125:6300)
+    at async a (/home/ranap/Documents/RailwayProject/src/generated/prisma/runtime/library.js:134:9551)
+    at async Module.getActiveShifts (file:///home/ranap/Documents/RailwayProject/src/services/dutyHours.service.js:20:18)
+    at async monitorShifts (file:///home/ranap/Documents/RailwayProject/src/jobs/shiftMonitor.job.js:13:26)
+2025-11-30 10:55:36 [error]: Error: Your account is pending approval by administrator
+    at AuthService.login (file:///home/ranap/Documents/RailwayProject/src/services/auth.service.js:111:15)
+    at async file:///home/ranap/Documents/RailwayProject/src/controllers/auth.controller.js:21:18
+2025-11-30 10:55:36 [error]: Error: Your account is pending approval by administrator
+    at AuthService.login (file:///home/ranap/Documents/RailwayProject/src/services/auth.service.js:111:15)
+    at async file:///home/ranap/Documents/RailwayProject/src/controllers/auth.controller.js:21:18
+2025-11-30 11:10:11 [error]: Prisma Error: 
+Invalid `prisma.shift.update()` invocation:
+
+
+An operation failed because it depends on one or more records that were required but not found. No record was found for an update.
+2025-11-30 11:10:11 [error]: PrismaClientKnownRequestError: 
+Invalid `prisma.shift.update()` invocation:
+
+
+An operation failed because it depends on one or more records that were required but not found. No record was found for an update.
+    at ei.handleRequestError (/home/ranap/Documents/RailwayProject/src/generated/prisma/runtime/library.js:125:7268)
+    at ei.handleAndLogRequestError (/home/ranap/Documents/RailwayProject/src/generated/prisma/runtime/library.js:125:6593)
+    at ei.request (/home/ranap/Documents/RailwayProject/src/generated/prisma/runtime/library.js:125:6300)
+    at async a (/home/ranap/Documents/RailwayProject/src/generated/prisma/runtime/library.js:134:9551)
+    at async Module.recordAlertResponse (file:///home/ranap/Documents/RailwayProject/src/services/dutyHours.service.js:207:17)
+    at async submitAlertResponse (file:///home/ranap/Documents/RailwayProject/src/controllers/alert.controller.js:41:19)
+2025-11-30 11:10:56 [error]: Prisma Error: 
+Invalid `prisma.shift.update()` invocation:
+
+
+An operation failed because it depends on one or more records that were required but not found. No record was found for an update.
+2025-11-30 11:10:56 [error]: PrismaClientKnownRequestError: 
+Invalid `prisma.shift.update()` invocation:
+
+
+An operation failed because it depends on one or more records that were required but not found. No record was found for an update.
+    at ei.handleRequestError (/home/ranap/Documents/RailwayProject/src/generated/prisma/runtime/library.js:125:7268)
+    at ei.handleAndLogRequestError (/home/ranap/Documents/RailwayProject/src/generated/prisma/runtime/library.js:125:6593)
+    at ei.request (/home/ranap/Documents/RailwayProject/src/generated/prisma/runtime/library.js:125:6300)
+    at async a (/home/ranap/Documents/RailwayProject/src/generated/prisma/runtime/library.js:134:9551)
+    at async Module.recordAlertResponse (file:///home/ranap/Documents/RailwayProject/src/services/dutyHours.service.js:207:17)
+    at async submitAlertResponse (file:///home/ranap/Documents/RailwayProject/src/controllers/alert.controller.js:41:19)
+2025-11-30 11:12:28 [error]: TokenExpiredError: jwt expired
+    at /home/ranap/Documents/RailwayProject/node_modules/jsonwebtoken/verify.js:190:21
+    at getSecret (/home/ranap/Documents/RailwayProject/node_modules/jsonwebtoken/verify.js:97:14)
+    at module.exports [as verify] (/home/ranap/Documents/RailwayProject/node_modules/jsonwebtoken/verify.js:101:10)
+    at Array.<anonymous> (file:///home/ranap/Documents/RailwayProject/src/socket/index.js:19:27)
+    at run (/home/ranap/Documents/RailwayProject/node_modules/socket.io/dist/namespace.js:130:19)
+    at Namespace.run (/home/ranap/Documents/RailwayProject/node_modules/socket.io/dist/namespace.js:141:9)
+    at Namespace._add (/home/ranap/Documents/RailwayProject/node_modules/socket.io/dist/namespace.js:218:14)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-11-30 11:12:28 [error]: Error: Token expired
+    at file:///home/ranap/Documents/RailwayProject/src/middleware/auth.js:70:13
+    at file:///home/ranap/Documents/RailwayProject/src/middleware/errorHandler.js:49:19
+    at Layer.handleRequest (/home/ranap/Documents/RailwayProject/node_modules/router/lib/layer.js:152:17)
+    at trimPrefix (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:342:13)
+    at /home/ranap/Documents/RailwayProject/node_modules/router/index.js:297:9
+    at processParams (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:582:12)
+    at next (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:291:5)
+    at Function.handle (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:186:3)
+    at router (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:60:12)
+    at Layer.handleRequest (/home/ranap/Documents/RailwayProject/node_modules/router/lib/layer.js:152:17)
+2025-11-30 16:55:20 [error]: TokenExpiredError: jwt expired
+    at /home/ranap/Documents/RailwayProject/node_modules/jsonwebtoken/verify.js:190:21
+    at getSecret (/home/ranap/Documents/RailwayProject/node_modules/jsonwebtoken/verify.js:97:14)
+    at module.exports [as verify] (/home/ranap/Documents/RailwayProject/node_modules/jsonwebtoken/verify.js:101:10)
+    at Array.<anonymous> (file:///home/ranap/Documents/RailwayProject/src/socket/index.js:19:27)
+    at run (/home/ranap/Documents/RailwayProject/node_modules/socket.io/dist/namespace.js:130:19)
+    at Namespace.run (/home/ranap/Documents/RailwayProject/node_modules/socket.io/dist/namespace.js:141:9)
+    at Namespace._add (/home/ranap/Documents/RailwayProject/node_modules/socket.io/dist/namespace.js:218:14)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-11-30 16:56:15 [error]: TokenExpiredError: jwt expired
+    at /home/ranap/Documents/RailwayProject/node_modules/jsonwebtoken/verify.js:190:21
+    at getSecret (/home/ranap/Documents/RailwayProject/node_modules/jsonwebtoken/verify.js:97:14)
+    at module.exports [as verify] (/home/ranap/Documents/RailwayProject/node_modules/jsonwebtoken/verify.js:101:10)
+    at Array.<anonymous> (file:///home/ranap/Documents/RailwayProject/src/socket/index.js:19:27)
+    at run (/home/ranap/Documents/RailwayProject/node_modules/socket.io/dist/namespace.js:130:19)
+    at Namespace.run (/home/ranap/Documents/RailwayProject/node_modules/socket.io/dist/namespace.js:141:9)
+    at Namespace._add (/home/ranap/Documents/RailwayProject/node_modules/socket.io/dist/namespace.js:218:14)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-11-30 16:56:18 [error]: TokenExpiredError: jwt expired
+    at /home/ranap/Documents/RailwayProject/node_modules/jsonwebtoken/verify.js:190:21
+    at getSecret (/home/ranap/Documents/RailwayProject/node_modules/jsonwebtoken/verify.js:97:14)
+    at module.exports [as verify] (/home/ranap/Documents/RailwayProject/node_modules/jsonwebtoken/verify.js:101:10)
+    at Array.<anonymous> (file:///home/ranap/Documents/RailwayProject/src/socket/index.js:19:27)
+    at run (/home/ranap/Documents/RailwayProject/node_modules/socket.io/dist/namespace.js:130:19)
+    at Namespace.run (/home/ranap/Documents/RailwayProject/node_modules/socket.io/dist/namespace.js:141:9)
+    at Namespace._add (/home/ranap/Documents/RailwayProject/node_modules/socket.io/dist/namespace.js:218:14)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-11-30 16:56:21 [error]: Error: Token expired
+    at file:///home/ranap/Documents/RailwayProject/src/middleware/auth.js:70:13
+    at file:///home/ranap/Documents/RailwayProject/src/middleware/errorHandler.js:49:19
+    at Layer.handleRequest (/home/ranap/Documents/RailwayProject/node_modules/router/lib/layer.js:152:17)
+    at next (/home/ranap/Documents/RailwayProject/node_modules/router/lib/route.js:157:13)
+    at Route.dispatch (/home/ranap/Documents/RailwayProject/node_modules/router/lib/route.js:117:3)
+    at handle (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:435:11)
+    at Layer.handleRequest (/home/ranap/Documents/RailwayProject/node_modules/router/lib/layer.js:152:17)
+    at /home/ranap/Documents/RailwayProject/node_modules/router/index.js:295:15
+    at processParams (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:582:12)
+    at next (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:291:5)
+2025-11-30 17:15:19 [error]: Error: Token expired
+    at file:///home/ranap/Documents/RailwayProject/src/middleware/auth.js:70:13
+    at file:///home/ranap/Documents/RailwayProject/src/middleware/errorHandler.js:49:19
+    at Layer.handleRequest (/home/ranap/Documents/RailwayProject/node_modules/router/lib/layer.js:152:17)
+    at trimPrefix (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:342:13)
+    at /home/ranap/Documents/RailwayProject/node_modules/router/index.js:297:9
+    at processParams (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:582:12)
+    at next (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:291:5)
+    at Function.handle (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:186:3)
+    at router (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:60:12)
+    at Layer.handleRequest (/home/ranap/Documents/RailwayProject/node_modules/router/lib/layer.js:152:17)
+2025-11-30 22:29:07 [error]: Error: Token expired
+    at file:///home/ranap/Documents/RailwayProject/src/middleware/auth.js:70:13
+    at file:///home/ranap/Documents/RailwayProject/src/middleware/errorHandler.js:49:19
+    at Layer.handleRequest (/home/ranap/Documents/RailwayProject/node_modules/router/lib/layer.js:152:17)
+    at trimPrefix (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:342:13)
+    at /home/ranap/Documents/RailwayProject/node_modules/router/index.js:297:9
+    at processParams (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:582:12)
+    at next (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:291:5)
+    at Function.handle (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:186:3)
+    at router (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:60:12)
+    at Layer.handleRequest (/home/ranap/Documents/RailwayProject/node_modules/router/lib/layer.js:152:17)
+2025-11-30 22:48:04 [error]: TokenExpiredError: jwt expired
+    at /home/ranap/Documents/RailwayProject/node_modules/jsonwebtoken/verify.js:190:21
+    at getSecret (/home/ranap/Documents/RailwayProject/node_modules/jsonwebtoken/verify.js:97:14)
+    at module.exports [as verify] (/home/ranap/Documents/RailwayProject/node_modules/jsonwebtoken/verify.js:101:10)
+    at Array.<anonymous> (file:///home/ranap/Documents/RailwayProject/src/socket/index.js:19:27)
+    at run (/home/ranap/Documents/RailwayProject/node_modules/socket.io/dist/namespace.js:130:19)
+    at Namespace.run (/home/ranap/Documents/RailwayProject/node_modules/socket.io/dist/namespace.js:141:9)
+    at Namespace._add (/home/ranap/Documents/RailwayProject/node_modules/socket.io/dist/namespace.js:218:14)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-11-30 23:11:38 [error]: Error: User not found
+    at file:///home/ranap/Documents/RailwayProject/src/middleware/auth.js:56:13
+2025-11-30 23:11:38 [error]: Error: Invalid refresh token
+    at AuthService.refreshToken (file:///home/ranap/Documents/RailwayProject/src/services/auth.service.js:160:15)
+    at async file:///home/ranap/Documents/RailwayProject/src/controllers/auth.controller.js:34:18
+2025-11-30 23:11:38 [error]: Error: Invalid refresh token
+    at AuthService.refreshToken (file:///home/ranap/Documents/RailwayProject/src/services/auth.service.js:170:13)
+    at async file:///home/ranap/Documents/RailwayProject/src/controllers/auth.controller.js:34:18
+2025-11-30 23:11:39 [error]: Error: Not authorized, no token provided
+    at file:///home/ranap/Documents/RailwayProject/src/middleware/auth.js:21:11
+    at file:///home/ranap/Documents/RailwayProject/src/middleware/errorHandler.js:49:19
+    at Layer.handleRequest (/home/ranap/Documents/RailwayProject/node_modules/router/lib/layer.js:152:17)
+    at trimPrefix (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:342:13)
+    at /home/ranap/Documents/RailwayProject/node_modules/router/index.js:297:9
+    at processParams (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:582:12)
+    at next (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:291:5)
+    at Function.handle (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:186:3)
+    at router (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:60:12)
+    at Layer.handleRequest (/home/ranap/Documents/RailwayProject/node_modules/router/lib/layer.js:152:17)
+2025-11-30 23:11:39 [error]: Error: Not authorized, no token provided
+    at file:///home/ranap/Documents/RailwayProject/src/middleware/auth.js:21:11
+    at file:///home/ranap/Documents/RailwayProject/src/middleware/errorHandler.js:49:19
+    at Layer.handleRequest (/home/ranap/Documents/RailwayProject/node_modules/router/lib/layer.js:152:17)
+    at trimPrefix (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:342:13)
+    at /home/ranap/Documents/RailwayProject/node_modules/router/index.js:297:9
+    at processParams (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:582:12)
+    at next (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:291:5)
+    at Function.handle (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:186:3)
+    at router (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:60:12)
+    at Layer.handleRequest (/home/ranap/Documents/RailwayProject/node_modules/router/lib/layer.js:152:17)
+2025-11-30 23:11:39 [error]: Error: User not found
+    at file:///home/ranap/Documents/RailwayProject/src/middleware/auth.js:56:13
+2025-11-30 23:11:48 [error]: Error: Not authorized, no token provided
+    at file:///home/ranap/Documents/RailwayProject/src/middleware/auth.js:21:11
+    at file:///home/ranap/Documents/RailwayProject/src/middleware/errorHandler.js:49:19
+    at Layer.handleRequest (/home/ranap/Documents/RailwayProject/node_modules/router/lib/layer.js:152:17)
+    at next (/home/ranap/Documents/RailwayProject/node_modules/router/lib/route.js:157:13)
+    at Route.dispatch (/home/ranap/Documents/RailwayProject/node_modules/router/lib/route.js:117:3)
+    at handle (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:435:11)
+    at Layer.handleRequest (/home/ranap/Documents/RailwayProject/node_modules/router/lib/layer.js:152:17)
+    at /home/ranap/Documents/RailwayProject/node_modules/router/index.js:295:15
+    at processParams (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:582:12)
+    at next (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:291:5)
+2025-12-01 00:12:18 [error]: Prisma Error: 
+Invalid `prisma.shift.findMany()` invocation:
+
+
+Timed out fetching a new connection from the connection pool. More info: http://pris.ly/d/connection-pool (Current connection pool timeout: 10, connection limit: 9)
+2025-12-01 00:12:18 [error]: PrismaClientKnownRequestError: 
+Invalid `prisma.shift.findMany()` invocation:
+
+
+Timed out fetching a new connection from the connection pool. More info: http://pris.ly/d/connection-pool (Current connection pool timeout: 10, connection limit: 9)
+    at ei.handleRequestError (/home/ranap/Documents/RailwayProject/src/generated/prisma/runtime/library.js:125:7268)
+    at ei.handleAndLogRequestError (/home/ranap/Documents/RailwayProject/src/generated/prisma/runtime/library.js:125:6593)
+    at ei.request (/home/ranap/Documents/RailwayProject/src/generated/prisma/runtime/library.js:125:6300)
+    at async a (/home/ranap/Documents/RailwayProject/src/generated/prisma/runtime/library.js:134:9551)
+    at async Module.getActiveShifts (file:///home/ranap/Documents/RailwayProject/src/services/dutyHours.service.js:20:18)
+    at async monitorShifts (file:///home/ranap/Documents/RailwayProject/src/jobs/shiftMonitor.job.js:13:26)
+2025-12-02 18:35:57 [error]: PrismaClientInitializationError: Can't reach database server at `ep-jolly-sky-ahjt6sc5-pooler.c-3.us-east-1.aws.neon.tech:5432`
+
+Please make sure your database server is running at `ep-jolly-sky-ahjt6sc5-pooler.c-3.us-east-1.aws.neon.tech:5432`.
+    at r (/home/ranap/Documents/RailwayProject/src/generated/prisma/runtime/library.js:116:2770)
+    at async connectDatabase (file:///home/ranap/Documents/RailwayProject/src/index.js:16:5)
+    at async startServer (file:///home/ranap/Documents/RailwayProject/src/index.js:55:5)
+2025-12-02 18:49:00 [error]: TokenExpiredError: jwt expired
+    at /home/ranap/Documents/RailwayProject/node_modules/jsonwebtoken/verify.js:190:21
+    at getSecret (/home/ranap/Documents/RailwayProject/node_modules/jsonwebtoken/verify.js:97:14)
+    at module.exports [as verify] (/home/ranap/Documents/RailwayProject/node_modules/jsonwebtoken/verify.js:101:10)
+    at Array.<anonymous> (file:///home/ranap/Documents/RailwayProject/src/socket/index.js:19:27)
+    at run (/home/ranap/Documents/RailwayProject/node_modules/socket.io/dist/namespace.js:130:19)
+    at Namespace.run (/home/ranap/Documents/RailwayProject/node_modules/socket.io/dist/namespace.js:141:9)
+    at Namespace._add (/home/ranap/Documents/RailwayProject/node_modules/socket.io/dist/namespace.js:218:14)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-12-02 18:49:00 [error]: Error: Token expired
+    at file:///home/ranap/Documents/RailwayProject/src/middleware/auth.js:70:13
+    at file:///home/ranap/Documents/RailwayProject/src/middleware/errorHandler.js:49:19
+    at Layer.handleRequest (/home/ranap/Documents/RailwayProject/node_modules/router/lib/layer.js:152:17)
+    at trimPrefix (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:342:13)
+    at /home/ranap/Documents/RailwayProject/node_modules/router/index.js:297:9
+    at processParams (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:582:12)
+    at next (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:291:5)
+    at Function.handle (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:186:3)
+    at router (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:60:12)
+    at Layer.handleRequest (/home/ranap/Documents/RailwayProject/node_modules/router/lib/layer.js:152:17)
+2025-12-02 18:49:00 [error]: Error: Token expired
+    at file:///home/ranap/Documents/RailwayProject/src/middleware/auth.js:70:13
+    at file:///home/ranap/Documents/RailwayProject/src/middleware/errorHandler.js:49:19
+    at Layer.handleRequest (/home/ranap/Documents/RailwayProject/node_modules/router/lib/layer.js:152:17)
+    at trimPrefix (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:342:13)
+    at /home/ranap/Documents/RailwayProject/node_modules/router/index.js:297:9
+    at processParams (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:582:12)
+    at next (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:291:5)
+    at Function.handle (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:186:3)
+    at router (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:60:12)
+    at Layer.handleRequest (/home/ranap/Documents/RailwayProject/node_modules/router/lib/layer.js:152:17)
+2025-12-02 18:53:34 [error]: Error: Route /socket.io/?EIO=4&transport=websocket not found
+    at notFound (file:///home/ranap/Documents/RailwayProject/src/middleware/errorHandler.js:43:17)
+    at Layer.handleRequest (/home/ranap/Documents/RailwayProject/node_modules/router/lib/layer.js:152:17)
+    at trimPrefix (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:342:13)
+    at /home/ranap/Documents/RailwayProject/node_modules/router/index.js:297:9
+    at processParams (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:582:12)
+    at next (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:291:5)
+    at urlencodedParser (/home/ranap/Documents/RailwayProject/node_modules/body-parser/lib/types/urlencoded.js:68:7)
+    at Layer.handleRequest (/home/ranap/Documents/RailwayProject/node_modules/router/lib/layer.js:152:17)
+    at trimPrefix (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:342:13)
+    at /home/ranap/Documents/RailwayProject/node_modules/router/index.js:297:9
+2025-12-02 18:53:35 [error]: Error: Route /socket.io/?EIO=4&transport=websocket not found
+    at notFound (file:///home/ranap/Documents/RailwayProject/src/middleware/errorHandler.js:43:17)
+    at Layer.handleRequest (/home/ranap/Documents/RailwayProject/node_modules/router/lib/layer.js:152:17)
+    at trimPrefix (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:342:13)
+    at /home/ranap/Documents/RailwayProject/node_modules/router/index.js:297:9
+    at processParams (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:582:12)
+    at next (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:291:5)
+    at urlencodedParser (/home/ranap/Documents/RailwayProject/node_modules/body-parser/lib/types/urlencoded.js:68:7)
+    at Layer.handleRequest (/home/ranap/Documents/RailwayProject/node_modules/router/lib/layer.js:152:17)
+    at trimPrefix (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:342:13)
+    at /home/ranap/Documents/RailwayProject/node_modules/router/index.js:297:9
+2025-12-02 18:53:38 [error]: Error: Route /socket.io/?EIO=4&transport=websocket not found
+    at notFound (file:///home/ranap/Documents/RailwayProject/src/middleware/errorHandler.js:43:17)
+    at Layer.handleRequest (/home/ranap/Documents/RailwayProject/node_modules/router/lib/layer.js:152:17)
+    at trimPrefix (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:342:13)
+    at /home/ranap/Documents/RailwayProject/node_modules/router/index.js:297:9
+    at processParams (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:582:12)
+    at next (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:291:5)
+    at urlencodedParser (/home/ranap/Documents/RailwayProject/node_modules/body-parser/lib/types/urlencoded.js:68:7)
+    at Layer.handleRequest (/home/ranap/Documents/RailwayProject/node_modules/router/lib/layer.js:152:17)
+    at trimPrefix (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:342:13)
+    at /home/ranap/Documents/RailwayProject/node_modules/router/index.js:297:9
+2025-12-02 18:53:41 [error]: Error: Route /socket.io/?EIO=4&transport=websocket not found
+    at notFound (file:///home/ranap/Documents/RailwayProject/src/middleware/errorHandler.js:43:17)
+    at Layer.handleRequest (/home/ranap/Documents/RailwayProject/node_modules/router/lib/layer.js:152:17)
+    at trimPrefix (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:342:13)
+    at /home/ranap/Documents/RailwayProject/node_modules/router/index.js:297:9
+    at processParams (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:582:12)
+    at next (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:291:5)
+    at urlencodedParser (/home/ranap/Documents/RailwayProject/node_modules/body-parser/lib/types/urlencoded.js:68:7)
+    at Layer.handleRequest (/home/ranap/Documents/RailwayProject/node_modules/router/lib/layer.js:152:17)
+    at trimPrefix (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:342:13)
+    at /home/ranap/Documents/RailwayProject/node_modules/router/index.js:297:9
+2025-12-02 18:53:46 [error]: Error: Route /socket.io/?EIO=4&transport=websocket not found
+    at notFound (file:///home/ranap/Documents/RailwayProject/src/middleware/errorHandler.js:43:17)
+    at Layer.handleRequest (/home/ranap/Documents/RailwayProject/node_modules/router/lib/layer.js:152:17)
+    at trimPrefix (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:342:13)
+    at /home/ranap/Documents/RailwayProject/node_modules/router/index.js:297:9
+    at processParams (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:582:12)
+    at next (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:291:5)
+    at urlencodedParser (/home/ranap/Documents/RailwayProject/node_modules/body-parser/lib/types/urlencoded.js:68:7)
+    at Layer.handleRequest (/home/ranap/Documents/RailwayProject/node_modules/router/lib/layer.js:152:17)
+    at trimPrefix (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:342:13)
+    at /home/ranap/Documents/RailwayProject/node_modules/router/index.js:297:9
+2025-12-02 18:53:51 [error]: Error: Route /socket.io/?EIO=4&transport=websocket not found
+    at notFound (file:///home/ranap/Documents/RailwayProject/src/middleware/errorHandler.js:43:17)
+    at Layer.handleRequest (/home/ranap/Documents/RailwayProject/node_modules/router/lib/layer.js:152:17)
+    at trimPrefix (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:342:13)
+    at /home/ranap/Documents/RailwayProject/node_modules/router/index.js:297:9
+    at processParams (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:582:12)
+    at next (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:291:5)
+    at urlencodedParser (/home/ranap/Documents/RailwayProject/node_modules/body-parser/lib/types/urlencoded.js:68:7)
+    at Layer.handleRequest (/home/ranap/Documents/RailwayProject/node_modules/router/lib/layer.js:152:17)
+    at trimPrefix (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:342:13)
+    at /home/ranap/Documents/RailwayProject/node_modules/router/index.js:297:9
+2025-12-02 18:53:56 [error]: Error: Route /socket.io/?EIO=4&transport=websocket not found
+    at notFound (file:///home/ranap/Documents/RailwayProject/src/middleware/errorHandler.js:43:17)
+    at Layer.handleRequest (/home/ranap/Documents/RailwayProject/node_modules/router/lib/layer.js:152:17)
+    at trimPrefix (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:342:13)
+    at /home/ranap/Documents/RailwayProject/node_modules/router/index.js:297:9
+    at processParams (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:582:12)
+    at next (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:291:5)
+    at urlencodedParser (/home/ranap/Documents/RailwayProject/node_modules/body-parser/lib/types/urlencoded.js:68:7)
+    at Layer.handleRequest (/home/ranap/Documents/RailwayProject/node_modules/router/lib/layer.js:152:17)
+    at trimPrefix (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:342:13)
+    at /home/ranap/Documents/RailwayProject/node_modules/router/index.js:297:9
+2025-12-02 18:54:01 [error]: Error: Route /socket.io/?EIO=4&transport=websocket not found
+    at notFound (file:///home/ranap/Documents/RailwayProject/src/middleware/errorHandler.js:43:17)
+    at Layer.handleRequest (/home/ranap/Documents/RailwayProject/node_modules/router/lib/layer.js:152:17)
+    at trimPrefix (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:342:13)
+    at /home/ranap/Documents/RailwayProject/node_modules/router/index.js:297:9
+    at processParams (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:582:12)
+    at next (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:291:5)
+    at urlencodedParser (/home/ranap/Documents/RailwayProject/node_modules/body-parser/lib/types/urlencoded.js:68:7)
+    at Layer.handleRequest (/home/ranap/Documents/RailwayProject/node_modules/router/lib/layer.js:152:17)
+    at trimPrefix (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:342:13)
+    at /home/ranap/Documents/RailwayProject/node_modules/router/index.js:297:9
+2025-12-02 18:54:07 [error]: Error: Route /socket.io/?EIO=4&transport=websocket not found
+    at notFound (file:///home/ranap/Documents/RailwayProject/src/middleware/errorHandler.js:43:17)
+    at Layer.handleRequest (/home/ranap/Documents/RailwayProject/node_modules/router/lib/layer.js:152:17)
+    at trimPrefix (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:342:13)
+    at /home/ranap/Documents/RailwayProject/node_modules/router/index.js:297:9
+    at processParams (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:582:12)
+    at next (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:291:5)
+    at urlencodedParser (/home/ranap/Documents/RailwayProject/node_modules/body-parser/lib/types/urlencoded.js:68:7)
+    at Layer.handleRequest (/home/ranap/Documents/RailwayProject/node_modules/router/lib/layer.js:152:17)
+    at trimPrefix (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:342:13)
+    at /home/ranap/Documents/RailwayProject/node_modules/router/index.js:297:9
+2025-12-02 18:54:16 [error]: Error: Route /socket.io/?EIO=4&transport=websocket not found
+    at notFound (file:///home/ranap/Documents/RailwayProject/src/middleware/errorHandler.js:43:17)
+    at Layer.handleRequest (/home/ranap/Documents/RailwayProject/node_modules/router/lib/layer.js:152:17)
+    at trimPrefix (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:342:13)
+    at /home/ranap/Documents/RailwayProject/node_modules/router/index.js:297:9
+    at processParams (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:582:12)
+    at next (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:291:5)
+    at urlencodedParser (/home/ranap/Documents/RailwayProject/node_modules/body-parser/lib/types/urlencoded.js:68:7)
+    at Layer.handleRequest (/home/ranap/Documents/RailwayProject/node_modules/router/lib/layer.js:152:17)
+    at trimPrefix (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:342:13)
+    at /home/ranap/Documents/RailwayProject/node_modules/router/index.js:297:9
+2025-12-02 18:54:30 [error]: Error: Route /socket.io/?EIO=4&transport=websocket not found
+    at notFound (file:///home/ranap/Documents/RailwayProject/src/middleware/errorHandler.js:43:17)
+    at Layer.handleRequest (/home/ranap/Documents/RailwayProject/node_modules/router/lib/layer.js:152:17)
+    at trimPrefix (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:342:13)
+    at /home/ranap/Documents/RailwayProject/node_modules/router/index.js:297:9
+    at processParams (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:582:12)
+    at next (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:291:5)
+    at urlencodedParser (/home/ranap/Documents/RailwayProject/node_modules/body-parser/lib/types/urlencoded.js:68:7)
+    at Layer.handleRequest (/home/ranap/Documents/RailwayProject/node_modules/router/lib/layer.js:152:17)
+    at trimPrefix (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:342:13)
+    at /home/ranap/Documents/RailwayProject/node_modules/router/index.js:297:9
+2025-12-02 18:54:50 [error]: Error: Route /socket.io/?EIO=4&transport=websocket not found
+    at notFound (file:///home/ranap/Documents/RailwayProject/src/middleware/errorHandler.js:43:17)
+    at Layer.handleRequest (/home/ranap/Documents/RailwayProject/node_modules/router/lib/layer.js:152:17)
+    at trimPrefix (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:342:13)
+    at /home/ranap/Documents/RailwayProject/node_modules/router/index.js:297:9
+    at processParams (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:582:12)
+    at next (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:291:5)
+    at urlencodedParser (/home/ranap/Documents/RailwayProject/node_modules/body-parser/lib/types/urlencoded.js:68:7)
+    at Layer.handleRequest (/home/ranap/Documents/RailwayProject/node_modules/router/lib/layer.js:152:17)
+    at trimPrefix (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:342:13)
+    at /home/ranap/Documents/RailwayProject/node_modules/router/index.js:297:9
+2025-12-02 18:55:20 [error]: Error: Route /socket.io/?EIO=4&transport=websocket not found
+    at notFound (file:///home/ranap/Documents/RailwayProject/src/middleware/errorHandler.js:43:17)
+    at Layer.handleRequest (/home/ranap/Documents/RailwayProject/node_modules/router/lib/layer.js:152:17)
+    at trimPrefix (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:342:13)
+    at /home/ranap/Documents/RailwayProject/node_modules/router/index.js:297:9
+    at processParams (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:582:12)
+    at next (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:291:5)
+    at urlencodedParser (/home/ranap/Documents/RailwayProject/node_modules/body-parser/lib/types/urlencoded.js:68:7)
+    at Layer.handleRequest (/home/ranap/Documents/RailwayProject/node_modules/router/lib/layer.js:152:17)
+    at trimPrefix (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:342:13)
+    at /home/ranap/Documents/RailwayProject/node_modules/router/index.js:297:9
+2025-12-02 18:56:05 [error]: Error: Route /socket.io/?EIO=4&transport=websocket not found
+    at notFound (file:///home/ranap/Documents/RailwayProject/src/middleware/errorHandler.js:43:17)
+    at Layer.handleRequest (/home/ranap/Documents/RailwayProject/node_modules/router/lib/layer.js:152:17)
+    at trimPrefix (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:342:13)
+    at /home/ranap/Documents/RailwayProject/node_modules/router/index.js:297:9
+    at processParams (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:582:12)
+    at next (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:291:5)
+    at urlencodedParser (/home/ranap/Documents/RailwayProject/node_modules/body-parser/lib/types/urlencoded.js:68:7)
+    at Layer.handleRequest (/home/ranap/Documents/RailwayProject/node_modules/router/lib/layer.js:152:17)
+    at trimPrefix (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:342:13)
+    at /home/ranap/Documents/RailwayProject/node_modules/router/index.js:297:9
+2025-12-02 18:57:06 [error]: Error: Route /socket.io/?EIO=4&transport=websocket not found
+    at notFound (file:///home/ranap/Documents/RailwayProject/src/middleware/errorHandler.js:43:17)
+    at Layer.handleRequest (/home/ranap/Documents/RailwayProject/node_modules/router/lib/layer.js:152:17)
+    at trimPrefix (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:342:13)
+    at /home/ranap/Documents/RailwayProject/node_modules/router/index.js:297:9
+    at processParams (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:582:12)
+    at next (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:291:5)
+    at urlencodedParser (/home/ranap/Documents/RailwayProject/node_modules/body-parser/lib/types/urlencoded.js:68:7)
+    at Layer.handleRequest (/home/ranap/Documents/RailwayProject/node_modules/router/lib/layer.js:152:17)
+    at trimPrefix (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:342:13)
+    at /home/ranap/Documents/RailwayProject/node_modules/router/index.js:297:9
+2025-12-02 18:58:06 [error]: Error: Route /socket.io/?EIO=4&transport=websocket not found
+    at notFound (file:///home/ranap/Documents/RailwayProject/src/middleware/errorHandler.js:43:17)
+    at Layer.handleRequest (/home/ranap/Documents/RailwayProject/node_modules/router/lib/layer.js:152:17)
+    at trimPrefix (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:342:13)
+    at /home/ranap/Documents/RailwayProject/node_modules/router/index.js:297:9
+    at processParams (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:582:12)
+    at next (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:291:5)
+    at urlencodedParser (/home/ranap/Documents/RailwayProject/node_modules/body-parser/lib/types/urlencoded.js:68:7)
+    at Layer.handleRequest (/home/ranap/Documents/RailwayProject/node_modules/router/lib/layer.js:152:17)
+    at trimPrefix (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:342:13)
+    at /home/ranap/Documents/RailwayProject/node_modules/router/index.js:297:9
+2025-12-02 18:59:07 [error]: Error: Route /socket.io/?EIO=4&transport=websocket not found
+    at notFound (file:///home/ranap/Documents/RailwayProject/src/middleware/errorHandler.js:43:17)
+    at Layer.handleRequest (/home/ranap/Documents/RailwayProject/node_modules/router/lib/layer.js:152:17)
+    at trimPrefix (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:342:13)
+    at /home/ranap/Documents/RailwayProject/node_modules/router/index.js:297:9
+    at processParams (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:582:12)
+    at next (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:291:5)
+    at urlencodedParser (/home/ranap/Documents/RailwayProject/node_modules/body-parser/lib/types/urlencoded.js:68:7)
+    at Layer.handleRequest (/home/ranap/Documents/RailwayProject/node_modules/router/lib/layer.js:152:17)
+    at trimPrefix (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:342:13)
+    at /home/ranap/Documents/RailwayProject/node_modules/router/index.js:297:9
+2025-12-02 19:00:07 [error]: Error: Route /socket.io/?EIO=4&transport=websocket not found
+    at notFound (file:///home/ranap/Documents/RailwayProject/src/middleware/errorHandler.js:43:17)
+    at Layer.handleRequest (/home/ranap/Documents/RailwayProject/node_modules/router/lib/layer.js:152:17)
+    at trimPrefix (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:342:13)
+    at /home/ranap/Documents/RailwayProject/node_modules/router/index.js:297:9
+    at processParams (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:582:12)
+    at next (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:291:5)
+    at urlencodedParser (/home/ranap/Documents/RailwayProject/node_modules/body-parser/lib/types/urlencoded.js:68:7)
+    at Layer.handleRequest (/home/ranap/Documents/RailwayProject/node_modules/router/lib/layer.js:152:17)
+    at trimPrefix (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:342:13)
+    at /home/ranap/Documents/RailwayProject/node_modules/router/index.js:297:9
+2025-12-02 19:01:07 [error]: Error: Route /socket.io/?EIO=4&transport=websocket not found
+    at notFound (file:///home/ranap/Documents/RailwayProject/src/middleware/errorHandler.js:43:17)
+    at Layer.handleRequest (/home/ranap/Documents/RailwayProject/node_modules/router/lib/layer.js:152:17)
+    at trimPrefix (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:342:13)
+    at /home/ranap/Documents/RailwayProject/node_modules/router/index.js:297:9
+    at processParams (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:582:12)
+    at next (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:291:5)
+    at urlencodedParser (/home/ranap/Documents/RailwayProject/node_modules/body-parser/lib/types/urlencoded.js:68:7)
+    at Layer.handleRequest (/home/ranap/Documents/RailwayProject/node_modules/router/lib/layer.js:152:17)
+    at trimPrefix (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:342:13)
+    at /home/ranap/Documents/RailwayProject/node_modules/router/index.js:297:9
+2025-12-02 19:02:08 [error]: Error: Route /socket.io/?EIO=4&transport=websocket not found
+    at notFound (file:///home/ranap/Documents/RailwayProject/src/middleware/errorHandler.js:43:17)
+    at Layer.handleRequest (/home/ranap/Documents/RailwayProject/node_modules/router/lib/layer.js:152:17)
+    at trimPrefix (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:342:13)
+    at /home/ranap/Documents/RailwayProject/node_modules/router/index.js:297:9
+    at processParams (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:582:12)
+    at next (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:291:5)
+    at urlencodedParser (/home/ranap/Documents/RailwayProject/node_modules/body-parser/lib/types/urlencoded.js:68:7)
+    at Layer.handleRequest (/home/ranap/Documents/RailwayProject/node_modules/router/lib/layer.js:152:17)
+    at trimPrefix (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:342:13)
+    at /home/ranap/Documents/RailwayProject/node_modules/router/index.js:297:9
+2025-12-02 19:03:08 [error]: Error: Route /socket.io/?EIO=4&transport=websocket not found
+    at notFound (file:///home/ranap/Documents/RailwayProject/src/middleware/errorHandler.js:43:17)
+    at Layer.handleRequest (/home/ranap/Documents/RailwayProject/node_modules/router/lib/layer.js:152:17)
+    at trimPrefix (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:342:13)
+    at /home/ranap/Documents/RailwayProject/node_modules/router/index.js:297:9
+    at processParams (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:582:12)
+    at next (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:291:5)
+    at urlencodedParser (/home/ranap/Documents/RailwayProject/node_modules/body-parser/lib/types/urlencoded.js:68:7)
+    at Layer.handleRequest (/home/ranap/Documents/RailwayProject/node_modules/router/lib/layer.js:152:17)
+    at trimPrefix (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:342:13)
+    at /home/ranap/Documents/RailwayProject/node_modules/router/index.js:297:9
+2025-12-02 19:04:09 [error]: Error: Route /socket.io/?EIO=4&transport=websocket not found
+    at notFound (file:///home/ranap/Documents/RailwayProject/src/middleware/errorHandler.js:43:17)
+    at Layer.handleRequest (/home/ranap/Documents/RailwayProject/node_modules/router/lib/layer.js:152:17)
+    at trimPrefix (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:342:13)
+    at /home/ranap/Documents/RailwayProject/node_modules/router/index.js:297:9
+    at processParams (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:582:12)
+    at next (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:291:5)
+    at urlencodedParser (/home/ranap/Documents/RailwayProject/node_modules/body-parser/lib/types/urlencoded.js:68:7)
+    at Layer.handleRequest (/home/ranap/Documents/RailwayProject/node_modules/router/lib/layer.js:152:17)
+    at trimPrefix (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:342:13)
+    at /home/ranap/Documents/RailwayProject/node_modules/router/index.js:297:9
+2025-12-02 19:04:29 [error]: Prisma Error: Error in PostgreSQL connection: Error { kind: Closed, cause: None }
+2025-12-02 19:05:09 [error]: Error: Route /socket.io/?EIO=4&transport=websocket not found
+    at notFound (file:///home/ranap/Documents/RailwayProject/src/middleware/errorHandler.js:43:17)
+    at Layer.handleRequest (/home/ranap/Documents/RailwayProject/node_modules/router/lib/layer.js:152:17)
+    at trimPrefix (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:342:13)
+    at /home/ranap/Documents/RailwayProject/node_modules/router/index.js:297:9
+    at processParams (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:582:12)
+    at next (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:291:5)
+    at urlencodedParser (/home/ranap/Documents/RailwayProject/node_modules/body-parser/lib/types/urlencoded.js:68:7)
+    at Layer.handleRequest (/home/ranap/Documents/RailwayProject/node_modules/router/lib/layer.js:152:17)
+    at trimPrefix (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:342:13)
+    at /home/ranap/Documents/RailwayProject/node_modules/router/index.js:297:9
+2025-12-02 19:06:09 [error]: Error: Route /socket.io/?EIO=4&transport=websocket not found
+    at notFound (file:///home/ranap/Documents/RailwayProject/src/middleware/errorHandler.js:43:17)
+    at Layer.handleRequest (/home/ranap/Documents/RailwayProject/node_modules/router/lib/layer.js:152:17)
+    at trimPrefix (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:342:13)
+    at /home/ranap/Documents/RailwayProject/node_modules/router/index.js:297:9
+    at processParams (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:582:12)
+    at next (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:291:5)
+    at urlencodedParser (/home/ranap/Documents/RailwayProject/node_modules/body-parser/lib/types/urlencoded.js:68:7)
+    at Layer.handleRequest (/home/ranap/Documents/RailwayProject/node_modules/router/lib/layer.js:152:17)
+    at trimPrefix (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:342:13)
+    at /home/ranap/Documents/RailwayProject/node_modules/router/index.js:297:9
+2025-12-02 19:08:10 [error]: Error: Route /socket.io/?EIO=4&transport=websocket not found
+    at notFound (file:///home/ranap/Documents/RailwayProject/src/middleware/errorHandler.js:43:17)
+    at Layer.handleRequest (/home/ranap/Documents/RailwayProject/node_modules/router/lib/layer.js:152:17)
+    at trimPrefix (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:342:13)
+    at /home/ranap/Documents/RailwayProject/node_modules/router/index.js:297:9
+    at processParams (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:582:12)
+    at next (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:291:5)
+    at urlencodedParser (/home/ranap/Documents/RailwayProject/node_modules/body-parser/lib/types/urlencoded.js:68:7)
+    at Layer.handleRequest (/home/ranap/Documents/RailwayProject/node_modules/router/lib/layer.js:152:17)
+    at trimPrefix (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:342:13)
+    at /home/ranap/Documents/RailwayProject/node_modules/router/index.js:297:9
+2025-12-02 19:09:11 [error]: Error: Route /socket.io/?EIO=4&transport=websocket not found
+    at notFound (file:///home/ranap/Documents/RailwayProject/src/middleware/errorHandler.js:43:17)
+    at Layer.handleRequest (/home/ranap/Documents/RailwayProject/node_modules/router/lib/layer.js:152:17)
+    at trimPrefix (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:342:13)
+    at /home/ranap/Documents/RailwayProject/node_modules/router/index.js:297:9
+    at processParams (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:582:12)
+    at next (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:291:5)
+    at urlencodedParser (/home/ranap/Documents/RailwayProject/node_modules/body-parser/lib/types/urlencoded.js:68:7)
+    at Layer.handleRequest (/home/ranap/Documents/RailwayProject/node_modules/router/lib/layer.js:152:17)
+    at trimPrefix (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:342:13)
+    at /home/ranap/Documents/RailwayProject/node_modules/router/index.js:297:9
+2025-12-02 19:09:53 [error]: PrismaClientInitializationError: Can't reach database server at `ep-jolly-sky-ahjt6sc5-pooler.c-3.us-east-1.aws.neon.tech:5432`
+
+Please make sure your database server is running at `ep-jolly-sky-ahjt6sc5-pooler.c-3.us-east-1.aws.neon.tech:5432`.
+    at r (/home/ranap/Documents/RailwayProject/src/generated/prisma/runtime/library.js:116:2770)
+    at async connectDatabase (file:///home/ranap/Documents/RailwayProject/src/index.js:16:5)
+    at async startServer (file:///home/ranap/Documents/RailwayProject/src/index.js:55:5)
+2025-12-02 19:34:22 [error]: Error: Route /socket.io/?EIO=4&transport=websocket not found
+    at notFound (file:///home/ranap/Documents/RailwayProject/src/middleware/errorHandler.js:43:17)
+    at Layer.handleRequest (/home/ranap/Documents/RailwayProject/node_modules/router/lib/layer.js:152:17)
+    at trimPrefix (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:342:13)
+    at /home/ranap/Documents/RailwayProject/node_modules/router/index.js:297:9
+    at processParams (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:582:12)
+    at next (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:291:5)
+    at urlencodedParser (/home/ranap/Documents/RailwayProject/node_modules/body-parser/lib/types/urlencoded.js:68:7)
+    at Layer.handleRequest (/home/ranap/Documents/RailwayProject/node_modules/router/lib/layer.js:152:17)
+    at trimPrefix (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:342:13)
+    at /home/ranap/Documents/RailwayProject/node_modules/router/index.js:297:9
+2025-12-02 19:35:22 [error]: Error: Route /socket.io/?EIO=4&transport=websocket not found
+    at notFound (file:///home/ranap/Documents/RailwayProject/src/middleware/errorHandler.js:43:17)
+    at Layer.handleRequest (/home/ranap/Documents/RailwayProject/node_modules/router/lib/layer.js:152:17)
+    at trimPrefix (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:342:13)
+    at /home/ranap/Documents/RailwayProject/node_modules/router/index.js:297:9
+    at processParams (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:582:12)
+    at next (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:291:5)
+    at urlencodedParser (/home/ranap/Documents/RailwayProject/node_modules/body-parser/lib/types/urlencoded.js:68:7)
+    at Layer.handleRequest (/home/ranap/Documents/RailwayProject/node_modules/router/lib/layer.js:152:17)
+    at trimPrefix (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:342:13)
+    at /home/ranap/Documents/RailwayProject/node_modules/router/index.js:297:9
+2025-12-02 19:36:23 [error]: Error: Route /socket.io/?EIO=4&transport=websocket not found
+    at notFound (file:///home/ranap/Documents/RailwayProject/src/middleware/errorHandler.js:43:17)
+    at Layer.handleRequest (/home/ranap/Documents/RailwayProject/node_modules/router/lib/layer.js:152:17)
+    at trimPrefix (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:342:13)
+    at /home/ranap/Documents/RailwayProject/node_modules/router/index.js:297:9
+    at processParams (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:582:12)
+    at next (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:291:5)
+    at urlencodedParser (/home/ranap/Documents/RailwayProject/node_modules/body-parser/lib/types/urlencoded.js:68:7)
+    at Layer.handleRequest (/home/ranap/Documents/RailwayProject/node_modules/router/lib/layer.js:152:17)
+    at trimPrefix (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:342:13)
+    at /home/ranap/Documents/RailwayProject/node_modules/router/index.js:297:9
+2025-12-02 19:37:23 [error]: Error: Route /socket.io/?EIO=4&transport=websocket not found
+    at notFound (file:///home/ranap/Documents/RailwayProject/src/middleware/errorHandler.js:43:17)
+    at Layer.handleRequest (/home/ranap/Documents/RailwayProject/node_modules/router/lib/layer.js:152:17)
+    at trimPrefix (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:342:13)
+    at /home/ranap/Documents/RailwayProject/node_modules/router/index.js:297:9
+    at processParams (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:582:12)
+    at next (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:291:5)
+    at urlencodedParser (/home/ranap/Documents/RailwayProject/node_modules/body-parser/lib/types/urlencoded.js:68:7)
+    at Layer.handleRequest (/home/ranap/Documents/RailwayProject/node_modules/router/lib/layer.js:152:17)
+    at trimPrefix (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:342:13)
+    at /home/ranap/Documents/RailwayProject/node_modules/router/index.js:297:9
+2025-12-02 19:37:58 [error]: Error: Token expired
+    at file:///home/ranap/Documents/RailwayProject/src/middleware/auth.js:70:13
+    at file:///home/ranap/Documents/RailwayProject/src/middleware/errorHandler.js:49:19
+    at Layer.handleRequest (/home/ranap/Documents/RailwayProject/node_modules/router/lib/layer.js:152:17)
+    at trimPrefix (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:342:13)
+    at /home/ranap/Documents/RailwayProject/node_modules/router/index.js:297:9
+    at processParams (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:582:12)
+    at next (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:291:5)
+    at Function.handle (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:186:3)
+    at router (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:60:12)
+    at Layer.handleRequest (/home/ranap/Documents/RailwayProject/node_modules/router/lib/layer.js:152:17)
+2025-12-02 19:37:58 [error]: Error: Token expired
+    at file:///home/ranap/Documents/RailwayProject/src/middleware/auth.js:70:13
+    at file:///home/ranap/Documents/RailwayProject/src/middleware/errorHandler.js:49:19
+    at Layer.handleRequest (/home/ranap/Documents/RailwayProject/node_modules/router/lib/layer.js:152:17)
+    at trimPrefix (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:342:13)
+    at /home/ranap/Documents/RailwayProject/node_modules/router/index.js:297:9
+    at processParams (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:582:12)
+    at next (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:291:5)
+    at Function.handle (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:186:3)
+    at router (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:60:12)
+    at Layer.handleRequest (/home/ranap/Documents/RailwayProject/node_modules/router/lib/layer.js:152:17)
+2025-12-02 19:38:05 [error]: Prisma Error: 
+Invalid `prisma.shift.count()` invocation:
+
+{
+  select: {
+    _count: {
+      select: {
+        _all: true
+      }
+    }
+  },
+  where: {
+    status: "COMPLETED",
+    signOffDate: {
+    ~~~~~~~~~~~
+      gte: new Date("2025-12-01T18:30:00.000Z")
+    },
+?   AND?: ShiftWhereInput | ShiftWhereInput[],
+?   OR?: ShiftWhereInput[],
+?   NOT?: ShiftWhereInput | ShiftWhereInput[],
+?   id?: StringFilter | String,
+?   trainNumber?: StringFilter | String,
+?   trainName?: StringNullableFilter | String | Null,
+?   locomotiveId?: StringFilter | String,
+?   locoPilotId?: StringFilter | String,
+?   trainManagerId?: StringFilter | String,
+?   trainArrivalDateTime?: DateTimeFilter | DateTime,
+?   signOnDateTime?: DateTimeFilter | DateTime,
+?   timeOfTO?: DateTimeNullableFilter | DateTime | Null,
+?   departureDateTime?: DateTimeNullableFilter | DateTime | Null,
+?   signOffDateTime?: DateTimeNullableFilter | DateTime | Null,
+?   signOnStation?: StringFilter | String,
+?   signOffStation?: StringNullableFilter | String | Null,
+?   section?: StringFilter | String,
+?   dutyType?: EnumdutyTypeFilter | dutyType,
+?   dutyHours?: FloatNullableFilter | Float | Null,
+?   alert7HrSent?: BoolFilter | Boolean,
+?   alert7HrSentAt?: DateTimeNullableFilter | DateTime | Null,
+?   alert8HrSent?: BoolFilter | Boolean,
+?   alert8HrSentAt?: DateTimeNullableFilter | DateTime | Null,
+?   alert8HrResponse?: StringNullableFilter | String | Null,
+?   alert9HrSent?: BoolFilter | Boolean,
+?   alert9HrSentAt?: DateTimeNullableFilter | DateTime | Null,
+?   alert9HrResponse?: StringNullableFilter | String | Null,
+?   alert10HrSent?: BoolFilter | Boolean,
+?   alert10HrSentAt?: DateTimeNullableFilter | DateTime | Null,
+?   alert10HrResponse?: StringNullableFilter | String | Null,
+?   alert11HrSent?: BoolFilter | Boolean,
+?   alert11HrSentAt?: DateTimeNullableFilter | DateTime | Null,
+?   alert11HrResponse?: StringNullableFilter | String | Null,
+?   alert14HrSent?: BoolFilter | Boolean,
+?   alert14HrSentAt?: DateTimeNullableFilter | DateTime | Null,
+?   alert14HrResponse?: StringNullableFilter | String | Null,
+?   reliefRequired?: BoolFilter | Boolean,
+?   reliefPlanned?: BoolFilter | Boolean,
+?   reliefTime?: DateTimeNullableFilter | DateTime | Null,
+?   reliefReason?: StringNullableFilter | String | Null,
+?   createdById?: StringFilter | String,
+?   updatedById?: StringNullableFilter | String | Null,
+?   createdAt?: DateTimeFilter | DateTime,
+?   updatedAt?: DateTimeFilter | DateTime,
+?   locomotive?: LocomotiveScalarRelationFilter | LocomotiveWhereInput,
+?   locoPilot?: StaffScalarRelationFilter | StaffWhereInput,
+?   trainManager?: StaffScalarRelationFilter | StaffWhereInput,
+?   createdBy?: UserScalarRelationFilter | UserWhereInput,
+?   updatedBy?: UserNullableScalarRelationFilter | UserWhereInput | Null,
+?   notifications?: NotificationListRelationFilter,
+?   dutyLogs?: DutyLogListRelationFilter
+  }
+}
+
+Unknown argument `signOffDate`. Available options are marked with ?.
+2025-12-02 19:38:05 [error]: PrismaClientValidationError: 
+Invalid `prisma.shift.count()` invocation:
+
+{
+  select: {
+    _count: {
+      select: {
+        _all: true
+      }
+    }
+  },
+  where: {
+    status: "COMPLETED",
+    signOffDate: {
+    ~~~~~~~~~~~
+      gte: new Date("2025-12-01T18:30:00.000Z")
+    },
+?   AND?: ShiftWhereInput | ShiftWhereInput[],
+?   OR?: ShiftWhereInput[],
+?   NOT?: ShiftWhereInput | ShiftWhereInput[],
+?   id?: StringFilter | String,
+?   trainNumber?: StringFilter | String,
+?   trainName?: StringNullableFilter | String | Null,
+?   locomotiveId?: StringFilter | String,
+?   locoPilotId?: StringFilter | String,
+?   trainManagerId?: StringFilter | String,
+?   trainArrivalDateTime?: DateTimeFilter | DateTime,
+?   signOnDateTime?: DateTimeFilter | DateTime,
+?   timeOfTO?: DateTimeNullableFilter | DateTime | Null,
+?   departureDateTime?: DateTimeNullableFilter | DateTime | Null,
+?   signOffDateTime?: DateTimeNullableFilter | DateTime | Null,
+?   signOnStation?: StringFilter | String,
+?   signOffStation?: StringNullableFilter | String | Null,
+?   section?: StringFilter | String,
+?   dutyType?: EnumdutyTypeFilter | dutyType,
+?   dutyHours?: FloatNullableFilter | Float | Null,
+?   alert7HrSent?: BoolFilter | Boolean,
+?   alert7HrSentAt?: DateTimeNullableFilter | DateTime | Null,
+?   alert8HrSent?: BoolFilter | Boolean,
+?   alert8HrSentAt?: DateTimeNullableFilter | DateTime | Null,
+?   alert8HrResponse?: StringNullableFilter | String | Null,
+?   alert9HrSent?: BoolFilter | Boolean,
+?   alert9HrSentAt?: DateTimeNullableFilter | DateTime | Null,
+?   alert9HrResponse?: StringNullableFilter | String | Null,
+?   alert10HrSent?: BoolFilter | Boolean,
+?   alert10HrSentAt?: DateTimeNullableFilter | DateTime | Null,
+?   alert10HrResponse?: StringNullableFilter | String | Null,
+?   alert11HrSent?: BoolFilter | Boolean,
+?   alert11HrSentAt?: DateTimeNullableFilter | DateTime | Null,
+?   alert11HrResponse?: StringNullableFilter | String | Null,
+?   alert14HrSent?: BoolFilter | Boolean,
+?   alert14HrSentAt?: DateTimeNullableFilter | DateTime | Null,
+?   alert14HrResponse?: StringNullableFilter | String | Null,
+?   reliefRequired?: BoolFilter | Boolean,
+?   reliefPlanned?: BoolFilter | Boolean,
+?   reliefTime?: DateTimeNullableFilter | DateTime | Null,
+?   reliefReason?: StringNullableFilter | String | Null,
+?   createdById?: StringFilter | String,
+?   updatedById?: StringNullableFilter | String | Null,
+?   createdAt?: DateTimeFilter | DateTime,
+?   updatedAt?: DateTimeFilter | DateTime,
+?   locomotive?: LocomotiveScalarRelationFilter | LocomotiveWhereInput,
+?   locoPilot?: StaffScalarRelationFilter | StaffWhereInput,
+?   trainManager?: StaffScalarRelationFilter | StaffWhereInput,
+?   createdBy?: UserScalarRelationFilter | UserWhereInput,
+?   updatedBy?: UserNullableScalarRelationFilter | UserWhereInput | Null,
+?   notifications?: NotificationListRelationFilter,
+?   dutyLogs?: DutyLogListRelationFilter
+  }
+}
+
+Unknown argument `signOffDate`. Available options are marked with ?.
+    at Nn (/home/ranap/Documents/RailwayProject/src/generated/prisma/runtime/library.js:33:1363)
+    at ei.handleRequestError (/home/ranap/Documents/RailwayProject/src/generated/prisma/runtime/library.js:125:6911)
+    at ei.handleAndLogRequestError (/home/ranap/Documents/RailwayProject/src/generated/prisma/runtime/library.js:125:6593)
+    at ei.request (/home/ranap/Documents/RailwayProject/src/generated/prisma/runtime/library.js:125:6300)
+    at async a (/home/ranap/Documents/RailwayProject/src/generated/prisma/runtime/library.js:134:9551)
+    at async Promise.all (index 1)
+    at async getDashboardStats (file:///home/ranap/Documents/RailwayProject/src/controllers/dashboard.controller.js:50:56)
+2025-12-02 19:38:05 [error]: Prisma Error: 
+Invalid `prisma.shift.count()` invocation:
+
+{
+  select: {
+    _count: {
+      select: {
+        _all: true
+      }
+    }
+  },
+  where: {
+    status: "IN_PROGRESS",
+    signOnTime: {
+    ~~~~~~~~~~
+      gte: new Date("2025-12-01T18:30:00.000Z")
+    },
+?   AND?: ShiftWhereInput | ShiftWhereInput[],
+?   OR?: ShiftWhereInput[],
+?   NOT?: ShiftWhereInput | ShiftWhereInput[],
+?   id?: StringFilter | String,
+?   trainNumber?: StringFilter | String,
+?   trainName?: StringNullableFilter | String | Null,
+?   locomotiveId?: StringFilter | String,
+?   locoPilotId?: StringFilter | String,
+?   trainManagerId?: StringFilter | String,
+?   trainArrivalDateTime?: DateTimeFilter | DateTime,
+?   signOnDateTime?: DateTimeFilter | DateTime,
+?   timeOfTO?: DateTimeNullableFilter | DateTime | Null,
+?   departureDateTime?: DateTimeNullableFilter | DateTime | Null,
+?   signOffDateTime?: DateTimeNullableFilter | DateTime | Null,
+?   signOnStation?: StringFilter | String,
+?   signOffStation?: StringNullableFilter | String | Null,
+?   section?: StringFilter | String,
+?   dutyType?: EnumdutyTypeFilter | dutyType,
+?   dutyHours?: FloatNullableFilter | Float | Null,
+?   alert7HrSent?: BoolFilter | Boolean,
+?   alert7HrSentAt?: DateTimeNullableFilter | DateTime | Null,
+?   alert8HrSent?: BoolFilter | Boolean,
+?   alert8HrSentAt?: DateTimeNullableFilter | DateTime | Null,
+?   alert8HrResponse?: StringNullableFilter | String | Null,
+?   alert9HrSent?: BoolFilter | Boolean,
+?   alert9HrSentAt?: DateTimeNullableFilter | DateTime | Null,
+?   alert9HrResponse?: StringNullableFilter | String | Null,
+?   alert10HrSent?: BoolFilter | Boolean,
+?   alert10HrSentAt?: DateTimeNullableFilter | DateTime | Null,
+?   alert10HrResponse?: StringNullableFilter | String | Null,
+?   alert11HrSent?: BoolFilter | Boolean,
+?   alert11HrSentAt?: DateTimeNullableFilter | DateTime | Null,
+?   alert11HrResponse?: StringNullableFilter | String | Null,
+?   alert14HrSent?: BoolFilter | Boolean,
+?   alert14HrSentAt?: DateTimeNullableFilter | DateTime | Null,
+?   alert14HrResponse?: StringNullableFilter | String | Null,
+?   reliefRequired?: BoolFilter | Boolean,
+?   reliefPlanned?: BoolFilter | Boolean,
+?   reliefTime?: DateTimeNullableFilter | DateTime | Null,
+?   reliefReason?: StringNullableFilter | String | Null,
+?   createdById?: StringFilter | String,
+?   updatedById?: StringNullableFilter | String | Null,
+?   createdAt?: DateTimeFilter | DateTime,
+?   updatedAt?: DateTimeFilter | DateTime,
+?   locomotive?: LocomotiveScalarRelationFilter | LocomotiveWhereInput,
+?   locoPilot?: StaffScalarRelationFilter | StaffWhereInput,
+?   trainManager?: StaffScalarRelationFilter | StaffWhereInput,
+?   createdBy?: UserScalarRelationFilter | UserWhereInput,
+?   updatedBy?: UserNullableScalarRelationFilter | UserWhereInput | Null,
+?   notifications?: NotificationListRelationFilter,
+?   dutyLogs?: DutyLogListRelationFilter
+  }
+}
+
+Unknown argument `signOnTime`. Available options are marked with ?.
+2025-12-02 19:38:08 [error]: Prisma Error: 
+Invalid `prisma.shift.count()` invocation:
+
+{
+  select: {
+    _count: {
+      select: {
+        _all: true
+      }
+    }
+  },
+  where: {
+    status: "IN_PROGRESS",
+    signOnTime: {
+    ~~~~~~~~~~
+      gte: new Date("2025-12-01T18:30:00.000Z")
+    },
+?   AND?: ShiftWhereInput | ShiftWhereInput[],
+?   OR?: ShiftWhereInput[],
+?   NOT?: ShiftWhereInput | ShiftWhereInput[],
+?   id?: StringFilter | String,
+?   trainNumber?: StringFilter | String,
+?   trainName?: StringNullableFilter | String | Null,
+?   locomotiveId?: StringFilter | String,
+?   locoPilotId?: StringFilter | String,
+?   trainManagerId?: StringFilter | String,
+?   trainArrivalDateTime?: DateTimeFilter | DateTime,
+?   signOnDateTime?: DateTimeFilter | DateTime,
+?   timeOfTO?: DateTimeNullableFilter | DateTime | Null,
+?   departureDateTime?: DateTimeNullableFilter | DateTime | Null,
+?   signOffDateTime?: DateTimeNullableFilter | DateTime | Null,
+?   signOnStation?: StringFilter | String,
+?   signOffStation?: StringNullableFilter | String | Null,
+?   section?: StringFilter | String,
+?   dutyType?: EnumdutyTypeFilter | dutyType,
+?   dutyHours?: FloatNullableFilter | Float | Null,
+?   alert7HrSent?: BoolFilter | Boolean,
+?   alert7HrSentAt?: DateTimeNullableFilter | DateTime | Null,
+?   alert8HrSent?: BoolFilter | Boolean,
+?   alert8HrSentAt?: DateTimeNullableFilter | DateTime | Null,
+?   alert8HrResponse?: StringNullableFilter | String | Null,
+?   alert9HrSent?: BoolFilter | Boolean,
+?   alert9HrSentAt?: DateTimeNullableFilter | DateTime | Null,
+?   alert9HrResponse?: StringNullableFilter | String | Null,
+?   alert10HrSent?: BoolFilter | Boolean,
+?   alert10HrSentAt?: DateTimeNullableFilter | DateTime | Null,
+?   alert10HrResponse?: StringNullableFilter | String | Null,
+?   alert11HrSent?: BoolFilter | Boolean,
+?   alert11HrSentAt?: DateTimeNullableFilter | DateTime | Null,
+?   alert11HrResponse?: StringNullableFilter | String | Null,
+?   alert14HrSent?: BoolFilter | Boolean,
+?   alert14HrSentAt?: DateTimeNullableFilter | DateTime | Null,
+?   alert14HrResponse?: StringNullableFilter | String | Null,
+?   reliefRequired?: BoolFilter | Boolean,
+?   reliefPlanned?: BoolFilter | Boolean,
+?   reliefTime?: DateTimeNullableFilter | DateTime | Null,
+?   reliefReason?: StringNullableFilter | String | Null,
+?   createdById?: StringFilter | String,
+?   updatedById?: StringNullableFilter | String | Null,
+?   createdAt?: DateTimeFilter | DateTime,
+?   updatedAt?: DateTimeFilter | DateTime,
+?   locomotive?: LocomotiveScalarRelationFilter | LocomotiveWhereInput,
+?   locoPilot?: StaffScalarRelationFilter | StaffWhereInput,
+?   trainManager?: StaffScalarRelationFilter | StaffWhereInput,
+?   createdBy?: UserScalarRelationFilter | UserWhereInput,
+?   updatedBy?: UserNullableScalarRelationFilter | UserWhereInput | Null,
+?   notifications?: NotificationListRelationFilter,
+?   dutyLogs?: DutyLogListRelationFilter
+  }
+}
+
+Unknown argument `signOnTime`. Available options are marked with ?.
+2025-12-02 19:38:08 [error]: PrismaClientValidationError: 
+Invalid `prisma.shift.count()` invocation:
+
+{
+  select: {
+    _count: {
+      select: {
+        _all: true
+      }
+    }
+  },
+  where: {
+    status: "IN_PROGRESS",
+    signOnTime: {
+    ~~~~~~~~~~
+      gte: new Date("2025-12-01T18:30:00.000Z")
+    },
+?   AND?: ShiftWhereInput | ShiftWhereInput[],
+?   OR?: ShiftWhereInput[],
+?   NOT?: ShiftWhereInput | ShiftWhereInput[],
+?   id?: StringFilter | String,
+?   trainNumber?: StringFilter | String,
+?   trainName?: StringNullableFilter | String | Null,
+?   locomotiveId?: StringFilter | String,
+?   locoPilotId?: StringFilter | String,
+?   trainManagerId?: StringFilter | String,
+?   trainArrivalDateTime?: DateTimeFilter | DateTime,
+?   signOnDateTime?: DateTimeFilter | DateTime,
+?   timeOfTO?: DateTimeNullableFilter | DateTime | Null,
+?   departureDateTime?: DateTimeNullableFilter | DateTime | Null,
+?   signOffDateTime?: DateTimeNullableFilter | DateTime | Null,
+?   signOnStation?: StringFilter | String,
+?   signOffStation?: StringNullableFilter | String | Null,
+?   section?: StringFilter | String,
+?   dutyType?: EnumdutyTypeFilter | dutyType,
+?   dutyHours?: FloatNullableFilter | Float | Null,
+?   alert7HrSent?: BoolFilter | Boolean,
+?   alert7HrSentAt?: DateTimeNullableFilter | DateTime | Null,
+?   alert8HrSent?: BoolFilter | Boolean,
+?   alert8HrSentAt?: DateTimeNullableFilter | DateTime | Null,
+?   alert8HrResponse?: StringNullableFilter | String | Null,
+?   alert9HrSent?: BoolFilter | Boolean,
+?   alert9HrSentAt?: DateTimeNullableFilter | DateTime | Null,
+?   alert9HrResponse?: StringNullableFilter | String | Null,
+?   alert10HrSent?: BoolFilter | Boolean,
+?   alert10HrSentAt?: DateTimeNullableFilter | DateTime | Null,
+?   alert10HrResponse?: StringNullableFilter | String | Null,
+?   alert11HrSent?: BoolFilter | Boolean,
+?   alert11HrSentAt?: DateTimeNullableFilter | DateTime | Null,
+?   alert11HrResponse?: StringNullableFilter | String | Null,
+?   alert14HrSent?: BoolFilter | Boolean,
+?   alert14HrSentAt?: DateTimeNullableFilter | DateTime | Null,
+?   alert14HrResponse?: StringNullableFilter | String | Null,
+?   reliefRequired?: BoolFilter | Boolean,
+?   reliefPlanned?: BoolFilter | Boolean,
+?   reliefTime?: DateTimeNullableFilter | DateTime | Null,
+?   reliefReason?: StringNullableFilter | String | Null,
+?   createdById?: StringFilter | String,
+?   updatedById?: StringNullableFilter | String | Null,
+?   createdAt?: DateTimeFilter | DateTime,
+?   updatedAt?: DateTimeFilter | DateTime,
+?   locomotive?: LocomotiveScalarRelationFilter | LocomotiveWhereInput,
+?   locoPilot?: StaffScalarRelationFilter | StaffWhereInput,
+?   trainManager?: StaffScalarRelationFilter | StaffWhereInput,
+?   createdBy?: UserScalarRelationFilter | UserWhereInput,
+?   updatedBy?: UserNullableScalarRelationFilter | UserWhereInput | Null,
+?   notifications?: NotificationListRelationFilter,
+?   dutyLogs?: DutyLogListRelationFilter
+  }
+}
+
+Unknown argument `signOnTime`. Available options are marked with ?.
+    at Nn (/home/ranap/Documents/RailwayProject/src/generated/prisma/runtime/library.js:33:1363)
+    at ei.handleRequestError (/home/ranap/Documents/RailwayProject/src/generated/prisma/runtime/library.js:125:6911)
+    at ei.handleAndLogRequestError (/home/ranap/Documents/RailwayProject/src/generated/prisma/runtime/library.js:125:6593)
+    at ei.request (/home/ranap/Documents/RailwayProject/src/generated/prisma/runtime/library.js:125:6300)
+    at async a (/home/ranap/Documents/RailwayProject/src/generated/prisma/runtime/library.js:134:9551)
+    at async Promise.all (index 2)
+    at async getDashboardStats (file:///home/ranap/Documents/RailwayProject/src/controllers/dashboard.controller.js:50:56)
+2025-12-02 19:38:08 [error]: Prisma Error: 
+Invalid `prisma.shift.count()` invocation:
+
+{
+  select: {
+    _count: {
+      select: {
+        _all: true
+      }
+    }
+  },
+  where: {
+    status: "COMPLETED",
+    signOffDate: {
+    ~~~~~~~~~~~
+      gte: new Date("2025-12-01T18:30:00.000Z")
+    },
+?   AND?: ShiftWhereInput | ShiftWhereInput[],
+?   OR?: ShiftWhereInput[],
+?   NOT?: ShiftWhereInput | ShiftWhereInput[],
+?   id?: StringFilter | String,
+?   trainNumber?: StringFilter | String,
+?   trainName?: StringNullableFilter | String | Null,
+?   locomotiveId?: StringFilter | String,
+?   locoPilotId?: StringFilter | String,
+?   trainManagerId?: StringFilter | String,
+?   trainArrivalDateTime?: DateTimeFilter | DateTime,
+?   signOnDateTime?: DateTimeFilter | DateTime,
+?   timeOfTO?: DateTimeNullableFilter | DateTime | Null,
+?   departureDateTime?: DateTimeNullableFilter | DateTime | Null,
+?   signOffDateTime?: DateTimeNullableFilter | DateTime | Null,
+?   signOnStation?: StringFilter | String,
+?   signOffStation?: StringNullableFilter | String | Null,
+?   section?: StringFilter | String,
+?   dutyType?: EnumdutyTypeFilter | dutyType,
+?   dutyHours?: FloatNullableFilter | Float | Null,
+?   alert7HrSent?: BoolFilter | Boolean,
+?   alert7HrSentAt?: DateTimeNullableFilter | DateTime | Null,
+?   alert8HrSent?: BoolFilter | Boolean,
+?   alert8HrSentAt?: DateTimeNullableFilter | DateTime | Null,
+?   alert8HrResponse?: StringNullableFilter | String | Null,
+?   alert9HrSent?: BoolFilter | Boolean,
+?   alert9HrSentAt?: DateTimeNullableFilter | DateTime | Null,
+?   alert9HrResponse?: StringNullableFilter | String | Null,
+?   alert10HrSent?: BoolFilter | Boolean,
+?   alert10HrSentAt?: DateTimeNullableFilter | DateTime | Null,
+?   alert10HrResponse?: StringNullableFilter | String | Null,
+?   alert11HrSent?: BoolFilter | Boolean,
+?   alert11HrSentAt?: DateTimeNullableFilter | DateTime | Null,
+?   alert11HrResponse?: StringNullableFilter | String | Null,
+?   alert14HrSent?: BoolFilter | Boolean,
+?   alert14HrSentAt?: DateTimeNullableFilter | DateTime | Null,
+?   alert14HrResponse?: StringNullableFilter | String | Null,
+?   reliefRequired?: BoolFilter | Boolean,
+?   reliefPlanned?: BoolFilter | Boolean,
+?   reliefTime?: DateTimeNullableFilter | DateTime | Null,
+?   reliefReason?: StringNullableFilter | String | Null,
+?   createdById?: StringFilter | String,
+?   updatedById?: StringNullableFilter | String | Null,
+?   createdAt?: DateTimeFilter | DateTime,
+?   updatedAt?: DateTimeFilter | DateTime,
+?   locomotive?: LocomotiveScalarRelationFilter | LocomotiveWhereInput,
+?   locoPilot?: StaffScalarRelationFilter | StaffWhereInput,
+?   trainManager?: StaffScalarRelationFilter | StaffWhereInput,
+?   createdBy?: UserScalarRelationFilter | UserWhereInput,
+?   updatedBy?: UserNullableScalarRelationFilter | UserWhereInput | Null,
+?   notifications?: NotificationListRelationFilter,
+?   dutyLogs?: DutyLogListRelationFilter
+  }
+}
+
+Unknown argument `signOffDate`. Available options are marked with ?.
+2025-12-02 19:39:29 [error]: Error: Route /socket.io/?EIO=4&transport=websocket not found
+    at notFound (file:///home/ranap/Documents/RailwayProject/src/middleware/errorHandler.js:43:17)
+    at Layer.handleRequest (/home/ranap/Documents/RailwayProject/node_modules/router/lib/layer.js:152:17)
+    at trimPrefix (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:342:13)
+    at /home/ranap/Documents/RailwayProject/node_modules/router/index.js:297:9
+    at processParams (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:582:12)
+    at next (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:291:5)
+    at urlencodedParser (/home/ranap/Documents/RailwayProject/node_modules/body-parser/lib/types/urlencoded.js:68:7)
+    at Layer.handleRequest (/home/ranap/Documents/RailwayProject/node_modules/router/lib/layer.js:152:17)
+    at trimPrefix (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:342:13)
+    at /home/ranap/Documents/RailwayProject/node_modules/router/index.js:297:9
+2025-12-02 19:39:30 [error]: Error: Route /socket.io/?EIO=4&transport=websocket not found
+    at notFound (file:///home/ranap/Documents/RailwayProject/src/middleware/errorHandler.js:43:17)
+    at Layer.handleRequest (/home/ranap/Documents/RailwayProject/node_modules/router/lib/layer.js:152:17)
+    at trimPrefix (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:342:13)
+    at /home/ranap/Documents/RailwayProject/node_modules/router/index.js:297:9
+    at processParams (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:582:12)
+    at next (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:291:5)
+    at urlencodedParser (/home/ranap/Documents/RailwayProject/node_modules/body-parser/lib/types/urlencoded.js:68:7)
+    at Layer.handleRequest (/home/ranap/Documents/RailwayProject/node_modules/router/lib/layer.js:152:17)
+    at trimPrefix (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:342:13)
+    at /home/ranap/Documents/RailwayProject/node_modules/router/index.js:297:9
+2025-12-02 19:39:32 [error]: Prisma Error: 
+Invalid `prisma.shift.count()` invocation:
+
+{
+  select: {
+    _count: {
+      select: {
+        _all: true
+      }
+    }
+  },
+  where: {
+    status: "IN_PROGRESS",
+    signOnTime: {
+    ~~~~~~~~~~
+      gte: new Date("2025-12-01T18:30:00.000Z")
+    },
+?   AND?: ShiftWhereInput | ShiftWhereInput[],
+?   OR?: ShiftWhereInput[],
+?   NOT?: ShiftWhereInput | ShiftWhereInput[],
+?   id?: StringFilter | String,
+?   trainNumber?: StringFilter | String,
+?   trainName?: StringNullableFilter | String | Null,
+?   locomotiveId?: StringFilter | String,
+?   locoPilotId?: StringFilter | String,
+?   trainManagerId?: StringFilter | String,
+?   trainArrivalDateTime?: DateTimeFilter | DateTime,
+?   signOnDateTime?: DateTimeFilter | DateTime,
+?   timeOfTO?: DateTimeNullableFilter | DateTime | Null,
+?   departureDateTime?: DateTimeNullableFilter | DateTime | Null,
+?   signOffDateTime?: DateTimeNullableFilter | DateTime | Null,
+?   signOnStation?: StringFilter | String,
+?   signOffStation?: StringNullableFilter | String | Null,
+?   section?: StringFilter | String,
+?   dutyType?: EnumdutyTypeFilter | dutyType,
+?   dutyHours?: FloatNullableFilter | Float | Null,
+?   alert7HrSent?: BoolFilter | Boolean,
+?   alert7HrSentAt?: DateTimeNullableFilter | DateTime | Null,
+?   alert8HrSent?: BoolFilter | Boolean,
+?   alert8HrSentAt?: DateTimeNullableFilter | DateTime | Null,
+?   alert8HrResponse?: StringNullableFilter | String | Null,
+?   alert9HrSent?: BoolFilter | Boolean,
+?   alert9HrSentAt?: DateTimeNullableFilter | DateTime | Null,
+?   alert9HrResponse?: StringNullableFilter | String | Null,
+?   alert10HrSent?: BoolFilter | Boolean,
+?   alert10HrSentAt?: DateTimeNullableFilter | DateTime | Null,
+?   alert10HrResponse?: StringNullableFilter | String | Null,
+?   alert11HrSent?: BoolFilter | Boolean,
+?   alert11HrSentAt?: DateTimeNullableFilter | DateTime | Null,
+?   alert11HrResponse?: StringNullableFilter | String | Null,
+?   alert14HrSent?: BoolFilter | Boolean,
+?   alert14HrSentAt?: DateTimeNullableFilter | DateTime | Null,
+?   alert14HrResponse?: StringNullableFilter | String | Null,
+?   reliefRequired?: BoolFilter | Boolean,
+?   reliefPlanned?: BoolFilter | Boolean,
+?   reliefTime?: DateTimeNullableFilter | DateTime | Null,
+?   reliefReason?: StringNullableFilter | String | Null,
+?   createdById?: StringFilter | String,
+?   updatedById?: StringNullableFilter | String | Null,
+?   createdAt?: DateTimeFilter | DateTime,
+?   updatedAt?: DateTimeFilter | DateTime,
+?   locomotive?: LocomotiveScalarRelationFilter | LocomotiveWhereInput,
+?   locoPilot?: StaffScalarRelationFilter | StaffWhereInput,
+?   trainManager?: StaffScalarRelationFilter | StaffWhereInput,
+?   createdBy?: UserScalarRelationFilter | UserWhereInput,
+?   updatedBy?: UserNullableScalarRelationFilter | UserWhereInput | Null,
+?   notifications?: NotificationListRelationFilter,
+?   dutyLogs?: DutyLogListRelationFilter
+  }
+}
+
+Unknown argument `signOnTime`. Available options are marked with ?.
+2025-12-02 19:39:32 [error]: PrismaClientValidationError: 
+Invalid `prisma.shift.count()` invocation:
+
+{
+  select: {
+    _count: {
+      select: {
+        _all: true
+      }
+    }
+  },
+  where: {
+    status: "IN_PROGRESS",
+    signOnTime: {
+    ~~~~~~~~~~
+      gte: new Date("2025-12-01T18:30:00.000Z")
+    },
+?   AND?: ShiftWhereInput | ShiftWhereInput[],
+?   OR?: ShiftWhereInput[],
+?   NOT?: ShiftWhereInput | ShiftWhereInput[],
+?   id?: StringFilter | String,
+?   trainNumber?: StringFilter | String,
+?   trainName?: StringNullableFilter | String | Null,
+?   locomotiveId?: StringFilter | String,
+?   locoPilotId?: StringFilter | String,
+?   trainManagerId?: StringFilter | String,
+?   trainArrivalDateTime?: DateTimeFilter | DateTime,
+?   signOnDateTime?: DateTimeFilter | DateTime,
+?   timeOfTO?: DateTimeNullableFilter | DateTime | Null,
+?   departureDateTime?: DateTimeNullableFilter | DateTime | Null,
+?   signOffDateTime?: DateTimeNullableFilter | DateTime | Null,
+?   signOnStation?: StringFilter | String,
+?   signOffStation?: StringNullableFilter | String | Null,
+?   section?: StringFilter | String,
+?   dutyType?: EnumdutyTypeFilter | dutyType,
+?   dutyHours?: FloatNullableFilter | Float | Null,
+?   alert7HrSent?: BoolFilter | Boolean,
+?   alert7HrSentAt?: DateTimeNullableFilter | DateTime | Null,
+?   alert8HrSent?: BoolFilter | Boolean,
+?   alert8HrSentAt?: DateTimeNullableFilter | DateTime | Null,
+?   alert8HrResponse?: StringNullableFilter | String | Null,
+?   alert9HrSent?: BoolFilter | Boolean,
+?   alert9HrSentAt?: DateTimeNullableFilter | DateTime | Null,
+?   alert9HrResponse?: StringNullableFilter | String | Null,
+?   alert10HrSent?: BoolFilter | Boolean,
+?   alert10HrSentAt?: DateTimeNullableFilter | DateTime | Null,
+?   alert10HrResponse?: StringNullableFilter | String | Null,
+?   alert11HrSent?: BoolFilter | Boolean,
+?   alert11HrSentAt?: DateTimeNullableFilter | DateTime | Null,
+?   alert11HrResponse?: StringNullableFilter | String | Null,
+?   alert14HrSent?: BoolFilter | Boolean,
+?   alert14HrSentAt?: DateTimeNullableFilter | DateTime | Null,
+?   alert14HrResponse?: StringNullableFilter | String | Null,
+?   reliefRequired?: BoolFilter | Boolean,
+?   reliefPlanned?: BoolFilter | Boolean,
+?   reliefTime?: DateTimeNullableFilter | DateTime | Null,
+?   reliefReason?: StringNullableFilter | String | Null,
+?   createdById?: StringFilter | String,
+?   updatedById?: StringNullableFilter | String | Null,
+?   createdAt?: DateTimeFilter | DateTime,
+?   updatedAt?: DateTimeFilter | DateTime,
+?   locomotive?: LocomotiveScalarRelationFilter | LocomotiveWhereInput,
+?   locoPilot?: StaffScalarRelationFilter | StaffWhereInput,
+?   trainManager?: StaffScalarRelationFilter | StaffWhereInput,
+?   createdBy?: UserScalarRelationFilter | UserWhereInput,
+?   updatedBy?: UserNullableScalarRelationFilter | UserWhereInput | Null,
+?   notifications?: NotificationListRelationFilter,
+?   dutyLogs?: DutyLogListRelationFilter
+  }
+}
+
+Unknown argument `signOnTime`. Available options are marked with ?.
+    at Nn (/home/ranap/Documents/RailwayProject/src/generated/prisma/runtime/library.js:33:1363)
+    at ei.handleRequestError (/home/ranap/Documents/RailwayProject/src/generated/prisma/runtime/library.js:125:6911)
+    at ei.handleAndLogRequestError (/home/ranap/Documents/RailwayProject/src/generated/prisma/runtime/library.js:125:6593)
+    at ei.request (/home/ranap/Documents/RailwayProject/src/generated/prisma/runtime/library.js:125:6300)
+    at async a (/home/ranap/Documents/RailwayProject/src/generated/prisma/runtime/library.js:134:9551)
+    at async Promise.all (index 2)
+    at async getDashboardStats (file:///home/ranap/Documents/RailwayProject/src/controllers/dashboard.controller.js:50:56)
+2025-12-02 19:39:32 [error]: Prisma Error: 
+Invalid `prisma.shift.count()` invocation:
+
+{
+  select: {
+    _count: {
+      select: {
+        _all: true
+      }
+    }
+  },
+  where: {
+    status: "COMPLETED",
+    signOffDate: {
+    ~~~~~~~~~~~
+      gte: new Date("2025-12-01T18:30:00.000Z")
+    },
+?   AND?: ShiftWhereInput | ShiftWhereInput[],
+?   OR?: ShiftWhereInput[],
+?   NOT?: ShiftWhereInput | ShiftWhereInput[],
+?   id?: StringFilter | String,
+?   trainNumber?: StringFilter | String,
+?   trainName?: StringNullableFilter | String | Null,
+?   locomotiveId?: StringFilter | String,
+?   locoPilotId?: StringFilter | String,
+?   trainManagerId?: StringFilter | String,
+?   trainArrivalDateTime?: DateTimeFilter | DateTime,
+?   signOnDateTime?: DateTimeFilter | DateTime,
+?   timeOfTO?: DateTimeNullableFilter | DateTime | Null,
+?   departureDateTime?: DateTimeNullableFilter | DateTime | Null,
+?   signOffDateTime?: DateTimeNullableFilter | DateTime | Null,
+?   signOnStation?: StringFilter | String,
+?   signOffStation?: StringNullableFilter | String | Null,
+?   section?: StringFilter | String,
+?   dutyType?: EnumdutyTypeFilter | dutyType,
+?   dutyHours?: FloatNullableFilter | Float | Null,
+?   alert7HrSent?: BoolFilter | Boolean,
+?   alert7HrSentAt?: DateTimeNullableFilter | DateTime | Null,
+?   alert8HrSent?: BoolFilter | Boolean,
+?   alert8HrSentAt?: DateTimeNullableFilter | DateTime | Null,
+?   alert8HrResponse?: StringNullableFilter | String | Null,
+?   alert9HrSent?: BoolFilter | Boolean,
+?   alert9HrSentAt?: DateTimeNullableFilter | DateTime | Null,
+?   alert9HrResponse?: StringNullableFilter | String | Null,
+?   alert10HrSent?: BoolFilter | Boolean,
+?   alert10HrSentAt?: DateTimeNullableFilter | DateTime | Null,
+?   alert10HrResponse?: StringNullableFilter | String | Null,
+?   alert11HrSent?: BoolFilter | Boolean,
+?   alert11HrSentAt?: DateTimeNullableFilter | DateTime | Null,
+?   alert11HrResponse?: StringNullableFilter | String | Null,
+?   alert14HrSent?: BoolFilter | Boolean,
+?   alert14HrSentAt?: DateTimeNullableFilter | DateTime | Null,
+?   alert14HrResponse?: StringNullableFilter | String | Null,
+?   reliefRequired?: BoolFilter | Boolean,
+?   reliefPlanned?: BoolFilter | Boolean,
+?   reliefTime?: DateTimeNullableFilter | DateTime | Null,
+?   reliefReason?: StringNullableFilter | String | Null,
+?   createdById?: StringFilter | String,
+?   updatedById?: StringNullableFilter | String | Null,
+?   createdAt?: DateTimeFilter | DateTime,
+?   updatedAt?: DateTimeFilter | DateTime,
+?   locomotive?: LocomotiveScalarRelationFilter | LocomotiveWhereInput,
+?   locoPilot?: StaffScalarRelationFilter | StaffWhereInput,
+?   trainManager?: StaffScalarRelationFilter | StaffWhereInput,
+?   createdBy?: UserScalarRelationFilter | UserWhereInput,
+?   updatedBy?: UserNullableScalarRelationFilter | UserWhereInput | Null,
+?   notifications?: NotificationListRelationFilter,
+?   dutyLogs?: DutyLogListRelationFilter
+  }
+}
+
+Unknown argument `signOffDate`. Available options are marked with ?.
+2025-12-02 19:39:32 [error]: Error: Route /socket.io/?EIO=4&transport=websocket not found
+    at notFound (file:///home/ranap/Documents/RailwayProject/src/middleware/errorHandler.js:43:17)
+    at Layer.handleRequest (/home/ranap/Documents/RailwayProject/node_modules/router/lib/layer.js:152:17)
+    at trimPrefix (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:342:13)
+    at /home/ranap/Documents/RailwayProject/node_modules/router/index.js:297:9
+    at processParams (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:582:12)
+    at next (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:291:5)
+    at urlencodedParser (/home/ranap/Documents/RailwayProject/node_modules/body-parser/lib/types/urlencoded.js:68:7)
+    at Layer.handleRequest (/home/ranap/Documents/RailwayProject/node_modules/router/lib/layer.js:152:17)
+    at trimPrefix (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:342:13)
+    at /home/ranap/Documents/RailwayProject/node_modules/router/index.js:297:9
+2025-12-02 19:39:36 [error]: Error: Route /socket.io/?EIO=4&transport=websocket not found
+    at notFound (file:///home/ranap/Documents/RailwayProject/src/middleware/errorHandler.js:43:17)
+    at Layer.handleRequest (/home/ranap/Documents/RailwayProject/node_modules/router/lib/layer.js:152:17)
+    at trimPrefix (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:342:13)
+    at /home/ranap/Documents/RailwayProject/node_modules/router/index.js:297:9
+    at processParams (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:582:12)
+    at next (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:291:5)
+    at urlencodedParser (/home/ranap/Documents/RailwayProject/node_modules/body-parser/lib/types/urlencoded.js:68:7)
+    at Layer.handleRequest (/home/ranap/Documents/RailwayProject/node_modules/router/lib/layer.js:152:17)
+    at trimPrefix (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:342:13)
+    at /home/ranap/Documents/RailwayProject/node_modules/router/index.js:297:9
+2025-12-02 19:39:41 [error]: Error: Route /socket.io/?EIO=4&transport=websocket not found
+    at notFound (file:///home/ranap/Documents/RailwayProject/src/middleware/errorHandler.js:43:17)
+    at Layer.handleRequest (/home/ranap/Documents/RailwayProject/node_modules/router/lib/layer.js:152:17)
+    at trimPrefix (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:342:13)
+    at /home/ranap/Documents/RailwayProject/node_modules/router/index.js:297:9
+    at processParams (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:582:12)
+    at next (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:291:5)
+    at urlencodedParser (/home/ranap/Documents/RailwayProject/node_modules/body-parser/lib/types/urlencoded.js:68:7)
+    at Layer.handleRequest (/home/ranap/Documents/RailwayProject/node_modules/router/lib/layer.js:152:17)
+    at trimPrefix (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:342:13)
+    at /home/ranap/Documents/RailwayProject/node_modules/router/index.js:297:9
+2025-12-02 19:39:46 [error]: Error: Route /socket.io/?EIO=4&transport=websocket not found
+    at notFound (file:///home/ranap/Documents/RailwayProject/src/middleware/errorHandler.js:43:17)
+    at Layer.handleRequest (/home/ranap/Documents/RailwayProject/node_modules/router/lib/layer.js:152:17)
+    at trimPrefix (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:342:13)
+    at /home/ranap/Documents/RailwayProject/node_modules/router/index.js:297:9
+    at processParams (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:582:12)
+    at next (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:291:5)
+    at urlencodedParser (/home/ranap/Documents/RailwayProject/node_modules/body-parser/lib/types/urlencoded.js:68:7)
+    at Layer.handleRequest (/home/ranap/Documents/RailwayProject/node_modules/router/lib/layer.js:152:17)
+    at trimPrefix (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:342:13)
+    at /home/ranap/Documents/RailwayProject/node_modules/router/index.js:297:9
+2025-12-02 19:39:56 [error]: Error: Route /socket.io/?EIO=4&transport=websocket not found
+    at notFound (file:///home/ranap/Documents/RailwayProject/src/middleware/errorHandler.js:43:17)
+    at Layer.handleRequest (/home/ranap/Documents/RailwayProject/node_modules/router/lib/layer.js:152:17)
+    at trimPrefix (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:342:13)
+    at /home/ranap/Documents/RailwayProject/node_modules/router/index.js:297:9
+    at processParams (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:582:12)
+    at next (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:291:5)
+    at urlencodedParser (/home/ranap/Documents/RailwayProject/node_modules/body-parser/lib/types/urlencoded.js:68:7)
+    at Layer.handleRequest (/home/ranap/Documents/RailwayProject/node_modules/router/lib/layer.js:152:17)
+    at trimPrefix (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:342:13)
+    at /home/ranap/Documents/RailwayProject/node_modules/router/index.js:297:9
+2025-12-02 19:40:02 [error]: Error: Route /socket.io/?EIO=4&transport=websocket not found
+    at notFound (file:///home/ranap/Documents/RailwayProject/src/middleware/errorHandler.js:43:17)
+    at Layer.handleRequest (/home/ranap/Documents/RailwayProject/node_modules/router/lib/layer.js:152:17)
+    at trimPrefix (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:342:13)
+    at /home/ranap/Documents/RailwayProject/node_modules/router/index.js:297:9
+    at processParams (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:582:12)
+    at next (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:291:5)
+    at urlencodedParser (/home/ranap/Documents/RailwayProject/node_modules/body-parser/lib/types/urlencoded.js:68:7)
+    at Layer.handleRequest (/home/ranap/Documents/RailwayProject/node_modules/router/lib/layer.js:152:17)
+    at trimPrefix (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:342:13)
+    at /home/ranap/Documents/RailwayProject/node_modules/router/index.js:297:9
+2025-12-02 19:40:11 [error]: Error: Route /socket.io/?EIO=4&transport=websocket not found
+    at notFound (file:///home/ranap/Documents/RailwayProject/src/middleware/errorHandler.js:43:17)
+    at Layer.handleRequest (/home/ranap/Documents/RailwayProject/node_modules/router/lib/layer.js:152:17)
+    at trimPrefix (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:342:13)
+    at /home/ranap/Documents/RailwayProject/node_modules/router/index.js:297:9
+    at processParams (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:582:12)
+    at next (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:291:5)
+    at urlencodedParser (/home/ranap/Documents/RailwayProject/node_modules/body-parser/lib/types/urlencoded.js:68:7)
+    at Layer.handleRequest (/home/ranap/Documents/RailwayProject/node_modules/router/lib/layer.js:152:17)
+    at trimPrefix (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:342:13)
+    at /home/ranap/Documents/RailwayProject/node_modules/router/index.js:297:9
+2025-12-02 19:40:24 [error]: Error: Route /socket.io/?EIO=4&transport=websocket not found
+    at notFound (file:///home/ranap/Documents/RailwayProject/src/middleware/errorHandler.js:43:17)
+    at Layer.handleRequest (/home/ranap/Documents/RailwayProject/node_modules/router/lib/layer.js:152:17)
+    at trimPrefix (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:342:13)
+    at /home/ranap/Documents/RailwayProject/node_modules/router/index.js:297:9
+    at processParams (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:582:12)
+    at next (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:291:5)
+    at urlencodedParser (/home/ranap/Documents/RailwayProject/node_modules/body-parser/lib/types/urlencoded.js:68:7)
+    at Layer.handleRequest (/home/ranap/Documents/RailwayProject/node_modules/router/lib/layer.js:152:17)
+    at trimPrefix (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:342:13)
+    at /home/ranap/Documents/RailwayProject/node_modules/router/index.js:297:9
+2025-12-02 19:40:44 [error]: Error: Route /socket.io/?EIO=4&transport=websocket not found
+    at notFound (file:///home/ranap/Documents/RailwayProject/src/middleware/errorHandler.js:43:17)
+    at Layer.handleRequest (/home/ranap/Documents/RailwayProject/node_modules/router/lib/layer.js:152:17)
+    at trimPrefix (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:342:13)
+    at /home/ranap/Documents/RailwayProject/node_modules/router/index.js:297:9
+    at processParams (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:582:12)
+    at next (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:291:5)
+    at urlencodedParser (/home/ranap/Documents/RailwayProject/node_modules/body-parser/lib/types/urlencoded.js:68:7)
+    at Layer.handleRequest (/home/ranap/Documents/RailwayProject/node_modules/router/lib/layer.js:152:17)
+    at trimPrefix (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:342:13)
+    at /home/ranap/Documents/RailwayProject/node_modules/router/index.js:297:9
+2025-12-02 19:41:14 [error]: Error: Route /socket.io/?EIO=4&transport=websocket not found
+    at notFound (file:///home/ranap/Documents/RailwayProject/src/middleware/errorHandler.js:43:17)
+    at Layer.handleRequest (/home/ranap/Documents/RailwayProject/node_modules/router/lib/layer.js:152:17)
+    at trimPrefix (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:342:13)
+    at /home/ranap/Documents/RailwayProject/node_modules/router/index.js:297:9
+    at processParams (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:582:12)
+    at next (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:291:5)
+    at urlencodedParser (/home/ranap/Documents/RailwayProject/node_modules/body-parser/lib/types/urlencoded.js:68:7)
+    at Layer.handleRequest (/home/ranap/Documents/RailwayProject/node_modules/router/lib/layer.js:152:17)
+    at trimPrefix (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:342:13)
+    at /home/ranap/Documents/RailwayProject/node_modules/router/index.js:297:9
+2025-12-02 19:48:14 [error]: Prisma Error: Error in PostgreSQL connection: Error { kind: Closed, cause: None }
+2025-12-02 19:53:50 [error]: Prisma Error: Error in PostgreSQL connection: Error { kind: Closed, cause: None }
+2025-12-02 19:55:37 [error]: Error: Token expired
+    at file:///home/ranap/Documents/RailwayProject/src/middleware/auth.js:70:13
+    at file:///home/ranap/Documents/RailwayProject/src/middleware/errorHandler.js:49:19
+    at Layer.handleRequest (/home/ranap/Documents/RailwayProject/node_modules/router/lib/layer.js:152:17)
+    at trimPrefix (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:342:13)
+    at /home/ranap/Documents/RailwayProject/node_modules/router/index.js:297:9
+    at processParams (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:582:12)
+    at next (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:291:5)
+    at Function.handle (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:186:3)
+    at router (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:60:12)
+    at Layer.handleRequest (/home/ranap/Documents/RailwayProject/node_modules/router/lib/layer.js:152:17)
+2025-12-02 19:55:37 [error]: Error: Token expired
+    at file:///home/ranap/Documents/RailwayProject/src/middleware/auth.js:70:13
+    at file:///home/ranap/Documents/RailwayProject/src/middleware/errorHandler.js:49:19
+    at Layer.handleRequest (/home/ranap/Documents/RailwayProject/node_modules/router/lib/layer.js:152:17)
+    at trimPrefix (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:342:13)
+    at /home/ranap/Documents/RailwayProject/node_modules/router/index.js:297:9
+    at processParams (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:582:12)
+    at next (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:291:5)
+    at Function.handle (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:186:3)
+    at router (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:60:12)
+    at Layer.handleRequest (/home/ranap/Documents/RailwayProject/node_modules/router/lib/layer.js:152:17)
+2025-12-02 20:01:18 [error]: Prisma Error: Error in PostgreSQL connection: Error { kind: Closed, cause: None }
+2025-12-02 20:01:18 [error]: Prisma Error: Error in PostgreSQL connection: Error { kind: Closed, cause: None }
+2025-12-02 20:01:18 [error]: Prisma Error: Error in PostgreSQL connection: Error { kind: Closed, cause: None }
+2025-12-02 20:01:18 [error]: Prisma Error: Error in PostgreSQL connection: Error { kind: Closed, cause: None }
+2025-12-02 20:01:18 [error]: Prisma Error: Error in PostgreSQL connection: Error { kind: Closed, cause: None }
+2025-12-02 20:01:18 [error]: Prisma Error: Error in PostgreSQL connection: Error { kind: Closed, cause: None }
+2025-12-02 20:01:18 [error]: Prisma Error: Error in PostgreSQL connection: Error { kind: Closed, cause: None }
+2025-12-02 20:08:13 [error]: Prisma Error: Error in PostgreSQL connection: Error { kind: Closed, cause: None }
+2025-12-02 20:08:13 [error]: Prisma Error: Error in PostgreSQL connection: Error { kind: Closed, cause: None }
+2025-12-02 20:08:13 [error]: Prisma Error: Error in PostgreSQL connection: Error { kind: Closed, cause: None }
+2025-12-02 20:08:13 [error]: Prisma Error: Error in PostgreSQL connection: Error { kind: Closed, cause: None }
+2025-12-02 20:08:13 [error]: Prisma Error: Error in PostgreSQL connection: Error { kind: Closed, cause: None }
+2025-12-02 20:08:13 [error]: Prisma Error: Error in PostgreSQL connection: Error { kind: Closed, cause: None }
+2025-12-02 20:08:13 [error]: Prisma Error: Error in PostgreSQL connection: Error { kind: Closed, cause: None }
+2025-12-02 20:25:04 [error]: Error: Token expired
+    at file:///home/ranap/Documents/RailwayProject/src/middleware/auth.js:70:13
+    at file:///home/ranap/Documents/RailwayProject/src/middleware/errorHandler.js:49:19
+    at Layer.handleRequest (/home/ranap/Documents/RailwayProject/node_modules/router/lib/layer.js:152:17)
+    at trimPrefix (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:342:13)
+    at /home/ranap/Documents/RailwayProject/node_modules/router/index.js:297:9
+    at processParams (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:582:12)
+    at next (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:291:5)
+    at Function.handle (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:186:3)
+    at router (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:60:12)
+    at Layer.handleRequest (/home/ranap/Documents/RailwayProject/node_modules/router/lib/layer.js:152:17)
+2025-12-02 20:45:34 [error]: Prisma Error: Error in PostgreSQL connection: Error { kind: Closed, cause: None }
+2025-12-02 20:45:34 [error]: Prisma Error: Error in PostgreSQL connection: Error { kind: Closed, cause: None }
+2025-12-02 20:45:34 [error]: Prisma Error: Error in PostgreSQL connection: Error { kind: Closed, cause: None }
+2025-12-02 20:46:05 [error]: Error: Token expired
+    at file:///home/ranap/Documents/RailwayProject/src/middleware/auth.js:70:13
+    at file:///home/ranap/Documents/RailwayProject/src/middleware/errorHandler.js:49:19
+    at Layer.handleRequest (/home/ranap/Documents/RailwayProject/node_modules/router/lib/layer.js:152:17)
+    at trimPrefix (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:342:13)
+    at /home/ranap/Documents/RailwayProject/node_modules/router/index.js:297:9
+    at processParams (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:582:12)
+    at next (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:291:5)
+    at Function.handle (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:186:3)
+    at router (/home/ranap/Documents/RailwayProject/node_modules/router/index.js:60:12)
+    at Layer.handleRequest (/home/ranap/Documents/RailwayProject/node_modules/router/lib/layer.js:152:17)
+2025-12-04 17:35:32 [error]: PrismaClientInitializationError: Can't reach database server at `ep-jolly-sky-ahjt6sc5-pooler.c-3.us-east-1.aws.neon.tech:5432`
+
+Please make sure your database server is running at `ep-jolly-sky-ahjt6sc5-pooler.c-3.us-east-1.aws.neon.tech:5432`.
+    at r (/home/ranap/Documents/RailwayProject/src/generated/prisma/runtime/library.js:116:2770)
+    at async connectDatabase (file:///home/ranap/Documents/RailwayProject/src/index.js:14:5)
+    at async startServer (file:///home/ranap/Documents/RailwayProject/src/index.js:51:5)

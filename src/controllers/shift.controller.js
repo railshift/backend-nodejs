@@ -5,7 +5,6 @@ import ApiError from '../middleware/errorHandler.js';
 // Create new shift
 export const createShift = asyncHandler(async (req, res) => {
   const userId = req.user.id;
-  
   const shift = await shiftService.createShift(req.body, userId);
 
   // Emit socket event for new shift

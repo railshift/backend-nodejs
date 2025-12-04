@@ -17,25 +17,30 @@ import { initializeSocket } from './socket/index.js';
 // Import routes
 import authRoutes from './routes/auth.routes.js';
 import shiftRoutes from './routes/shift.routes.js';
+import userRoutes from './routes/user.routes.js';
+import dashboardRoutes from './routes/dashboard.routes.js';
 
 const app = express();
 const httpServer = createServer(app);
 
-// Initialize Socket.io
-const io = new Server(httpServer, {
-  cors: {
-    origin: config.socket.corsOrigin,
-    credentials: true,
-  },
-  pingTimeout: 60000,
-  pingInterval: 25000,
-});
+// Initialize Socket.io (Not for Phase 1 , for phase 2 )
+let io = null;
+if (config.features.socketEnabled) {  //checking config that socket enabled or not 
+  io = new Server(httpServer, {
+    cors: {
+      origin: config.socket.corsOrigin,
+      credentials: true,
+    },
+    pingTimeout: 60000,
+    pingInterval: 25000,
+  });
 
-//socket handlers
-initializeSocket(io);
+  // socket handlers
+  initializeSocket(io);
 
-// Makeing io accessible to routes
-app.set('io', io);
+  // Make io accessible to routes
+  app.set('io', io);
+}
 
 // Security Middleware
 // ============================================
@@ -89,7 +94,7 @@ app.use(express.urlencoded({ extended: true, limit: '10mb' }));
 // Apply rate limiting to all routes
 app.use('/api', apiLimiter);
 
-// ============================================
+
 // Health Check & Metrics
 // ============================================
 
@@ -129,6 +134,8 @@ app.get(API_PREFIX, (req, res) => {
 // Mount routes
 app.use(`${API_PREFIX}/auth`, authRoutes);
 app.use(`${API_PREFIX}/shifts`, shiftRoutes);
+app.use(`${API_PREFIX}/users`, userRoutes);
+app.use(`${API_PREFIX}/dashboard`, dashboardRoutes);
 
 // Error Handling
 // ============================================

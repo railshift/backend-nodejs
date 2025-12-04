@@ -17,11 +17,8 @@ class AuthService {
       config.jwt.accessSecret,
       { expiresIn: config.jwt.accessExpiry }
     );
-
     const refreshToken = jwt.sign(
-      {
-        userId: user.id,
-      },
+      { userId: user.id,},
       config.jwt.refreshSecret,
       { expiresIn: config.jwt.refreshExpiry }
     );
@@ -29,21 +26,87 @@ class AuthService {
     return { accessToken, refreshToken };
   }
 
+  // Register new user
+  async register(userData) {
+    try {
+      const { employeeId, name, email, phone, password, division, designation, role } = userData;
+
+      // Check if user already exists
+      const existingUser = await prisma.user.findFirst({
+        where: {
+          OR: [{ email }, { employeeId }],
+        },
+      });
+
+      if (existingUser) {
+        if (existingUser.email === email) {
+          throw new ApiError(400, 'Email already registered');
+        }
+        if (existingUser.employeeId === employeeId) {
+          throw new ApiError(400, 'Employee ID already exists');
+        }
+      }
+
+      // user can request role while creating account ; admin will approve
+      const requestedRole = role && ['USER', 'ADMIN', 'SUPERADMIN'].includes(role) ? role : 'USER';
+      const hashedPassword = await bcrypt.hash(password, 12);
+
+      // Create user (status: INACTIVE, isVerified: false)
+      const user = await prisma.user.create({
+        data: {
+          employeeId,
+          name,
+          email,
+          phone,
+          password: hashedPassword,
+          division,
+          designation,
+          role: requestedRole, // User's requested role (pending approval)
+          status: 'INACTIVE', // Inactive until approved
+          isVerified: false, // Requires admin approval (super admin only)
+        },
+        select: {
+          id: true,
+          employeeId: true,
+          name: true,
+          email: true,
+          phone: true,
+          role: true,
+          status: true,
+          isVerified: true,
+          division: true,
+          designation: true,
+          createdAt: true,
+        },
+      });
+
+      logger.info(`New user registered: ${user.email} (pending approval)`);
+
+      return { user };
+    } catch (error) {
+      logger.error('Registration error:', error);
+      throw error;
+    }
+  }
+
   // Login
   async login(email, password) {
     try {
-      // Find user
       const user = await prisma.user.findUnique({
         where: { email },
       });
-
       if (!user) {
         throw new ApiError(401, 'Invalid email or password');
       }
 
+      // Check if user is verified
+      if (!user.isVerified) {
+        throw new ApiError(403, 'Your account is pending approval by administrator');
+      }
+
       // Check if user is active
       if (user.status !== 'ACTIVE') {
-        throw new ApiError(403, 'Your account has been suspended');
+        throw new ApiError(403, 'Your account has been suspended or deactivated');
       }
 
       // Verify password

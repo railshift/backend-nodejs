@@ -41,33 +41,27 @@ export const createShiftValidation = [
     .notEmpty()
     .withMessage('Train manager name is required'),
   
-  body('trainArrivalDate')
+  body('trainArrivalDateTime')
     .notEmpty()
-    .withMessage('Train arrival date is required')
+    .withMessage('Train arrival date time is required')
     .isISO8601()
-    .withMessage('Invalid date format'),
+    .withMessage('Invalid date time format'),
   
-  body('trainArrivalTime')
+  body('signOnDateTime')
     .notEmpty()
-    .withMessage('Train arrival time is required')
+    .withMessage('Sign on date time is required')
     .isISO8601()
-    .withMessage('Invalid time format'),
-  
-  body('signOnTime')
-    .notEmpty()
-    .withMessage('Sign on time is required')
-    .isISO8601()
-    .withMessage('Invalid time format'),
+    .withMessage('Invalid date time format'),
   
   body('timeOfTO')
     .optional()
     .isISO8601()
     .withMessage('Invalid time format'),
   
-  body('departureTime')
+  body('departureDateTime')
     .optional()
     .isISO8601()
-    .withMessage('Invalid time format'),
+    .withMessage('Invalid date time format'),
   
   body('signOnStation')
     .trim()
@@ -95,25 +89,10 @@ export const createShiftValidation = [
     .isIn(['SP', 'WR', 'LR'])
     .withMessage('Duty type must be SP, WR, or LR'),
   
-  body('signOffDate')
+  body('signOffDateTime')
     .optional()
     .isISO8601()
-    .withMessage('Invalid date format'),
-  
-  body('signOffTime')
-    .optional()
-    .isISO8601()
-    .withMessage('Invalid time format'),
-  
-  body('lobbySignOn')
-    .optional()
-    .isBoolean()
-    .withMessage('Lobby sign on must be a boolean'),
-  
-  body('lobbySignOff')
-    .optional()
-    .isBoolean()
-    .withMessage('Lobby sign off must be a boolean'),
+    .withMessage('Invalid date time format'),
 ];
 
 export const updateShiftValidation = [
@@ -128,20 +107,15 @@ export const updateShiftValidation = [
     .isISO8601()
     .withMessage('Invalid time format'),
   
-  body('departureTime')
+  body('departureDateTime')
     .optional()
     .isISO8601()
-    .withMessage('Invalid time format'),
+    .withMessage('Invalid date time format'),
   
-  body('signOffDate')
+  body('signOffDateTime')
     .optional()
     .isISO8601()
-    .withMessage('Invalid date format'),
-  
-  body('signOffTime')
-    .optional()
-    .isISO8601()
-    .withMessage('Invalid time format'),
+    .withMessage('Invalid date time format'),
   
   body('signOffStation')
     .optional()
@@ -159,16 +133,6 @@ export const updateShiftValidation = [
     .optional()
     .isIn(['SP', 'WR', 'LR'])
     .withMessage('Duty type must be SP, WR, or LR'),
-  
-  body('lobbySignOn')
-    .optional()
-    .isBoolean()
-    .withMessage('Lobby sign on must be a boolean'),
-  
-  body('lobbySignOff')
-    .optional()
-    .isBoolean()
-    .withMessage('Lobby sign off must be a boolean'),
   
   body('status')
     .optional()

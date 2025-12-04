@@ -73,7 +73,7 @@ export const authenticate = asyncHandler(async (req, res, next) => {
   }
 });
 
-// Authorization middleware - check user roles
+// Authorization middleware - check for  user roles
 export const authorize = (...roles) => {
   return (req, res, next) => {
     if (!req.user) {

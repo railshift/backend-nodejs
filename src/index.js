@@ -1,13 +1,13 @@
-import { httpServer } from './app.js';
+import { httpServer, io } from './app.js';
 import config from './config/config.js';
 import logger from './utils/logger.js';
 import prisma from './config/database.js';
 import redisClient from './config/redis.js';
 import seedDatabase from './utils/seed.js';
+import { startShiftMonitoring, stopShiftMonitoring } from './jobs/shiftMonitor.job.js';
+import { logConfiguration } from '../config.testing.js';
 
-// ============================================
 // Initialize Database Connections
-// ============================================
 
 async function connectDatabase() {
   try {
@@ -21,7 +21,7 @@ async function connectDatabase() {
 
 async function connectRedis() {
   // Check if Redis is enabled
-  if (!config.redis.enabled) {
+  if (!config.redis.enabled) {  // from config ; redis is optional for phase 1
     logger.info(' Redis disabled - running without cache');
     return;
   }
@@ -29,7 +29,6 @@ async function connectRedis() {
   try {
     const client = redisClient.connect();
     
-    // Try to connect with timeout
     await Promise.race([
       client.connect(),
       new Promise((_, reject) => 
@@ -39,24 +38,39 @@ async function connectRedis() {
     
     logger.info('Redis connected successfully');
   } catch (error) {
-    logger.warn('Redis not available - running without cache (this is fine for development)');
-    // Don't exit - Redis is optional for basic functionality
+    logger.warn('Redis not available - running without cache (this is fine for development , we can run without redis also )');
+    // Don't exit - redis is optional for basic functionality
   }
 }
 
 // Start Server
-// ============================================
+// =============
 
 async function startServer() {
   try {
-    // Connect to database
     await connectDatabase();
 
-    // Seed database with default users
-    await seedDatabase();
+    // Seed database with default users ; already in utils/seed.js
+    if (config.features.seedOnStartup) {  //checking config that seed needed or not 
+      await seedDatabase();
+      logger.info('Seeded default data (seedOnStartup=true)');
+    } else {
+      logger.info('Skipping seed (seedOnStartup=false)');
+    }
 
-    // Connect to Redis (optional)
+    // Connect to Redis (optional for phase 1)
     await connectRedis();
+
+    // Log testing 
+    logConfiguration(logger);
+
+    // Start shift monitoring job (optional for phase 1 )
+    if (config.features.monitoringEnabled) {  ////checking config that needed or not 
+      monitoringIntervalId = startShiftMonitoring(io);
+      logger.info('Shift monitoring job started');
+    } else {
+      logger.info('Monitoring disabled (monitoringEnabled=false)');
+    }
 
     // Start HTTP server
     const server = httpServer.listen(config.port, () => {
@@ -68,7 +82,11 @@ async function startServer() {
       logger.info(`API URL: http://localhost:${config.port}/api/${config.apiVersion}`);
       logger.info(` Health Check: http://localhost:${config.port}/health`);
       logger.info(`Metrics: http://localhost:${config.port}/metrics`);
-      logger.info(` Socket.io enabled on port: ${config.port}`);
+      if (config.features.socketEnabled) {
+        logger.info(` Socket.io enabled on port: ${config.port}`);
+      } else {
+        logger.info(' Socket.io disabled (socketEnabled=false)');
+      }
       logger.info('='.repeat(50));
     });
 
@@ -89,6 +107,8 @@ async function startServer() {
   }
 }
 
+let monitoringIntervalId = null;
+
 // Graceful Shutdown
 // ============================================
 
@@ -96,6 +116,11 @@ async function gracefulShutdown(signal) {
   logger.info(`\n${signal} received. Starting graceful shutdown...`);
 
   try {
+    // Stop shift monitoring job
+    if (monitoringIntervalId) {
+      stopShiftMonitoring(monitoringIntervalId);
+    }
+
     // Close HTTP server
     httpServer.close(() => {
       logger.info('HTTP server closed');

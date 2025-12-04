@@ -27,6 +27,10 @@ async function seedDatabase() {
         password: hashedPassword,
         role: 'SUPERADMIN',
         status: 'ACTIVE',
+        isVerified: true,
+        verifiedAt: new Date(),
+        division: 'Administration',
+        designation: 'System Administrator',
       },
     });
 
@@ -43,6 +47,10 @@ async function seedDatabase() {
         password: hashedPassword,
         role: 'ADMIN',
         status: 'ACTIVE',
+        isVerified: true,
+        verifiedAt: new Date(),
+        division: 'Operations',
+        designation: 'Operations Manager',
       },
     });
 
@@ -59,6 +67,10 @@ async function seedDatabase() {
         password: hashedPassword,
         role: 'USER',
         status: 'ACTIVE',
+        isVerified: true,
+        verifiedAt: new Date(),
+        division: 'Operations',
+        designation: 'Shift Coordinator',
       },
     });
 

@@ -114,7 +114,7 @@ class ShiftService {
           status: {
             in: ['SCHEDULED', 'IN_PROGRESS'],
           },
-          signOffTime: null,
+          signOffDateTime: null,
         },
       });
 
@@ -135,7 +135,7 @@ class ShiftService {
       }
 
       // Calculate initial duty hours
-      const dutyHours = this.calculateDutyHours(data.signOnTime);
+      const dutyHours = this.calculateDutyHours(data.signOnDateTime);
 
       // Create shift
       const shift = await prisma.shift.create({
@@ -145,19 +145,15 @@ class ShiftService {
           locomotiveId: locomotive.id,
           locoPilotId: locoPilot.id,
           trainManagerId: trainManager.id,
-          trainArrivalDate: new Date(data.trainArrivalDate),
-          trainArrivalTime: new Date(data.trainArrivalTime),
-          signOnTime: new Date(data.signOnTime),
+          trainArrivalDateTime: new Date(data.trainArrivalDateTime),
+          signOnDateTime: new Date(data.signOnDateTime),
           timeOfTO: data.timeOfTO ? new Date(data.timeOfTO) : null,
-          departureTime: data.departureTime ? new Date(data.departureTime) : null,
+          departureDateTime: data.departureDateTime ? new Date(data.departureDateTime) : null,
           signOnStation: data.signOnStation,
           signOffStation: data.signOffStation || null,
           section: data.section,
           dutyType: data.dutyType,
-          signOffDate: data.signOffDate ? new Date(data.signOffDate) : null,
-          signOffTime: data.signOffTime ? new Date(data.signOffTime) : null,
-          lobbySignOn: data.lobbySignOn || null,
-          lobbySignOff: data.lobbySignOff || null,
+          signOffDateTime: data.signOffDateTime ? new Date(data.signOffDateTime) : null,
           dutyHours,
           status: 'IN_PROGRESS',
           createdById: userId,
@@ -258,8 +254,8 @@ class ShiftService {
       }
 
       // Calculate current duty hours
-      if (shift.status === 'IN_PROGRESS' && !shift.signOffTime) {
-        shift.dutyHours = this.calculateDutyHours(shift.signOnTime);
+      if (shift.status === 'IN_PROGRESS' && !shift.signOffDateTime) {
+        shift.dutyHours = this.calculateDutyHours(shift.signOnDateTime);
       }
 
       return shift;
@@ -294,12 +290,12 @@ class ShiftService {
       }
 
       if (filters.startDate || filters.endDate) {
-        where.trainArrivalDate = {};
+        where.trainArrivalDateTime = {};
         if (filters.startDate) {
-          where.trainArrivalDate.gte = new Date(filters.startDate);
+          where.trainArrivalDateTime.gte = new Date(filters.startDate);
         }
         if (filters.endDate) {
-          where.trainArrivalDate.lte = new Date(filters.endDate);
+          where.trainArrivalDateTime.lte = new Date(filters.endDate);
         }
       }
 
@@ -328,10 +324,10 @@ class ShiftService {
 
       // Calculate current duty hours for in-progress shifts
       const shiftsWithDutyHours = shifts.map(shift => {
-        if (shift.status === 'IN_PROGRESS' && !shift.signOffTime) {
+        if (shift.status === 'IN_PROGRESS' && !shift.signOffDateTime) {
           return {
             ...shift,
-            dutyHours: this.calculateDutyHours(shift.signOnTime),
+            dutyHours: this.calculateDutyHours(shift.signOnDateTime),
           };
         }
         return shift;
@@ -381,14 +377,14 @@ class ShiftService {
             shiftId: shift.id,
             staffId: shift.locoPilotId,
             logType: 'TAKE_OVER',
-            dutyHoursAtLog: this.calculateDutyHours(shift.signOnTime),
+            dutyHoursAtLog: this.calculateDutyHours(shift.signOnDateTime),
             remarks: 'Train take over',
           },
         });
       }
 
-      if (data.departureTime) {
-        updateData.departureTime = new Date(data.departureTime);
+      if (data.departureDateTime) {
+        updateData.departureDateTime = new Date(data.departureDateTime);
         
         // Log departure
         await prisma.dutyLog.create({
@@ -396,19 +392,15 @@ class ShiftService {
             shiftId: shift.id,
             staffId: shift.locoPilotId,
             logType: 'DEPARTURE',
-            dutyHoursAtLog: this.calculateDutyHours(shift.signOnTime),
+            dutyHoursAtLog: this.calculateDutyHours(shift.signOnDateTime),
             remarks: 'Train departed',
           },
         });
       }
 
       // Update new fields
-      if (data.signOffDate) {
-        updateData.signOffDate = new Date(data.signOffDate);
-      }
-
-      if (data.signOffTime) {
-        updateData.signOffTime = new Date(data.signOffTime);
+      if (data.signOffDateTime) {
+        updateData.signOffDateTime = new Date(data.signOffDateTime);
       }
 
       if (data.signOffStation) {
@@ -423,22 +415,15 @@ class ShiftService {
         updateData.dutyType = data.dutyType;
       }
 
-      if (data.lobbySignOn !== undefined) {
-        updateData.lobbySignOn = data.lobbySignOn;
-      }
+      // lobbySignOn/lobbySignOff removed from schema
 
-      if (data.lobbySignOff !== undefined) {
-        updateData.lobbySignOff = data.lobbySignOff;
-      }
-
-      // Handle shift completion with signOffTime and signOffDate
-      if (data.signOffTime && data.signOffDate) {
-        updateData.signOffTime = new Date(data.signOffTime);
-        updateData.signOffDate = new Date(data.signOffDate);
+      // Handle shift completion with signOffDateTime
+      if (data.signOffDateTime) {
+        updateData.signOffDateTime = new Date(data.signOffDateTime);
         updateData.status = 'COMPLETED';
         updateData.dutyHours = this.calculateDutyHours(
-          shift.signOnTime,
-          data.signOffTime
+          shift.signOnDateTime,
+          data.signOffDateTime
         );
 
         // Log release
@@ -491,7 +476,7 @@ class ShiftService {
                 shiftId: shift.id,
                 staffId: shift.locoPilotId,
                 logType: 'RELIEF_PLANNED',
-                dutyHoursAtLog: this.calculateDutyHours(shift.signOnTime),
+                dutyHoursAtLog: this.calculateDutyHours(shift.signOnDateTime),
                 remarks: data.reliefReason || 'Relief planned',
               },
               {

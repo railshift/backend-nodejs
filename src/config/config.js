@@ -53,6 +53,16 @@ export const config = {
     port: parseInt(process.env.PROMETHEUS_PORT, 10) || 9090,
   },
 
+  // Feature flags (Phase 1: keep simple REST only)
+  features: {
+    // Disable background monitoring job unless enabled
+    monitoringEnabled: process.env.MONITORING_ENABLED === 'true',
+    // Disable socket.io unless  enabled
+    socketEnabled: process.env.SOCKET_ENABLED === 'true',
+    // Run seed script automatically on server start
+    seedOnStartup: process.env.SEED_ON_STARTUP === 'true',
+  },
+
   // Notification Thresholds (in hours)
   dutyAlerts: {
     alert8Hr: parseInt(process.env.DUTY_ALERT_8HR, 10) || 8,
