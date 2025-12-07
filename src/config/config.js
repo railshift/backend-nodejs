@@ -39,7 +39,8 @@ export const config = {
 
   // CORS
   cors: {
-    origin: process.env.CORS_ORIGIN?.split(',') || ['http://localhost:3000'],
+    // origin: process.env.CORS_ORIGIN?.split(',') || ['http://localhost:3000'],
+    origin: "https://railway-project-frontend.vercel.app",
     credentials: true,
   },
 
