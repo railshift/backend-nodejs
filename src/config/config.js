@@ -39,9 +39,28 @@ export const config = {
 
   // CORS
   cors: {
-    // origin: process.env.CORS_ORIGIN?.split(',') || ['http://localhost:3000'],
-    origin: "https://railway-project-frontend.vercel.app",
+    // Allow listed origins and local development
+    origin: (origin, callback) => {
+      const allowed = [
+        'https://railway-project-frontend.vercel.app',
+        'http://localhost:3000',
+        'http://127.0.0.1:3000',
+      ];
+      if (!origin || allowed.includes(origin)) return callback(null, true);
+      return callback(new Error('CORS blocked: origin not allowed'));
+    },
     credentials: true,
+    methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'],
+    allowedHeaders: [
+      'Content-Type',
+      'Authorization',
+      'Accept',
+      'Origin',
+      'X-Requested-With',
+    ],
+    exposedHeaders: ['Content-Length', 'X-Request-Id'],
+    preflightContinue: false,
+    optionsSuccessStatus: 204,
   },
 
   // Socket.io

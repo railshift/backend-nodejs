@@ -6,3 +6,4 @@ node_modules
 /src/generated/prisma
 API_TESTING.md
 SETUP_COMPLETE.md
+API_DOCUMENTATION.md
