@@ -28,7 +28,7 @@ let io = null;
 if (config.features.socketEnabled) {  //checking config that socket enabled or not 
   io = new Server(httpServer, {
     cors: {
-      origin: config.socket.corsOrigin,
+      origin: "https://railway-project-frontend.vercel.app",
       credentials: true,
     },
     pingTimeout: 60000,
