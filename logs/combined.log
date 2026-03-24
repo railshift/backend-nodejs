@@ -5747,3 +5747,117 @@ Timed out fetching a new connection from the connection pool. More info: http://
     at router (/home/ranapoddar/Documents/railway-project/RailwayProject-node-backend/node_modules/router/index.js:60:12)
     at Layer.handleRequest (/home/ranapoddar/Documents/railway-project/RailwayProject-node-backend/node_modules/router/lib/layer.js:152:17)
 2026-03-25 01:28:08 [info]: GET /api/v1/dashboard/alerts-summary 401 - 0.038s
+2026-03-25 01:28:27 [info]:  Running shift monitoring job... (minutes mode)
+2026-03-25 01:28:28 [info]: No active shifts to monitor
+2026-03-25 01:28:57 [info]:  Running shift monitoring job... (minutes mode)
+2026-03-25 01:28:58 [info]: No active shifts to monitor
+2026-03-25 01:29:08 [error]: Error: Not authorized, no token provided
+    at file:///home/ranapoddar/Documents/railway-project/RailwayProject-node-backend/src/middleware/auth.js:21:11
+    at file:///home/ranapoddar/Documents/railway-project/RailwayProject-node-backend/src/middleware/errorHandler.js:49:19
+    at Layer.handleRequest (/home/ranapoddar/Documents/railway-project/RailwayProject-node-backend/node_modules/router/lib/layer.js:152:17)
+    at trimPrefix (/home/ranapoddar/Documents/railway-project/RailwayProject-node-backend/node_modules/router/index.js:342:13)
+    at /home/ranapoddar/Documents/railway-project/RailwayProject-node-backend/node_modules/router/index.js:297:9
+    at processParams (/home/ranapoddar/Documents/railway-project/RailwayProject-node-backend/node_modules/router/index.js:582:12)
+    at next (/home/ranapoddar/Documents/railway-project/RailwayProject-node-backend/node_modules/router/index.js:291:5)
+    at router.handle (/home/ranapoddar/Documents/railway-project/RailwayProject-node-backend/node_modules/router/index.js:186:3)
+    at router (/home/ranapoddar/Documents/railway-project/RailwayProject-node-backend/node_modules/router/index.js:60:12)
+    at Layer.handleRequest (/home/ranapoddar/Documents/railway-project/RailwayProject-node-backend/node_modules/router/lib/layer.js:152:17)
+2026-03-25 01:29:08 [info]: GET /api/v1/dashboard/alerts-summary 401 - 0.006s
+2026-03-25 01:29:27 [info]:  Running shift monitoring job... (minutes mode)
+2026-03-25 01:29:28 [info]: No active shifts to monitor
+2026-03-25 01:29:57 [info]:  Running shift monitoring job... (minutes mode)
+2026-03-25 01:29:58 [info]: No active shifts to monitor
+2026-03-25 01:30:08 [error]: Error: Not authorized, no token provided
+    at file:///home/ranapoddar/Documents/railway-project/RailwayProject-node-backend/src/middleware/auth.js:21:11
+    at file:///home/ranapoddar/Documents/railway-project/RailwayProject-node-backend/src/middleware/errorHandler.js:49:19
+    at Layer.handleRequest (/home/ranapoddar/Documents/railway-project/RailwayProject-node-backend/node_modules/router/lib/layer.js:152:17)
+    at trimPrefix (/home/ranapoddar/Documents/railway-project/RailwayProject-node-backend/node_modules/router/index.js:342:13)
+    at /home/ranapoddar/Documents/railway-project/RailwayProject-node-backend/node_modules/router/index.js:297:9
+    at processParams (/home/ranapoddar/Documents/railway-project/RailwayProject-node-backend/node_modules/router/index.js:582:12)
+    at next (/home/ranapoddar/Documents/railway-project/RailwayProject-node-backend/node_modules/router/index.js:291:5)
+    at router.handle (/home/ranapoddar/Documents/railway-project/RailwayProject-node-backend/node_modules/router/index.js:186:3)
+    at router (/home/ranapoddar/Documents/railway-project/RailwayProject-node-backend/node_modules/router/index.js:60:12)
+    at Layer.handleRequest (/home/ranapoddar/Documents/railway-project/RailwayProject-node-backend/node_modules/router/lib/layer.js:152:17)
+2026-03-25 01:30:08 [info]: GET /api/v1/dashboard/alerts-summary 401 - 0.008s
+2026-03-25 01:30:27 [info]:  Running shift monitoring job... (minutes mode)
+2026-03-25 01:30:28 [info]: No active shifts to monitor
+2026-03-25 01:30:57 [info]:  Running shift monitoring job... (minutes mode)
+2026-03-25 01:30:58 [info]: No active shifts to monitor
+2026-03-25 01:31:08 [error]: Error: Not authorized, no token provided
+    at file:///home/ranapoddar/Documents/railway-project/RailwayProject-node-backend/src/middleware/auth.js:21:11
+    at file:///home/ranapoddar/Documents/railway-project/RailwayProject-node-backend/src/middleware/errorHandler.js:49:19
+    at Layer.handleRequest (/home/ranapoddar/Documents/railway-project/RailwayProject-node-backend/node_modules/router/lib/layer.js:152:17)
+    at trimPrefix (/home/ranapoddar/Documents/railway-project/RailwayProject-node-backend/node_modules/router/index.js:342:13)
+    at /home/ranapoddar/Documents/railway-project/RailwayProject-node-backend/node_modules/router/index.js:297:9
+    at processParams (/home/ranapoddar/Documents/railway-project/RailwayProject-node-backend/node_modules/router/index.js:582:12)
+    at next (/home/ranapoddar/Documents/railway-project/RailwayProject-node-backend/node_modules/router/index.js:291:5)
+    at router.handle (/home/ranapoddar/Documents/railway-project/RailwayProject-node-backend/node_modules/router/index.js:186:3)
+    at router (/home/ranapoddar/Documents/railway-project/RailwayProject-node-backend/node_modules/router/index.js:60:12)
+    at Layer.handleRequest (/home/ranapoddar/Documents/railway-project/RailwayProject-node-backend/node_modules/router/lib/layer.js:152:17)
+2026-03-25 01:31:08 [info]: GET /api/v1/dashboard/alerts-summary 401 - 0.007s
+2026-03-25 01:31:27 [info]:  Running shift monitoring job... (minutes mode)
+2026-03-25 01:31:28 [info]: No active shifts to monitor
+2026-03-25 01:31:57 [info]:  Running shift monitoring job... (minutes mode)
+2026-03-25 01:31:58 [info]: No active shifts to monitor
+2026-03-25 01:32:08 [error]: Error: Not authorized, no token provided
+    at file:///home/ranapoddar/Documents/railway-project/RailwayProject-node-backend/src/middleware/auth.js:21:11
+    at file:///home/ranapoddar/Documents/railway-project/RailwayProject-node-backend/src/middleware/errorHandler.js:49:19
+    at Layer.handleRequest (/home/ranapoddar/Documents/railway-project/RailwayProject-node-backend/node_modules/router/lib/layer.js:152:17)
+    at trimPrefix (/home/ranapoddar/Documents/railway-project/RailwayProject-node-backend/node_modules/router/index.js:342:13)
+    at /home/ranapoddar/Documents/railway-project/RailwayProject-node-backend/node_modules/router/index.js:297:9
+    at processParams (/home/ranapoddar/Documents/railway-project/RailwayProject-node-backend/node_modules/router/index.js:582:12)
+    at next (/home/ranapoddar/Documents/railway-project/RailwayProject-node-backend/node_modules/router/index.js:291:5)
+    at router.handle (/home/ranapoddar/Documents/railway-project/RailwayProject-node-backend/node_modules/router/index.js:186:3)
+    at router (/home/ranapoddar/Documents/railway-project/RailwayProject-node-backend/node_modules/router/index.js:60:12)
+    at Layer.handleRequest (/home/ranapoddar/Documents/railway-project/RailwayProject-node-backend/node_modules/router/lib/layer.js:152:17)
+2026-03-25 01:32:08 [info]: GET /api/v1/dashboard/alerts-summary 401 - 0.005s
+2026-03-25 01:32:27 [info]:  Running shift monitoring job... (minutes mode)
+2026-03-25 01:32:30 [info]: No active shifts to monitor
+2026-03-25 01:32:57 [info]:  Running shift monitoring job... (minutes mode)
+2026-03-25 01:32:58 [info]: No active shifts to monitor
+2026-03-25 01:33:08 [error]: Error: Not authorized, no token provided
+    at file:///home/ranapoddar/Documents/railway-project/RailwayProject-node-backend/src/middleware/auth.js:21:11
+    at file:///home/ranapoddar/Documents/railway-project/RailwayProject-node-backend/src/middleware/errorHandler.js:49:19
+    at Layer.handleRequest (/home/ranapoddar/Documents/railway-project/RailwayProject-node-backend/node_modules/router/lib/layer.js:152:17)
+    at trimPrefix (/home/ranapoddar/Documents/railway-project/RailwayProject-node-backend/node_modules/router/index.js:342:13)
+    at /home/ranapoddar/Documents/railway-project/RailwayProject-node-backend/node_modules/router/index.js:297:9
+    at processParams (/home/ranapoddar/Documents/railway-project/RailwayProject-node-backend/node_modules/router/index.js:582:12)
+    at next (/home/ranapoddar/Documents/railway-project/RailwayProject-node-backend/node_modules/router/index.js:291:5)
+    at router.handle (/home/ranapoddar/Documents/railway-project/RailwayProject-node-backend/node_modules/router/index.js:186:3)
+    at router (/home/ranapoddar/Documents/railway-project/RailwayProject-node-backend/node_modules/router/index.js:60:12)
+    at Layer.handleRequest (/home/ranapoddar/Documents/railway-project/RailwayProject-node-backend/node_modules/router/lib/layer.js:152:17)
+2026-03-25 01:33:08 [info]: GET /api/v1/dashboard/alerts-summary 401 - 0.007s
+2026-03-25 01:33:27 [info]:  Running shift monitoring job... (minutes mode)
+2026-03-25 01:33:28 [info]: No active shifts to monitor
+2026-03-25 01:33:57 [info]:  Running shift monitoring job... (minutes mode)
+2026-03-25 01:33:58 [info]: No active shifts to monitor
+2026-03-25 01:34:08 [error]: Error: Not authorized, no token provided
+    at file:///home/ranapoddar/Documents/railway-project/RailwayProject-node-backend/src/middleware/auth.js:21:11
+    at file:///home/ranapoddar/Documents/railway-project/RailwayProject-node-backend/src/middleware/errorHandler.js:49:19
+    at Layer.handleRequest (/home/ranapoddar/Documents/railway-project/RailwayProject-node-backend/node_modules/router/lib/layer.js:152:17)
+    at trimPrefix (/home/ranapoddar/Documents/railway-project/RailwayProject-node-backend/node_modules/router/index.js:342:13)
+    at /home/ranapoddar/Documents/railway-project/RailwayProject-node-backend/node_modules/router/index.js:297:9
+    at processParams (/home/ranapoddar/Documents/railway-project/RailwayProject-node-backend/node_modules/router/index.js:582:12)
+    at next (/home/ranapoddar/Documents/railway-project/RailwayProject-node-backend/node_modules/router/index.js:291:5)
+    at router.handle (/home/ranapoddar/Documents/railway-project/RailwayProject-node-backend/node_modules/router/index.js:186:3)
+    at router (/home/ranapoddar/Documents/railway-project/RailwayProject-node-backend/node_modules/router/index.js:60:12)
+    at Layer.handleRequest (/home/ranapoddar/Documents/railway-project/RailwayProject-node-backend/node_modules/router/lib/layer.js:152:17)
+2026-03-25 01:34:08 [info]: GET /api/v1/dashboard/alerts-summary 401 - 0.003s
+2026-03-25 01:34:27 [info]:  Running shift monitoring job... (minutes mode)
+2026-03-25 01:34:28 [info]: No active shifts to monitor
+2026-03-25 01:34:57 [info]:  Running shift monitoring job... (minutes mode)
+2026-03-25 01:34:58 [info]: No active shifts to monitor
+2026-03-25 01:35:08 [error]: Error: Not authorized, no token provided
+    at file:///home/ranapoddar/Documents/railway-project/RailwayProject-node-backend/src/middleware/auth.js:21:11
+    at file:///home/ranapoddar/Documents/railway-project/RailwayProject-node-backend/src/middleware/errorHandler.js:49:19
+    at Layer.handleRequest (/home/ranapoddar/Documents/railway-project/RailwayProject-node-backend/node_modules/router/lib/layer.js:152:17)
+    at trimPrefix (/home/ranapoddar/Documents/railway-project/RailwayProject-node-backend/node_modules/router/index.js:342:13)
+    at /home/ranapoddar/Documents/railway-project/RailwayProject-node-backend/node_modules/router/index.js:297:9
+    at processParams (/home/ranapoddar/Documents/railway-project/RailwayProject-node-backend/node_modules/router/index.js:582:12)
+    at next (/home/ranapoddar/Documents/railway-project/RailwayProject-node-backend/node_modules/router/index.js:291:5)
+    at router.handle (/home/ranapoddar/Documents/railway-project/RailwayProject-node-backend/node_modules/router/index.js:186:3)
+    at router (/home/ranapoddar/Documents/railway-project/RailwayProject-node-backend/node_modules/router/index.js:60:12)
+    at Layer.handleRequest (/home/ranapoddar/Documents/railway-project/RailwayProject-node-backend/node_modules/router/lib/layer.js:152:17)
+2026-03-25 01:35:08 [info]: GET /api/v1/dashboard/alerts-summary 401 - 0.004s
+2026-03-25 01:35:27 [info]:  Running shift monitoring job... (minutes mode)
+2026-03-25 01:35:28 [info]: No active shifts to monitor
