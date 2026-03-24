@@ -31,6 +31,7 @@ export const getActiveShifts = async () => {
           employeeId: true,
           name: true,
           phone: true,
+          division: true,
         },
       },
       trainManager: {
@@ -39,6 +40,7 @@ export const getActiveShifts = async () => {
           employeeId: true,
           name: true,
           phone: true,
+          division: true,
         },
       },
       locomotive: {
@@ -359,7 +361,7 @@ export const completeShift = async (shiftId, signOffData) => {
     ],
   });
 
-  // Update staff status to AVAILABLE
+  // Update staff status === AVAILABLE
   await prisma.staff.updateMany({
     where: {
       id: {

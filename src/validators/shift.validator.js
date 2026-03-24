@@ -84,8 +84,8 @@ export const createShiftValidation = [
     .withMessage('Section must be a string'),
   
   body('dutyType')
-    .notEmpty()
-    .withMessage('Duty type is required')
+    .optional()
+    .trim()
     .isIn(['SP', 'WR', 'LR'])
     .withMessage('Duty type must be SP, WR, or LR'),
   

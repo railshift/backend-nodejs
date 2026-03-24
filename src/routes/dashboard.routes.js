@@ -11,7 +11,7 @@ import { validate } from '../middleware/validate.js';
 
 const router = express.Router();
 
-// Apply authentication to all dashboard routes
+// all dashboard rourtes need authentication
 router.use(authenticate);
 
 /**

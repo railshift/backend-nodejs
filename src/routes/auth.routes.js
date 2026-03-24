@@ -1,5 +1,5 @@
 import express from 'express';
-import { register, login, refreshToken, getCurrentUser, logout } from '../controllers/auth.controller.js';
+import { register, login, refreshToken, getCurrentUser, logout, forgotPassword, resetPassword } from '../controllers/auth.controller.js';
 import { authenticate } from '../middleware/auth.js';
 import { authLimiter } from '../middleware/rateLimiter.js';
 import { body } from 'express-validator';
@@ -89,5 +89,47 @@ router.route('/me').get(authenticate, getCurrentUser);
  * @access  Private
  */
 router.route('/logout').post(authenticate, logout);
+
+/**
+ * @route   POST /api/v1/auth/forgot-password
+ * @desc    Request password reset OTP
+ * @access  Public
+ */
+router.route('/forgot-password').post(
+  authLimiter,
+  [
+    body('email')
+      .isEmail()
+      .withMessage('Please provide a valid email')
+      .normalizeEmail(),
+  ],
+  validate,
+  forgotPassword
+);
+
+/**
+ * @route   POST /api/v1/auth/reset-password
+ * @desc    Reset password with OTP
+ * @access  Public
+ */
+router.route('/reset-password').post(
+  authLimiter,
+  [
+    body('email')
+      .isEmail()
+      .withMessage('Please provide a valid email')
+      .normalizeEmail(),
+    body('otp')
+      .notEmpty()
+      .withMessage('OTP is required')
+      .isLength({ min: 6, max: 6 })
+      .withMessage('OTP must be 6 digits'),
+    body('newPassword')
+      .isLength({ min: 6 })
+      .withMessage('Password must be at least 6 characters'),
+  ],
+  validate,
+  resetPassword
+);
 
 export default router;

@@ -4,83 +4,156 @@ import logger from '../utils/logger.js';
 
 async function seedDatabase() {
   try {
-    logger.info('🌱 Starting database seed...');
+    logger.info(' Starting database seed...');
 
-    // Check if super admin already exists
-    const existingAdmin = await prisma.user.findUnique({
-      where: { email: 'admin@railway.com' },
-    });
-
-    if (existingAdmin) {
-      logger.info('✅ Super admin already exists');
-      return;
-    }
-
-    // Create super admin
     const hashedPassword = await bcrypt.hash('Admin@123', 12);
-    
-    const superAdmin = await prisma.user.create({
-      data: {
-        employeeId: 'ADMIN001',
-        name: 'Super Admin',
+
+    // SUPERADMIN - gets all alerts
+    const superAdmin = await prisma.user.upsert({
+      where: { email: 'admin@railway.com' },
+      update: {},
+      create: {
+        employeeId: 'SA001',
+        name: 'Rajesh Kumar',
         email: 'admin@railway.com',
+        phone: '+91-9876543210',
         password: hashedPassword,
         role: 'SUPERADMIN',
         status: 'ACTIVE',
         isVerified: true,
         verifiedAt: new Date(),
-        division: 'Administration',
-        designation: 'System Administrator',
+        division: 'CENTRAL',
+        designation: 'X',
+        priority: 2,
       },
     });
 
-    logger.info('✅ Super admin created');
-    logger.info(`   Email: admin@railway.com`);
-    logger.info(`   Password: Admin@123`);
+    logger.info(` SUPERADMIN created: ${superAdmin.name}`);
+    logger.info(`   Email: admin@railway.com | Password: Admin@123`);
 
-    // Create regular admin
-    const admin = await prisma.user.create({
-      data: {
-        employeeId: 'ADMIN002',
-        name: 'Admin User',
-        email: 'admin2@railway.com',
+    // ADMIN - Designation X (all alerts)
+    const adminX = await prisma.user.upsert({
+      where: { email: 'admin.x@railway.com' },
+      update: {},
+      create: {
+        employeeId: 'ADM001',
+        name: 'Priya Singh',
+        email: 'admin.x@railway.com',
+        phone: '+91-9876543211',
         password: hashedPassword,
         role: 'ADMIN',
         status: 'ACTIVE',
         isVerified: true,
         verifiedAt: new Date(),
-        division: 'Operations',
-        designation: 'Operations Manager',
+        division: 'CENTRAL',
+        designation: 'X',
+        priority: 1,
       },
     });
 
-    logger.info('✅ Regular admin created');
-    logger.info(`   Email: admin2@railway.com`);
-    logger.info(`   Password: Admin@123`);
+    logger.info(` ADMIN (Designation X - All Alerts) created: ${adminX.name}`);
+    logger.info(`   Email: admin.x@railway.com | Password: Admin@123`);
 
-    // Create regular user
-    const user = await prisma.user.create({
-      data: {
-        employeeId: 'USER001',
-        name: 'Regular User',
-        email: 'user@railway.com',
+    // ADMIN - Designation Y (10HR+ alerts)
+    const adminY = await prisma.user.upsert({
+      where: { email: 'admin.y@railway.com' },
+      update: {},
+      create: {
+        employeeId: 'ADM002',
+        name: 'Amit Patel',
+        email: 'admin.y@railway.com',
+        phone: '+91-9876543212',
         password: hashedPassword,
-        role: 'USER',
+        role: 'ADMIN',
         status: 'ACTIVE',
         isVerified: true,
         verifiedAt: new Date(),
-        division: 'Operations',
-        designation: 'Shift Coordinator',
+        division: 'CENTRAL',
+        designation: 'Y',
+        priority: 1,
       },
     });
 
-    logger.info('✅ Regular user created');
-    logger.info(`   Email: user@railway.com`);
-    logger.info(`   Password: Admin@123`);
+    logger.info(` ADMIN (Designation Y - 10HR+ Alerts) created: ${adminY.name}`);
+    logger.info(`   Email: admin.y@railway.com | Password: Admin@123`);
 
-    logger.info('🎉 Database seeded successfully!');
+    // ADMIN - Designation Z (12HR+ alerts)
+    const adminZ = await prisma.user.upsert({
+      where: { email: 'admin.z@railway.com' },
+      update: {},
+      create: {
+        employeeId: 'ADM003',
+        name: 'Deepak Verma',
+        email: 'admin.z@railway.com',
+        phone: '+91-9876543213',
+        password: hashedPassword,
+        role: 'ADMIN',
+        status: 'ACTIVE',
+        isVerified: true,
+        verifiedAt: new Date(),
+        division: 'CENTRAL',
+        designation: 'Z',
+        priority: 0,
+      },
+    });
+
+    logger.info(` ADMIN (Designation Z - 12HR+ Alerts) created: ${adminZ.name}`);
+    logger.info(`   Email: admin.z@railway.com | Password: Admin@123`);
+
+    // ADMIN - Different division, Designation X
+    const adminNorthX = await prisma.user.upsert({
+      where: { email: 'admin.north@railway.com' },
+      update: {},
+      create: {
+        employeeId: 'ADM004',
+        name: 'Neha Sharma',
+        email: 'admin.north@railway.com',
+        phone: '+91-9876543214',
+        password: hashedPassword,
+        role: 'ADMIN',
+        status: 'ACTIVE',
+        isVerified: true,
+        verifiedAt: new Date(),
+        division: 'NORTHERN',
+        designation: 'X',
+        priority: 1,
+      },
+    });
+
+    logger.info(`ADMIN (Northern Division, X) created: ${adminNorthX.name}`);
+    logger.info(`   Email: admin.north@railway.com | Password: Admin@123`);
+
+    // ADMIN - Different division, Designation Y
+    const adminNorthY = await prisma.user.upsert({
+      where: { email: 'admin.north.y@railway.com' },
+      update: {},
+      create: {
+        employeeId: 'ADM005',
+        name: 'Vikram Singh',
+        email: 'admin.north.y@railway.com',
+        phone: '+91-9876543215',
+        password: hashedPassword,
+        role: 'ADMIN',
+        status: 'ACTIVE',
+        isVerified: true,
+        verifiedAt: new Date(),
+        division: 'NORTHERN',
+        designation: 'Y',
+        priority: 0,
+      },
+    });
+
+    logger.info(` ADMIN (Northern Division, Y) created: ${adminNorthY.name}`);
+    logger.info(`   Email: admin.north.y@railway.com | Password: Admin@123`);
+
+    logger.info(' Database seeded successfully with designation-based alert hierarchy!');
+    logger.info('\n📋 Alert Hierarchy:');
+    logger.info('   • SUPERADMIN: Gets ALL alerts (7HR+)');
+    logger.info('   • ADMIN with X: Gets ALL alerts (7HR+)');
+    logger.info('   • ADMIN with Y: Gets 10HR+ alerts');
+    logger.info('   • ADMIN with Z: Gets 12HR+ alerts');
   } catch (error) {
-    logger.error('❌ Error seeding database:', error);
+    logger.error(' Error seeding database:', error);
     throw error;
   }
 }

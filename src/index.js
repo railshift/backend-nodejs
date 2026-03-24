@@ -9,19 +9,52 @@ import { logConfiguration } from '../config.testing.js';
 
 // Initialize Database Connections
 
-async function connectDatabase() {
+const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+
+function getDatabaseHost() {
   try {
-    await prisma.$connect();
-    logger.info('Database connected successfully');
-  } catch (error) {
-    logger.error( 'Database connection failed:', error);
-    process.exit(1);
+    const databaseUrl = process.env.DATABASE_URL;
+    if (!databaseUrl) return 'unknown-host';
+    return new URL(databaseUrl).hostname;
+  } catch {
+    return 'unknown-host';
+  }
+}
+
+async function connectDatabase() {
+  const maxAttempts = parseInt(process.env.DB_CONNECT_MAX_RETRIES || '8', 10);
+  const baseDelayMs = parseInt(process.env.DB_CONNECT_RETRY_DELAY_MS || '2000', 10);
+  const dbHost = getDatabaseHost();
+
+  for (let attempt = 1; attempt <= maxAttempts; attempt += 1) {
+    try {
+      await prisma.$connect();
+      logger.info(`Database connected successfully (${dbHost})`);
+      return;
+    } catch (error) {
+      const isLastAttempt = attempt === maxAttempts;
+      const delayMs = Math.min(baseDelayMs * attempt, 15000);
+
+      logger.error(`Database connection failed (attempt ${attempt}/${maxAttempts})`, {
+        message: error?.message,
+        code: error?.code,
+        host: dbHost,
+      });
+
+      if (isLastAttempt) {
+        logger.error('Exhausted database connection retries. Shutting down.');
+        process.exit(1);
+      }
+
+      logger.warn(`Retrying database connection in ${delayMs}ms...`);
+      await sleep(delayMs);
+    }
   }
 }
 
 async function connectRedis() {
   // Check if Redis is enabled
-  if (!config.redis.enabled) {  // from config ; redis is optional for phase 1
+  if (!config.redis.enabled) {  // from config ;
     logger.info(' Redis disabled - running without cache');
     return;
   }
@@ -43,28 +76,20 @@ async function connectRedis() {
   }
 }
 
-// Start Server
-// =============
+
 
 async function startServer() {
   try {
     await connectDatabase();
 
-    // Seed database with default users ; already in utils/seed.js
-    if (config.features.seedOnStartup) {  //checking config that seed needed or not 
-      await seedDatabase();
-      logger.info('Seeded default data (seedOnStartup=true)');
-    } else {
-      logger.info('Skipping seed (seedOnStartup=false)');
-    }
 
-    // Connect to Redis (optional for phase 1)
+    // Connect to Redis 
     await connectRedis();
 
     // Log testing 
     logConfiguration(logger);
 
-    // Start shift monitoring job (optional for phase 1 )
+    // Start shift monitoring job 
     if (config.features.monitoringEnabled) {  ////checking config that needed or not 
       monitoringIntervalId = startShiftMonitoring(io);
       logger.info('Shift monitoring job started');
@@ -110,7 +135,7 @@ async function startServer() {
 let monitoringIntervalId = null;
 
 // Graceful Shutdown
-// ============================================
+
 
 async function gracefulShutdown(signal) {
   logger.info(`\n${signal} received. Starting graceful shutdown...`);
@@ -143,7 +168,7 @@ async function gracefulShutdown(signal) {
 }
 
 // Process Event Handlers
-// ============================================
+
 
 // Handle uncaught exceptions
 process.on('uncaughtException', (error) => {

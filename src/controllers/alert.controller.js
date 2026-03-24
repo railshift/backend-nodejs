@@ -12,7 +12,6 @@ export const submitAlertResponse = async (req, res) => {
     const { id: shiftId } = req.params;
     const { alertType, response, remarks } = req.body;
 
-    // Validate alert type
     const validAlertTypes = ['8HR', '9HR', '10HR', '11HR', '14HR'];
     if (!validAlertTypes.includes(alertType)) {
       return res.status(400).json({
@@ -21,7 +20,6 @@ export const submitAlertResponse = async (req, res) => {
       });
     }
 
-    // Validate response based on alert type
     const validResponses = {
       '8HR': ['PLAN_RELIEF', 'RELIEF_NOT_REQUIRED'],
       '9HR': ['CREW_RELIEVED', 'CREW_NOT_BOOKED'],
@@ -37,7 +35,6 @@ export const submitAlertResponse = async (req, res) => {
       });
     }
 
-    // Record the response and update shift
     const shift = await dutyHoursService.recordAlertResponse(
       shiftId,
       alertType,
@@ -45,7 +42,7 @@ export const submitAlertResponse = async (req, res) => {
       remarks
     );
 
-    // Emit socket event for real-time update
+    // emit  socket event for real-time update
     const io = req.app.get('io');
     io.emit('alertResponse', {
       shiftId: shift.id,
@@ -210,7 +207,7 @@ export const completeShiftController = async (req, res) => {
 
     const shift = await dutyHoursService.completeShift(shiftId, signOffData);
 
-    // Emit socket event
+// socket event 
     const io = req.app.get('io');
     io.emit('shiftCompleted', {
       shiftId: shift.id,

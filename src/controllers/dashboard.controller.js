@@ -12,8 +12,7 @@ export const getDashboardStats = async (req, res) => {
     const userId = req.user.id;
     const userRole = req.user.role;
 
-    // Get date ranges
-    const now = new Date();
+      const now = new Date();
     const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
     const thisWeekStart = new Date(today);
     thisWeekStart.setDate(today.getDate() - today.getDay()); // Start of week (Sunday)
@@ -29,7 +28,7 @@ export const getDashboardStats = async (req, res) => {
         }
       : {}; // Admin/SuperAdmin can see all
 
-    // 1. Total Shifts Statistics
+    // 1. Total Shifts  Statistics
     const [
       totalShifts,
       activeShifts,
@@ -134,7 +133,7 @@ export const getDashboardStats = async (req, res) => {
       )
     };
 
-    // 6. Duty Hours Statistics (only for completed shifts)
+    // 6. Duty Hours Statistics for competed shifts 
     const completedShiftsWithHours = await prisma.shift.findMany({
       where: {
         ...baseFilter,
@@ -317,7 +316,6 @@ export const getRecentActivities = async (req, res) => {
     const limitNum = parseInt(limit);
     const offsetNum = parseInt(offset);
 
-    // Base filter based on role
     const baseFilter = userRole === 'USER'
       ? {
           shift: {
@@ -329,10 +327,8 @@ export const getRecentActivities = async (req, res) => {
         }
       : {}; // Admin/SuperAdmin can see all
 
-    // Filter by activity type if specified
     const typeFilter = type ? { logType: type } : {};
 
-    // Get recent duty logs (activities)
     const activities = await prisma.dutyLog.findMany({
       where: {
         ...baseFilter,
@@ -362,7 +358,6 @@ export const getRecentActivities = async (req, res) => {
       skip: offsetNum
     });
 
-    // Get total count for pagination
     const totalCount = await prisma.dutyLog.count({
       where: {
         ...baseFilter,
@@ -430,7 +425,6 @@ export const getShiftTrends = async (req, res) => {
     const startDate = new Date();
     startDate.setDate(startDate.getDate() - daysNum);
 
-    // Base filter based on role
     const baseFilter = userRole === 'USER'
       ? {
           OR: [
@@ -440,7 +434,7 @@ export const getShiftTrends = async (req, res) => {
         }
       : {};
 
-    // Get shifts grouped by date
+
     const shifts = await prisma.shift.findMany({
       where: {
         ...baseFilter,
@@ -461,7 +455,6 @@ export const getShiftTrends = async (req, res) => {
     // Group by date
     const trendData = {};
     
-    // Initialize all dates
     for (let i = 0; i < daysNum; i++) {
       const date = new Date();
       date.setDate(date.getDate() - (daysNum - 1 - i));
@@ -477,7 +470,7 @@ export const getShiftTrends = async (req, res) => {
       };
     }
 
-    // Fill with actual data
+
     shifts.forEach(shift => {
       const dateKey = shift.createdAt.toISOString().split('T')[0];
       if (trendData[dateKey]) {
@@ -489,7 +482,7 @@ export const getShiftTrends = async (req, res) => {
       }
     });
 
-    // Calculate average duty hours per day
+
     for (const dateKey in trendData) {
       const dayShifts = shifts.filter(
         s => s.createdAt.toISOString().split('T')[0] === dateKey && s.dutyHours
@@ -535,7 +528,6 @@ export const getAlertsSummary = async (req, res) => {
     const userId = req.user.id;
     const userRole = req.user.role;
 
-    // Base filter based on role
     const baseFilter = userRole === 'USER'
       ? {
           OR: [
@@ -545,7 +537,6 @@ export const getAlertsSummary = async (req, res) => {
         }
       : {};
 
-    // Get current active shifts with alerts
     const activeShiftsWithAlerts = await prisma.shift.findMany({
       where: {
         ...baseFilter,
@@ -576,18 +567,25 @@ export const getAlertsSummary = async (req, res) => {
         alert14HrSent: true,
         alert14HrSentAt: true,
         alert14HrResponse: true,
+        locomotive: {
+          select: {
+            locomotiveNo: true
+          }
+        },
         locoPilot: {
           select: {
             name: true,
             employeeId: true,
-            phone: true
+            phone: true,
+            division: true
           }
         },
         trainManager: {
           select: {
             name: true,
             employeeId: true,
-            phone: true
+            phone: true,
+            division: true
           }
         }
       },
@@ -596,59 +594,59 @@ export const getAlertsSummary = async (req, res) => {
       }
     });
 
-    // Format alert data
-    const activeAlerts = activeShiftsWithAlerts
-      .map(shift => {
-        const alerts = [];
-        const dutyHours = calculateDutyHours(shift.signOnDateTime);
+    const alerts = [];
+    
+    activeShiftsWithAlerts.forEach(shift => {
+      const dutyHours = calculateDutyHours(shift.signOnDateTime);
 
-        // Collect all alerts for this shift
-        if (shift.alert7HrSent) alerts.push({ type: '7HR', sentAt: shift.alert7HrSentAt, response: null, requiresAction: false });
-        if (shift.alert8HrSent) alerts.push({ type: '8HR', sentAt: shift.alert8HrSentAt, response: shift.alert8HrResponse, requiresAction: !shift.alert8HrResponse });
-        if (shift.alert9HrSent) alerts.push({ type: '9HR', sentAt: shift.alert9HrSentAt, response: shift.alert9HrResponse, requiresAction: !shift.alert9HrResponse });
-        if (shift.alert10HrSent) alerts.push({ type: '10HR', sentAt: shift.alert10HrSentAt, response: shift.alert10HrResponse, requiresAction: !shift.alert10HrResponse });
-        if (shift.alert11HrSent) alerts.push({ type: '11HR', sentAt: shift.alert11HrSentAt, response: shift.alert11HrResponse, requiresAction: !shift.alert11HrResponse });
-        if (shift.alert14HrSent) alerts.push({ type: '14HR', sentAt: shift.alert14HrSentAt, response: shift.alert14HrResponse, requiresAction: !shift.alert14HrResponse });
+      const createAlert = (type, sentAt, response) => ({
+        id: `${shift.id}-${type}`,
+        shiftId: shift.id,
+        type: `DUTY_${type}`,
+        title: `${type} Alert - Train #${shift.trainNumber}`,
+        message: `Duty hours: ${dutyHours.toFixed(2)} - Action required`,
+        dutyHours: parseFloat(dutyHours.toFixed(2)),
+        targetDivision: shift.locoPilot?.division || shift.trainManager?.division || 'GENERAL',
+        status: 'SENT',
+        sentAt: sentAt,
+        createdAt: sentAt,
+        responseAction: response,
+        shift: {
+          trainNumber: shift.trainNumber,
+          trainName: shift.trainName,
+          section: shift.section,
+          status: shift.status,
+          locoPilot: shift.locoPilot?.name,
+          trainManager: shift.trainManager?.name,
+          locomotiveNo: shift.locomotive?.locomotiveNo || 'N/A'
+        }
+      });
 
-        return {
-          shift: {
-            id: shift.id,
-            trainNumber: shift.trainNumber,
-            trainName: shift.trainName,
-            section: shift.section,
-            status: shift.status,
-            currentDutyHours: parseFloat(dutyHours.toFixed(2)),
-            signOnDateTime: shift.signOnDateTime
-          },
-          crew: {
-            locoPilot: shift.locoPilot,
-            trainManager: shift.trainManager
-          },
-          alerts,
-          pendingResponses: alerts.filter(a => a.requiresAction).length
-        };
-      })
-      .filter(item => item.alerts.length > 0); // Only include shifts with alerts
+      if (shift.alert7HrSent) alerts.push(createAlert('7HR', shift.alert7HrSentAt, null));
+      if (shift.alert8HrSent) alerts.push(createAlert('8HR', shift.alert8HrSentAt, shift.alert8HrResponse));
+      if (shift.alert9HrSent) alerts.push(createAlert('9HR', shift.alert9HrSentAt, shift.alert9HrResponse));
+      if (shift.alert10HrSent) alerts.push(createAlert('10HR', shift.alert10HrSentAt, shift.alert10HrResponse));
+      if (shift.alert11HrSent) alerts.push(createAlert('11HR', shift.alert11HrSentAt, shift.alert11HrResponse));
+      if (shift.alert14HrSent) alerts.push(createAlert('14HR', shift.alert14HrSentAt, shift.alert14HrResponse));
+    });
 
-    // Calculate summary statistics
-    const summary = {
-      totalActiveShifts: activeShiftsWithAlerts.length,
-      shiftsWithAlerts: activeAlerts.length,
-      totalActiveAlerts: activeAlerts.reduce((sum, item) => sum + item.alerts.length, 0),
-      pendingResponses: activeAlerts.reduce((sum, item) => sum + item.pendingResponses, 0),
-      criticalShifts: activeAlerts.filter(item => 
-        item.shift.currentDutyHours >= 11 || 
-        item.alerts.some(a => a.type === '11HR' || a.type === '14HR')
-      ).length
-    };
+    alerts.sort((a, b) => {
+      if (b.dutyHours !== a.dutyHours) {
+        return b.dutyHours - a.dutyHours;
+      }
+      return new Date(b.sentAt) - new Date(a.sentAt);
+    });
 
-    logger.info(`Alert summary retrieved for user ${userId}`);
+    logger.info(`Alert summary retrieved for user ${userId}: ${alerts.length} alerts`);
 
     res.status(200).json({
       success: true,
       data: {
-        summary,
-        activeAlerts
+        alerts,
+        totalAlerts: alerts.length,
+        pendingResponses: alerts.filter(a => !a.responseAction && 
+          (a.type === 'DUTY_8HR' || a.type === 'DUTY_9HR' || a.type === 'DUTY_11HR' || a.type === 'DUTY_14HR')
+        ).length
       }
     });
   } catch (error) {

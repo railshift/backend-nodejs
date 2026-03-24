@@ -53,9 +53,31 @@ export const getCurrentUser = asyncHandler(async (req, res) => {
 // Logout
 export const logout = asyncHandler(async (req, res) => {
   // In a Redis setup, we would blacklist the token here
-  
+  // TODO: REdis #rana8256
   res.status(200).json({
     success: true,
     message: 'Logout successful',
+  });
+});
+
+// Forgot Password
+export const forgotPassword = asyncHandler(async (req, res) => {
+  const { email } = req.body;
+  const result = await authService.forgotPassword(email);
+
+  res.status(200).json({
+    success: true,
+    message: result.message,
+  });
+});
+
+// Reset Password
+export const resetPassword = asyncHandler(async (req, res) => {
+  const { email, otp, newPassword } = req.body;
+  const result = await authService.resetPassword(email, otp, newPassword);
+
+  res.status(200).json({
+    success: true,
+    message: result.message,
   });
 });

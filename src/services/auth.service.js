@@ -63,7 +63,7 @@ class AuthService {
           designation,
           role: requestedRole, // User's requested role (pending approval)
           status: 'INACTIVE', // Inactive until approved
-          isVerified: false, // Requires admin approval (super admin only)
+          isVerified: false, // need admin approval (super admin only)
         },
         select: {
           id: true,
@@ -127,7 +127,7 @@ class AuthService {
 
       logger.info(`User logged in: ${user.email}`);
 
-      // Return user without password
+      // return user 
       const { password: _, ...userWithoutPassword } = user;
 
       return {
@@ -189,6 +189,88 @@ class AuthService {
       return user;
     } catch (error) {
       logger.error('Get current user error:', error);
+      throw error;
+    }
+  }
+
+  // Forgot Password - Generate OTP
+  async forgotPassword(email) {
+    try {
+      const user = await prisma.user.findUnique({
+        where: { email },
+      });
+
+      if (!user) {
+        logger.info(`Forgot password attempt for non-existent email: ${email}`);
+        return { message: 'If the email exists, an OTP has been sent' };
+      }
+
+      // Generate 6-digit OTP
+      const otp = Math.floor(100000 + Math.random() * 900000).toString();
+      const otpExpiry = new Date(Date.now() + 10 * 60 * 1000); // 10 minutes
+
+      // Save OTP to database
+      await prisma.user.update({
+        where: { id: user.id },
+        data: {
+          resetOtp: otp,
+          resetOtpExpiry: otpExpiry,
+        },
+      });
+
+      // Console log OTP for now (instead of sending email)
+      console.log('PASSWORD RESET OTP');
+      console.log(`Email: ${email}`);
+      console.log(`OTP: ${otp}`);
+      console.log(`Expires at: ${otpExpiry.toLocaleString()}`);
+      logger.info(`Password reset OTP generated for user: ${email}`);
+
+      return { message: 'If the email exists, an OTP has been sent' };
+    } catch (error) {
+      logger.error('Forgot password error:', error);
+      throw error;
+    }
+  }
+
+  // Reset Password with OTP
+  async resetPassword(email, otp, newPassword) {
+    try {
+      const user = await prisma.user.findUnique({
+        where: { email },
+      });
+
+      if (!user) {
+        throw new ApiError(400, 'Invalid email or OTP');
+      }
+
+      // Check if OTP exists and matches
+      if (!user.resetOtp || user.resetOtp !== otp) {
+        throw new ApiError(400, 'Invalid email or OTP');
+      }
+
+      // Check if OTP has expired
+      if (!user.resetOtpExpiry || new Date() > user.resetOtpExpiry) {
+        throw new ApiError(400, 'OTP has expired. Please request a new one');
+      }
+
+      // Hash new password
+      const hashedPassword = await bcrypt.hash(newPassword, 12);
+
+      // Update password and clear OTP fields
+      await prisma.user.update({
+        where: { id: user.id },
+        data: {
+          password: hashedPassword,
+          resetOtp: null,
+          resetOtpExpiry: null,
+        },
+      });
+
+      logger.info(`Password reset successfully for user: ${email}`);
+
+      return { message: 'Password has been reset successfully' };
+    } catch (error) {
+      logger.error('Reset password error:', error);
       throw error;
     }
   }

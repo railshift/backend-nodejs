@@ -39,11 +39,11 @@ export const config = {
 
   // CORS
   cors: {
-    // Allow listed origins and local development
     origin: (origin, callback) => {
       const allowed = [
         'https://railway-project-frontend.vercel.app',
         'http://localhost:3000',
+        'http://localhost:5173',
         'http://127.0.0.1:3000',
       ];
       if (!origin || allowed.includes(origin)) return callback(null, true);
@@ -73,17 +73,14 @@ export const config = {
     port: parseInt(process.env.PROMETHEUS_PORT, 10) || 9090,
   },
 
-  // Feature flags (Phase 1: keep simple REST only)
+  // to manage diff features , better testing , 1 by 1
   features: {
-    // Disable background monitoring job unless enabled
     monitoringEnabled: process.env.MONITORING_ENABLED === 'true',
-    // Disable socket.io unless  enabled
     socketEnabled: process.env.SOCKET_ENABLED === 'true',
-    // Run seed script automatically on server start
-    seedOnStartup: process.env.SEED_ON_STARTUP === 'true',
+    seedOnStartup: process.env.SEED_ON_STARTUP === 'false',
   },
 
-  // Notification Thresholds (in hours)
+//(in hours)
   dutyAlerts: {
     alert8Hr: parseInt(process.env.DUTY_ALERT_8HR, 10) || 8,
     alert9Hr: parseInt(process.env.DUTY_ALERT_9HR, 10) || 9,
@@ -98,7 +95,6 @@ export const config = {
   },
 };
 
-// Validate required environment variables
 const requiredEnvVars = [
   'DATABASE_URL',
   'JWT_ACCESS_SECRET',

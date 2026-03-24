@@ -1,6 +1,7 @@
 import jwt from 'jsonwebtoken';
 import config from '../config/config.js';
 import logger from '../utils/logger.js';
+import prisma from '../config/database.js';
 import { socketConnections } from '../config/metrics.js';
 
 // Connected users map
@@ -27,18 +28,36 @@ export const initializeSocket = (io) => {
   });
 
   // Connection handler
-  io.on('connection', (socket) => {
-    logger.info(`✅ Socket connected: ${socket.id} | User: ${socket.userId}`);
+  io.on('connection', async (socket) => {
+    logger.info(`Socket connected: ${socket.id} | User: ${socket.userId}`);
 
     // Add to connected users
     connectedUsers.set(socket.userId, socket.id);
     socketConnections.inc();
+
+    // Get user details including division
+    let userDivision = null;
+    try {
+      const user = await prisma.user.findUnique({
+        where: { id: socket.userId },
+        select: { division: true },
+      });
+      userDivision = user?.division;
+    } catch (error) {
+      logger.error('Failed to fetch user division:', error);
+    }
 
     // Join user-specific room
     socket.join(`user:${socket.userId}`);
 
     // Join role-specific room
     socket.join(`role:${socket.userRole}`);
+
+    // Join division-specific room (for admins)
+    if (userDivision && ['ADMIN', 'SUPERADMIN'].includes(socket.userRole)) {
+      socket.join(`division:${userDivision}`);
+      logger.info(`User ${socket.userId} joined division room: ${userDivision}`);
+    }
 
     // Send welcome message
     socket.emit('connected', {
@@ -100,7 +119,7 @@ export const initializeSocket = (io) => {
 
     // Disconnection handler
     socket.on('disconnect', (reason) => {
-      logger.info(`❌ Socket disconnected: ${socket.id} | Reason: ${reason}`);
+      logger.info(` Socket disconnected: ${socket.id} | Reason: ${reason}`);
       connectedUsers.delete(socket.userId);
       socketConnections.dec();
     });

@@ -16,10 +16,10 @@ class RedisClient {
         password: config.redis.password,
         db: config.redis.db,
         retryStrategy: (times) => {
-          // Stop retrying after 3 attempts
+          // Stop retrying
           if (times > 3) {
             logger.warn('Redis connection failed after 3 attempts. Running without Redis.');
-            return null; // Stop retrying
+            return null; 
           }
           const delay = Math.min(times * 1000, 3000);
           return delay;
@@ -37,7 +37,6 @@ class RedisClient {
 
       this.client.on('error', (error) => {
         this.isConnected = false;
-        // Only log once, not continuously
         if (!this.errorLogged) {
           logger.warn('Redis not available - running without cache');
           this.errorLogged = true;
@@ -46,11 +45,10 @@ class RedisClient {
 
       this.client.on('close', () => {
         this.isConnected = false;
-        // Suppress continuous close messages
       });
 
       this.client.on('reconnecting', () => {
-        // Suppress continuous reconnect messages
+      // TODO : check here #rana8256
       });
 
       return this.client;
@@ -74,7 +72,6 @@ class RedisClient {
     }
   }
 
-  // Helper methods for common operations
   async set(key, value, expirySeconds = null) {
     try {
       if (expirySeconds) {
@@ -191,7 +188,7 @@ class RedisClient {
 
 const redisClient = new RedisClient();
 
-// Graceful shutdown
+// shutdown
 process.on('beforeExit', async () => {
   await redisClient.disconnect();
 });

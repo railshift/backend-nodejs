@@ -23,7 +23,7 @@ import dashboardRoutes from './routes/dashboard.routes.js';
 const app = express();
 const httpServer = createServer(app);
 
-// Initialize Socket.io (Not for Phase 1 , for phase 2 )
+// Initialize Socket.io 
 let io = null;
 if (config.features.socketEnabled) {  //checking config that socket enabled or not 
   io = new Server(httpServer, {
@@ -43,7 +43,7 @@ if (config.features.socketEnabled) {  //checking config that socket enabled or n
 }
 
 // Security Middleware
-// ============================================
+// TODO #rana8258 = Enhance Helmet configuration for stricter security policies
 
 // Helmet 
 app.use(
@@ -80,23 +80,20 @@ if (config.env === 'development') {
 }
 
 // Prometheus metrics middleware
+// TODO : #rana8257
 app.use(metricsMiddleware);
 
-// ============================================
+
 // Body Parser Middleware
 
 app.use(express.json({ limit: '10mb' }));
 app.use(express.urlencoded({ extended: true, limit: '10mb' }));
 
-// Rate Limiting
-// ============================================
 
 // Apply rate limiting to all routes
 app.use('/api', apiLimiter);
 
 
-// Health Check & Metrics
-// ============================================
 
 app.get('/health', (req, res) => {
   res.status(200).json({
@@ -117,8 +114,6 @@ app.get('/metrics', async (req, res) => {
   }
 });
 
-// API Routes
-// ============================================
 
 const API_PREFIX = `/api/${config.apiVersion}`;
 
@@ -137,8 +132,6 @@ app.use(`${API_PREFIX}/shifts`, shiftRoutes);
 app.use(`${API_PREFIX}/users`, userRoutes);
 app.use(`${API_PREFIX}/dashboard`, dashboardRoutes);
 
-// Error Handling
-// ============================================
 
 // 404 handler
 app.use(notFound);

@@ -1,5 +1,6 @@
 import * as dutyHoursService from '../services/dutyHours.service.js';
 import logger from '../utils/logger.js';
+import prisma from '../config/database.js';
 import { TESTING_MODE, MONITORING_INTERVAL, TIME_UNIT } from '../../config.testing.js';
 
 /**
@@ -7,9 +8,8 @@ import { TESTING_MODE, MONITORING_INTERVAL, TIME_UNIT } from '../../config.testi
  */
 export const monitorShifts = async (io) => {
   try {
-    logger.info(`🔍 Running shift monitoring job... (${TIME_UNIT} mode)`);
+    logger.info(` Running shift monitoring job... (${TIME_UNIT} mode)`);
 
-    // Get all active shifts
     const activeShifts = await dutyHoursService.getActiveShifts();
 
     if (activeShifts.length === 0) {
@@ -21,25 +21,69 @@ export const monitorShifts = async (io) => {
 
     for (const shift of activeShifts) {
       try {
-        // Calculate current duty hours
         const dutyHours = dutyHoursService.calculateDutyHours(shift.signOnDateTime);
+
+        // Update dutyHours in database , in each monitoring 
+        await prisma.shift.update({
+          where: { id: shift.id },
+          data: { dutyHours },
+        });
 
         // Check which alerts need to be sent
         const alerts = dutyHoursService.checkAlertThreshold(dutyHours, shift);
 
         for (const alert of alerts) {
-          // Send alert via socket.io
-          await sendAlert(io, shift, alert, dutyHours);
+          // Get target admins BEFORE sending alert
+          // TODO : not working correctly for user designations 
+          const division = shift.locoPilot.division || shift.trainManager.division || 'GENERAL';
+          const allAdmins = await prisma.user.findMany({
+            where: {
+              role: { in: ['ADMIN', 'SUPERADMIN'] },
+              status: 'ACTIVE',
+              isVerified: true,
+              division: division,
+            },
+            select: {
+              id: true,
+              name: true,
+              employeeId: true,
+              role: true,
+              designation: true,
+              priority: true,
+              division: true,
+            },
+            orderBy: { priority: 'desc' },
+          });
 
-          // Mark alert as sent in database
-          await dutyHoursService.markAlertAsSent(shift.id, alert.type);
+          // Filter admins based on designation (X, Y, Z for now) threshold
+          const targetAdmins = allAdmins.filter(admin => {
+            if (admin.role === 'SUPERADMIN') return true;
+            if (admin.role === 'ADMIN' && admin.designation) {
+              const threshold = getAlertThresholdForDesignation(admin.designation);
+              return dutyHours >= threshold;
+            }
+            return false;
+          });
 
-          // Create duty log entry
-          await dutyHoursService.createAlertLog(shift, alert.type, dutyHours);
+          // Only send alert if there are admins to receive it
+          if (targetAdmins.length > 0) {
+            // Send alert via socket.io
+            await sendAlert(io, shift, alert, dutyHours, targetAdmins, division);
 
-          logger.info(
-            `🚨 Alert sent: ${alert.type} for shift ${shift.id} (Train: ${shift.trainNumber}, Duty ${TIME_UNIT}: ${dutyHours})`
-          );
+            // Mark alert as sent in database (update shift record)
+            await dutyHoursService.markAlertAsSent(shift.id, alert.type);
+
+            // ++ duty log entry
+            await dutyHoursService.createAlertLog(shift, alert.type, dutyHours);
+
+            logger.info(
+              ` Alert sent: ${alert.type} for shift ${shift.id} (Train: ${shift.trainNumber}, Duty ${TIME_UNIT}: ${dutyHours}, Recipients: ${targetAdmins.length})`
+            );
+          } else {
+            logger.info(
+              ` Alert suppressed: ${alert.type} for shift ${shift.id} - no admins qualified (dutyHours=${dutyHours})`
+            );
+          }
         }
       } catch (error) {
         logger.error(`Error monitoring shift ${shift.id}:`, error);
@@ -53,9 +97,35 @@ export const monitorShifts = async (io) => {
 };
 
 /**
+ * Get alert threshold for admin designation
+ * X designation: all alerts (7HR+)
+ * Y designation: 10HR alerts and above
+ * Z designation: 12HR alerts and above
+ */
+const getAlertThresholdForDesignation = (designation) => {
+  const thresholds = {
+    'X': 7,   // All alerts from 7HR++
+    'Y': 10,  // Alerts >= 10HR
+    'Z': 12,  // Alerts >=   12HR
+  };
+  return thresholds[designation] || 7; // Default to 7 if unknown
+};
+
+/**
+ * Check if admin should receive alert based on designation and duty hours
+ */
+const shouldAdminReceiveAlert = (adminDesignation, dutyHours) => {
+  const threshold = getAlertThresholdForDesignation(adminDesignation);
+  const shouldReceive = dutyHours >= threshold;
+  logger.info(`Checking admin designation ${adminDesignation}: dutyHours=${dutyHours}, threshold=${threshold}, shouldReceive=${shouldReceive}`);
+  return shouldReceive;
+};
+
+/**
  * Send alert notification via socket.io
  */
-const sendAlert = async (io, shift, alert, dutyHours) => {
+const sendAlert = async (io, shift, alert, dutyHours, targetAdmins, division) => {
+
   const alertData = {
     shiftId: shift.id,
     trainNumber: shift.trainNumber,
@@ -63,27 +133,90 @@ const sendAlert = async (io, shift, alert, dutyHours) => {
     locomotiveNo: shift.locomotive.locomotiveNo,
     alertType: alert.type,
     dutyHours: dutyHours,
+    division: division,
     locoPilot: {
       name: shift.locoPilot.name,
       employeeId: shift.locoPilot.employeeId,
       phone: shift.locoPilot.phone,
+      division: shift.locoPilot.division,
     },
     trainManager: {
       name: shift.trainManager.name,
       employeeId: shift.trainManager.employeeId,
       phone: shift.trainManager.phone,
+      division: shift.trainManager.division,
     },
     signOnDateTime: shift.signOnDateTime,
     section: shift.section,
     timestamp: new Date(),
+    targetAdmins: targetAdmins.map(admin => ({
+      id: admin.id,
+      name: admin.name,
+      employeeId: admin.employeeId,
+      role: admin.role,
+      designation: admin.designation,
+      priority: admin.priority,
+    })),
     options: getAlertOptions(alert.type),
   };
 
-  // Emit to all connected clients (or specific room for admins)
-  io.emit('dutyAlert', alertData);
+  // Determine priority based on alert type
+  const priority = ['11HR', '14HR'].includes(alert.type) ? 2 : 
+                   ['9HR', '10HR'].includes(alert.type) ? 1 : 0;
 
-  // Also emit to specific shift room if exists
+  //  notification record in database
+  try {
+    await prisma.notification.create({
+      data: {
+        shiftId: shift.id,
+        type: alert.type.includes('8') ? 'DUTY_8HR' :
+              alert.type.includes('9') ? 'DUTY_9HR' :
+              alert.type.includes('11') ? 'DUTY_11HR' :
+              alert.type.includes('12') ? 'DUTY_12HR' :
+              alert.type.includes('14') ? 'DUTY_14HR' : 'CUSTOM',
+        title: `${alert.type} Alert - Train #${shift.trainNumber}`,
+        message: `Duty ${TIME_UNIT}: ${dutyHours.toFixed(2)} - ${getAlertOptions(alert.type).message}`,
+        dutyHours: dutyHours,
+        targetDivision: division,
+        targetUsers: targetAdmins.map(admin => admin.id),
+        priority: priority,
+        status: 'SENT',
+        sentAt: new Date(),
+        metadata: {
+          alertType: alert.type,
+          shift: {
+            trainNumber: shift.trainNumber,
+            locomotiveNo: shift.locomotive.locomotiveNo,
+            section: shift.section,
+          },
+          crew: {
+            locoPilot: shift.locoPilot.name,
+            trainManager: shift.trainManager.name,
+          },
+        },
+      },
+    });
+  } catch (error) {
+    logger.error('Failed to create notification record:', error);
+  }
+
+  // Emit alerts ONLY to filtered target admins based on designation threshold
+  // (remove role-based broadcasts to prevent bypass of designation filtering)
+  
+  // Emit to each target admin individually (based on designation and duty hours)
+  targetAdmins.forEach(admin => {
+    io.to(`user:${admin.id}`).emit('dutyAlert', {
+      ...alertData,
+      targetPriority: admin.priority,
+    });
+  });
+
+
   io.to(`shift:${shift.id}`).emit('dutyAlert', alertData);
+  
+  logger.info(
+    ` Alert sent to ${targetAdmins.length} filtered admins (Division: ${division}, Alert Type: ${alert.type}, Duty Hours: ${dutyHours})`
+  );
 };
 
 /**
@@ -152,10 +285,10 @@ export const startShiftMonitoring = (io) => {
     ? `${MONITORING_INTERVAL / 1000} seconds`
     : `${MONITORING_INTERVAL / 60000} minutes`;
 
-  logger.info(`🚀 Starting shift monitoring job (checking every ${intervalDisplay})`);
+  logger.info(` Starting shift monitoring job (checking every ${intervalDisplay})`);
   
   if (TESTING_MODE) {
-    logger.warn('⚠️  TESTING MODE: Using minutes instead of hours for alerts');
+    logger.warn('  TESTING MODE: Using minutes instead of hours for alerts');
   }
 
   // Run immediately on start
@@ -175,6 +308,6 @@ export const startShiftMonitoring = (io) => {
 export const stopShiftMonitoring = (intervalId) => {
   if (intervalId) {
     clearInterval(intervalId);
-    logger.info('⏹️  Shift monitoring job stopped');
+    logger.info('  Shift monitoring job stopped');
   }
 };

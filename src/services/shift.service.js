@@ -1,6 +1,7 @@
 import prisma from '../config/database.js';
 import logger from '../utils/logger.js';
 import ApiError from '../middleware/errorHandler.js';
+import * as dutyHoursService from './dutyHours.service.js';
 
 class ShiftService {
   // Find or create locomotive
@@ -18,7 +19,7 @@ class ShiftService {
             autoCreated: true,
           },
         });
-        logger.info(`✅ Locomotive created: ${locomotiveNo}`);
+        logger.info(` Locomotive created: ${locomotiveNo}`);
       }
 
       return locomotive;
@@ -46,7 +47,7 @@ class ShiftService {
             autoCreated: true,
           },
         });
-        logger.info(`✅ Staff created: ${name} (${employeeId})`);
+        logger.info(`Staff created: ${name} (${employeeId})`);
       } else {
         // Update name and phone if they have changed
         const updateData = {};
@@ -73,22 +74,18 @@ class ShiftService {
     }
   }
 
-  // Calculate duty hours from sign on time
+
   calculateDutyHours(signOnTime, currentTime = new Date()) {
-    const signOn = new Date(signOnTime);
-    const current = new Date(currentTime);
-    const diffMs = current - signOn;
-    const diffHours = diffMs / (1000 * 60 * 60);
-    return Math.max(0, diffHours);
+    const current = currentTime instanceof Date ? currentTime : new Date(currentTime);
+    return dutyHoursService.calculateDutyHours(signOnTime, current);
   }
 
   // Create shift
   async createShift(data, userId) {
     try {
-      // Find or create locomotive
+  
       const locomotive = await this.findOrCreateLocomotive(data.locomotiveNo);
 
-      // Find or create loco pilot
       const locoPilot = await this.findOrCreateStaff(
         data.locoPilot.employeeId,
         data.locoPilot.name,
@@ -96,7 +93,7 @@ class ShiftService {
         data.locoPilot.phone
       );
 
-      // Find or create train manager
+
       const trainManager = await this.findOrCreateStaff(
         data.trainManager.employeeId,
         data.trainManager.name,
@@ -104,7 +101,6 @@ class ShiftService {
         data.trainManager.phone
       );
 
-      // Check if staff are already on duty
       const activeShifts = await prisma.shift.findMany({
         where: {
           OR: [
@@ -134,7 +130,7 @@ class ShiftService {
         );
       }
 
-      // Calculate initial duty hours
+      // duty hours at shift adding 
       const dutyHours = this.calculateDutyHours(data.signOnDateTime);
 
       // Create shift
@@ -417,7 +413,6 @@ class ShiftService {
 
       // lobbySignOn/lobbySignOff removed from schema
 
-      // Handle shift completion with signOffDateTime
       if (data.signOffDateTime) {
         updateData.signOffDateTime = new Date(data.signOffDateTime);
         updateData.status = 'COMPLETED';
@@ -512,7 +507,7 @@ class ShiftService {
         },
       });
 
-      logger.info(`✅ Shift updated successfully: ${shiftId}`);
+      logger.info(` Shift updated successfully: ${shiftId}`);
       return updatedShift;
     } catch (error) {
       logger.error('Error updating shift:', error);
@@ -525,21 +520,35 @@ class ShiftService {
     try {
       const shift = await prisma.shift.findUnique({
         where: { id: shiftId },
+        include: {
+          locoPilot: true,
+          trainManager: true,
+        },
       });
 
       if (!shift) {
         throw new ApiError(404, 'Shift not found');
       }
 
+      // Update staff status to AVAILABLE if they were on duty
       if (shift.status === 'IN_PROGRESS') {
-        throw new ApiError(400, 'Cannot delete an in-progress shift');
+        await prisma.staff.updateMany({
+          where: {
+            id: {
+              in: [shift.locoPilotId, shift.trainManagerId],
+            },
+          },
+          data: {
+            status: 'AVAILABLE',
+          },
+        });
       }
 
       await prisma.shift.delete({
         where: { id: shiftId },
       });
 
-      logger.info(`✅ Shift deleted successfully: ${shiftId}`);
+      logger.info(` Shift deleted successfully: ${shiftId}`);
       return { message: 'Shift deleted successfully' };
     } catch (error) {
       logger.error('Error deleting shift:', error);

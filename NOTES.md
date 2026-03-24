@@ -15,10 +15,6 @@ Packages :
  prom-client
 
 
- docker:
- docker-compose up -d postgres redis
-
-
 Test  Credentials:
 
 Email	            Password	Role

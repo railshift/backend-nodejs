@@ -26,6 +26,12 @@ enum UserStatus {
   SUSPENDED
 }
 
+enum UserDesignation {
+  X
+  Y
+  Z
+}
+
 model User {
   id            String      @id @default(uuid())
   employeeId    String      @unique
@@ -39,14 +45,19 @@ model User {
   // Verification & Approval
   isVerified    Boolean     @default(false)
   verifiedAt    DateTime?
-  verifiedBy    String?     // Employee ID of SUPERADMIN who approved
+  verifiedBy    String?     // Employee ID of SUPERADMIN
   rejectedAt    DateTime?
-  rejectedBy    String?     // Employee ID of SUPERADMIN who rejected
+  rejectedBy    String?     // Employee ID of SUPERADMIN
   rejectionReason String?
   
   // Additional Info
-  division      String?     // Railway division/department
-  designation   String?     // Job designation
+  division      String?          // Railway division/department (important for alert routing)
+  designation   UserDesignation? // Alert notification designation (X, Y, Z)
+  priority      Int              @default(0) // Priority level for alert notifications (0=normal, 1=high, 2=urgent)
+  
+  // Password Reset
+  resetOtp      String?
+  resetOtpExpiry DateTime?
   
   createdAt     DateTime    @default(now())
   updatedAt     DateTime    @updatedAt
@@ -87,6 +98,7 @@ model Staff {
   phone           String?
   email           String?
   homeStation     String?
+  division        String?       // Railway division for alert routing
   status          StaffStatus   @default(AVAILABLE)
   
   // Auto-created during shift entry
@@ -172,7 +184,7 @@ model Shift {
   section           String
   
   // Duty Hours Calculation
-  dutyType          dutyType
+  dutyType          dutyType?
   dutyHours         Float?        // Calculated duty hours , after end of the shift
   
   // Status
@@ -300,6 +312,11 @@ model Notification {
   title           String
   message         String
   dutyHours       Float
+  
+  // Division-based routing
+  targetDivision  String?         // Target specific division
+  targetUsers     String[]        // Target specific user IDs
+  priority        Int             @default(0) // 0=normal, 1=high, 2=urgent
   
   status          NotificationStatus  @default(PENDING)
   sentAt          DateTime?

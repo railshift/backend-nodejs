@@ -1,16 +1,10 @@
-/**
- * ALERT CONFIGURATION (Production)
- * 
- * Phase 1: Monitoring/alerts disabled by default
- * Alert system will be activated in Phase 2
- */
+export const TESTING_MODE = process.env.TESTING_MODE === 'true';
 
-export const TESTING_MODE = false; // Always production
+// Monitoring interval
+export const MONITORING_INTERVAL = TESTING_MODE 
+  ? 30 * 1000  // 30 s in testing mode
+  : 5 * 60 * 1000; // 5 min in production
 
-// Monitoring interval: 5 minutes
-export const MONITORING_INTERVAL = 5 * 60 * 1000; // milliseconds
-
-// Alert thresholds in hours
 export const ALERT_THRESHOLDS = {
   '7HR': 7,
   '8HR': 8,
@@ -20,13 +14,19 @@ export const ALERT_THRESHOLDS = {
   '14HR': 14,
 };
 
-// Production time settings
-export const TIME_UNIT = 'hours';
-export const TIME_DIVISOR = 60 * 60 * 1000; // milliseconds to hours
+export const TIME_UNIT = TESTING_MODE ? 'minutes' : 'hours';
+export const TIME_DIVISOR = TESTING_MODE 
+  ? 60 * 1000  // mili --> s, hr
+  : 60 * 60 * 1000; 
 
-// Log configuration on startup (disabled - no verbose logging)
+// Log configuration on startup (on server start up first time)
 export const logConfiguration = (logger) => {
-  // Silent - no configuration logging needed
+  if (TESTING_MODE) {
+    logger.warn('  TESTING MODE ');
+    logger.warn('   Using MINUTES instead of HOURS for alerts');
+    logger.warn('   7 minutes = 7HR alert, 8 minutes = 8HR alert, etc.');
+    logger.warn(`   Monitoring interval: ${MONITORING_INTERVAL / 1000} seconds`);
+  }
 };
 
 export default {

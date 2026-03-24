@@ -1,9 +1,10 @@
 import promClient from 'prom-client';
+// Currently Not in use ; for later expansion 
 
-// Create a Registry
+// Registry
 const register = new promClient.Registry();
 
-// Add default metrics
+// default metrics
 promClient.collectDefaultMetrics({ register });
 
 // Custom metrics
@@ -54,7 +55,7 @@ export const socketConnections = new promClient.Gauge({
   help: 'Number of active socket connections',
 });
 
-// Register all metrics
+
 register.registerMetric(httpRequestDuration);
 register.registerMetric(httpRequestTotal);
 register.registerMetric(activeShifts);

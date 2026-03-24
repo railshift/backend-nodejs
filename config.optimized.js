@@ -1,37 +1,24 @@
-/**
- * OPTIMIZED MONITORING CONFIGURATION
- * 
- * This configuration includes various optimization strategies to minimize
- * resource usage and costs while maintaining alert reliability.
- */
+
 
 export const TESTING_MODE = process.env.TESTING_MODE === 'true' || false;
 
-// ============================================
-// MONITORING INTERVALS
-// ============================================
-
-// Standard intervals
+// Monitoring 
 export const MONITORING_INTERVAL = TESTING_MODE 
   ? parseInt(process.env.MONITORING_INTERVAL_SECONDS || '30') * 1000  // Default: 30 seconds
   : parseInt(process.env.MONITORING_INTERVAL_MINUTES || '5') * 60 * 1000; // Default: 5 minutes
 
-// Adaptive intervals (optional feature)
+// Adaptive intervals
 export const ADAPTIVE_MONITORING = process.env.ADAPTIVE_MONITORING === 'true' || false;
 
-// When no active shifts, check less frequently
 export const IDLE_INTERVAL = TESTING_MODE
-  ? 60 * 1000  // 60 seconds when idle (testing)
-  : 15 * 60 * 1000; // 15 minutes when idle (production)
+  ? 60 * 1000  // 60 Sec
+  : 15 * 60 * 1000; // 15 minutes)
 
-// When approaching alert threshold, check more frequently
 export const CRITICAL_INTERVAL = TESTING_MODE
-  ? 15 * 1000  // 15 seconds when critical (testing)
-  : 2 * 60 * 1000; // 2 minutes when critical (production)
+  ? 15 * 1000  // 15 s
+  : 2 * 60 * 1000; // 2 min
 
-// ============================================
 // ALERT THRESHOLDS
-// ============================================
 
 export const ALERT_THRESHOLDS = {
   '7HR': TESTING_MODE ? 7 : 7,
@@ -42,11 +29,8 @@ export const ALERT_THRESHOLDS = {
   '14HR': TESTING_MODE ? 14 : 14,
 };
 
-// ============================================
-// OPTIMIZATION FLAGS
-// ============================================
 
-// Skip monitoring during quiet hours (optional)
+// Skip monitoring during quiet hours
 export const QUIET_HOURS_ENABLED = process.env.QUIET_HOURS_ENABLED === 'true' || false;
 export const QUIET_HOURS_START = parseInt(process.env.QUIET_HOURS_START || '1'); // 1 AM
 export const QUIET_HOURS_END = parseInt(process.env.QUIET_HOURS_END || '5'); // 5 AM
@@ -54,23 +38,16 @@ export const QUIET_HOURS_INTERVAL = 30 * 60 * 1000; // Check every 30 minutes du
 
 // Cache recent checks to avoid redundant processing
 export const ENABLE_CACHE = process.env.ENABLE_MONITORING_CACHE === 'true' || true;
-export const CACHE_TTL = 60 * 1000; // 60 seconds
+export const CACHE_TTL = 60 * 1000; 
 
 // Database query optimization
 export const BATCH_SIZE = parseInt(process.env.MONITORING_BATCH_SIZE || '100'); // Process max 100 shifts per cycle
 
-// ============================================
 // TIME CALCULATIONS
-// ============================================
-
 export const TIME_UNIT = TESTING_MODE ? 'minutes' : 'hours';
 export const TIME_DIVISOR = TESTING_MODE 
-  ? (1000 * 60)        // milliseconds to minutes
-  : (1000 * 60 * 60);  // milliseconds to hours
-
-// ============================================
-// HELPER FUNCTIONS
-// ============================================
+  ? (1000 * 60)        // milis to minutes
+  : (1000 * 60 * 60);  
 
 /**
  * Check if current time is within quiet hours
@@ -84,7 +61,7 @@ export const isQuietHours = () => {
   if (QUIET_HOURS_START < QUIET_HOURS_END) {
     return hour >= QUIET_HOURS_START && hour < QUIET_HOURS_END;
   } else {
-    // Handles overnight quiet hours (e.g., 22:00 to 05:00)
+    // Handles overnight quiet hours 10 to 5 night
     return hour >= QUIET_HOURS_START || hour < QUIET_HOURS_END;
   }
 };
@@ -102,12 +79,11 @@ export const getMonitoringInterval = (activeShiftsCount = 0, hasApproachingThres
     return IDLE_INTERVAL;
   }
 
-  // Shifts approaching alert threshold - check more frequently
   if (hasApproachingThreshold) {
     return CRITICAL_INTERVAL;
   }
 
-  // Quiet hours - check less frequently
+  // Quiet hours
   if (isQuietHours()) {
     return QUIET_HOURS_INTERVAL;
   }
@@ -131,9 +107,7 @@ export const isApproachingThreshold = (dutyTime) => {
   return false;
 };
 
-// ============================================
-// COST ESTIMATION
-// ============================================
+
 
 export const getCostEstimation = () => {
   const checksPerHour = 3600000 / MONITORING_INTERVAL;
@@ -153,9 +127,6 @@ export const getCostEstimation = () => {
   };
 };
 
-// ============================================
-// CONFIGURATION DISPLAY
-// ============================================
 
 export const getDisplayConfig = () => ({
   mode: TESTING_MODE ? 'TESTING' : 'PRODUCTION',
@@ -185,9 +156,7 @@ export const logConfiguration = (logger) => {
   const config = getDisplayConfig();
   const cost = getCostEstimation();
   
-  logger.info('═══════════════════════════════════════════════════════');
   logger.info(`Alert System Configuration - ${config.mode} MODE`);
-  logger.info('═══════════════════════════════════════════════════════');
   logger.info(` Monitoring Interval: ${config.monitoringInterval}`);
   logger.info(`Time Unit: ${config.timeUnit.toUpperCase()}`);
   
@@ -216,7 +185,6 @@ export const logConfiguration = (logger) => {
   logger.info(`   • Checks/day: ${cost.checksPerDay}`);
   logger.info(`   • Checks/month: ${cost.checksPerMonth}`);
   logger.info(`   • DB queries/month: ~${cost.estimatedDBQueries}`);
-  logger.info('═══════════════════════════════════════════════════════');
   
   if (TESTING_MODE) {
     logger.warn('  WARNING: System is running in TESTING MODE');

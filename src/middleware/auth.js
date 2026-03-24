@@ -9,7 +9,7 @@ import redisClient from '../config/redis.js';
 export const authenticate = asyncHandler(async (req, res, next) => {
   let token;
 
-  // Get token from header
+  //  token from header
   if (
     req.headers.authorization &&
     req.headers.authorization.startsWith('Bearer')
@@ -22,10 +22,11 @@ export const authenticate = asyncHandler(async (req, res, next) => {
   }
 
   try {
-    // Verify token
+    // verify token
     const decoded = jwt.verify(token, config.jwt.accessSecret);
 
-    // Check if token is blacklisted (logged out) - only if Redis is enabled
+    // Check if token is blacklisted (logged out)
+    // TODO: #rana8256 Redis blacklist check --- Implement Redis blacklist for logout tokens
     if (config.redis.enabled && redisClient.isConnected) {
       try {
         const redis = redisClient.getClient();
@@ -73,7 +74,7 @@ export const authenticate = asyncHandler(async (req, res, next) => {
   }
 });
 
-// Authorization middleware - check for  user roles
+// authh middleware - check for  user roles
 export const authorize = (...roles) => {
   return (req, res, next) => {
     if (!req.user) {

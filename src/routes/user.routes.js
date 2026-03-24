@@ -17,7 +17,7 @@ import { validate } from '../middleware/validate.js';
 
 const router = express.Router();
 
-// All routes require authentication and SUPERADMIN role
+// alll routes ; authentication + SUPERADMIN role
 router.use(authenticate, authorize('SUPERADMIN'));
 
 /**

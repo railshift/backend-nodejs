@@ -7,20 +7,20 @@ const __dirname = path.dirname(__filename);
 
 const { combine, timestamp, printf, colorize, errors } = winston.format;
 
-// Custom log format
+// log format
 const logFormat = printf(({ level, message, timestamp, stack }) => {
   return `${timestamp} [${level}]: ${stack || message}`;
 });
 
-// Use /tmp for logs in production (required for Render), local logs directory otherwise
+// Use /tmp for logs in production (required for Render)
+// local logs directory otherwise
 const logDir = process.env.NODE_ENV === 'production' 
   ? '/tmp' 
   : path.join(__dirname, '../../logs');
 
-// Create transports array based on environment
 const transports = [];
 
-// Always add console in production for Render logs
+// add console in production for Render logs
 if (process.env.NODE_ENV === 'production') {
   transports.push(
     new winston.transports.Console({
@@ -31,7 +31,7 @@ if (process.env.NODE_ENV === 'production') {
     })
   );
 } else {
-  // In development, add file transports
+  // env =  development, add file transports
   transports.push(
     new winston.transports.File({
       filename: path.join(logDir, 'error.log'),
@@ -64,7 +64,7 @@ const logger = winston.createLogger({
     : [new winston.transports.File({ filename: path.join(logDir, 'rejections.log') })],
 });
 
-// If not in production, log to console with colorized output
+// env =  development, log to console with colorized output
 if (process.env.NODE_ENV !== 'production') {
   logger.add(
     new winston.transports.Console({

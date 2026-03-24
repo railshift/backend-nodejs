@@ -17,12 +17,6 @@
     "test:shift:7min": "node scripts/createTestShift.js 7",
     "test:shift:8min": "node scripts/createTestShift.js 8",
     "test:shift:14min": "node scripts/createTestShift.js 14",
-    "docker:build": "docker build -t railway-app:latest .",
-    "docker:up": "docker-compose up -d",
-    "docker:down": "docker-compose down",
-    "docker:logs": "docker-compose logs -f app",
-    "k8s:deploy": "kubectl apply -f k8s/",
-    "k8s:delete": "kubectl delete -f k8s/",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Rana Poddar",
