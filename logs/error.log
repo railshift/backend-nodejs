@@ -7267,3 +7267,572 @@ Invalid value for argument `trainArrivalDateTime`: Provided Date object is inval
     at $n (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/src/generated/prisma/runtime/library.js:33:5747)
     at /home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/src/generated/prisma/runtime/library.js:134:10104
     at Object.runInChildSpan (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/src/generated/prisma/runtime/library.js:125:1549)
+2026-06-15 14:49:16 [error]: Prisma Error: 
+Invalid `prisma.user.findUnique()` invocation:
+
+
+Can't reach database server at `ep-snowy-dust-am423xhp-pooler.c-5.us-east-1.aws.neon.tech:5432`
+
+Please make sure your database server is running at `ep-snowy-dust-am423xhp-pooler.c-5.us-east-1.aws.neon.tech:5432`.
+2026-06-15 14:49:16 [error]: PrismaClientKnownRequestError: 
+Invalid `prisma.user.findUnique()` invocation:
+
+
+Can't reach database server at `ep-snowy-dust-am423xhp-pooler.c-5.us-east-1.aws.neon.tech:5432`
+
+Please make sure your database server is running at `ep-snowy-dust-am423xhp-pooler.c-5.us-east-1.aws.neon.tech:5432`.
+    at ei.handleRequestError (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/src/generated/prisma/runtime/library.js:125:7268)
+    at ei.handleAndLogRequestError (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/src/generated/prisma/runtime/library.js:125:6593)
+    at ei.request (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/src/generated/prisma/runtime/library.js:125:6300)
+    at async a (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/src/generated/prisma/runtime/library.js:134:9551)
+    at async file:///home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/src/middleware/auth.js:44:18
+2026-06-15 14:49:16 [error]: Prisma Error: 
+Invalid `prisma.user.findUnique()` invocation:
+
+
+Can't reach database server at `ep-snowy-dust-am423xhp-pooler.c-5.us-east-1.aws.neon.tech:5432`
+
+Please make sure your database server is running at `ep-snowy-dust-am423xhp-pooler.c-5.us-east-1.aws.neon.tech:5432`.
+2026-06-15 14:49:16 [error]: PrismaClientKnownRequestError: 
+Invalid `prisma.user.findUnique()` invocation:
+
+
+Can't reach database server at `ep-snowy-dust-am423xhp-pooler.c-5.us-east-1.aws.neon.tech:5432`
+
+Please make sure your database server is running at `ep-snowy-dust-am423xhp-pooler.c-5.us-east-1.aws.neon.tech:5432`.
+    at ei.handleRequestError (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/src/generated/prisma/runtime/library.js:125:7268)
+    at ei.handleAndLogRequestError (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/src/generated/prisma/runtime/library.js:125:6593)
+    at ei.request (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/src/generated/prisma/runtime/library.js:125:6300)
+    at async a (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/src/generated/prisma/runtime/library.js:134:9551)
+    at async file:///home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/src/middleware/auth.js:44:18
+2026-06-15 15:06:08 [error]: Prisma Error: Error in PostgreSQL connection: Error { kind: Io, cause: Some(Os { code: 101, kind: NetworkUnreachable, message: "Network is unreachable" }) }
+2026-06-15 15:06:08 [error]: Prisma Error: 
+Invalid `prisma.shift.findMany()` invocation:
+
+
+Server has closed the connection.
+2026-06-15 15:06:08 [error]: PrismaClientKnownRequestError: 
+Invalid `prisma.shift.findMany()` invocation:
+
+
+Server has closed the connection.
+    at ei.handleRequestError (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/src/generated/prisma/runtime/library.js:125:7268)
+    at ei.handleAndLogRequestError (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/src/generated/prisma/runtime/library.js:125:6593)
+    at ei.request (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/src/generated/prisma/runtime/library.js:125:6300)
+    at async a (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/src/generated/prisma/runtime/library.js:134:9551)
+    at async getAlertsSummary (file:///home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/src/controllers/dashboard.controller.js:540:36)
+2026-06-15 15:11:40 [error]: Error: Connection is closed.
+    at RedisClient.disconnect (file:///home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/src/config/redis.js:70:25)
+    at gracefulShutdown (file:///home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/src/index.js:159:23)
+2026-06-15 15:15:25 [error]: TypeError: redisClient.ping is not a function
+    at file:///home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/src/app.js:109:35
+    at Layer.handleRequest (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/router/lib/layer.js:152:17)
+    at next (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/router/lib/route.js:157:13)
+    at Route.dispatch (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/router/lib/route.js:117:3)
+    at handle (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/router/index.js:435:11)
+    at Layer.handleRequest (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/router/lib/layer.js:152:17)
+    at /home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/router/index.js:295:15
+    at processParams (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/router/index.js:582:12)
+    at next (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/router/index.js:291:5)
+    at urlencodedParser (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/body-parser/lib/types/urlencoded.js:68:7)
+2026-06-16 00:06:31 [error]: Prisma Error: 
+Invalid `prisma.user.findUnique()` invocation:
+
+
+Can't reach database server at `ep-snowy-dust-am423xhp-pooler.c-5.us-east-1.aws.neon.tech:5432`
+
+Please make sure your database server is running at `ep-snowy-dust-am423xhp-pooler.c-5.us-east-1.aws.neon.tech:5432`.
+2026-06-16 00:06:31 [error]: PrismaClientKnownRequestError: 
+Invalid `prisma.user.findUnique()` invocation:
+
+
+Can't reach database server at `ep-snowy-dust-am423xhp-pooler.c-5.us-east-1.aws.neon.tech:5432`
+
+Please make sure your database server is running at `ep-snowy-dust-am423xhp-pooler.c-5.us-east-1.aws.neon.tech:5432`.
+    at ei.handleRequestError (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/src/generated/prisma/runtime/library.js:125:7268)
+    at ei.handleAndLogRequestError (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/src/generated/prisma/runtime/library.js:125:6593)
+    at ei.request (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/src/generated/prisma/runtime/library.js:125:6300)
+    at async a (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/src/generated/prisma/runtime/library.js:134:9551)
+    at async file:///home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/src/middleware/auth.js:44:18
+2026-06-16 00:08:51 [error]: Error: CORS blocked: origin not allowed
+    at origin (file:///home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/src/config/config.js:52:23)
+    at /home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/cors/lib/index.js:219:13
+    at optionsCallback (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/cors/lib/index.js:199:9)
+    at corsMiddleware (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/cors/lib/index.js:204:7)
+    at Layer.handleRequest (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/router/lib/layer.js:152:17)
+    at trimPrefix (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/router/index.js:342:13)
+    at /home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/router/index.js:297:9
+    at processParams (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/router/index.js:582:12)
+    at next (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/router/index.js:291:5)
+    at internalNext (file:///home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/helmet/index.mjs:527:6)
+2026-06-16 00:09:08 [error]: Error: CORS blocked: origin not allowed
+    at origin (file:///home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/src/config/config.js:52:23)
+    at /home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/cors/lib/index.js:219:13
+    at optionsCallback (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/cors/lib/index.js:199:9)
+    at corsMiddleware (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/cors/lib/index.js:204:7)
+    at Layer.handleRequest (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/router/lib/layer.js:152:17)
+    at trimPrefix (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/router/index.js:342:13)
+    at /home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/router/index.js:297:9
+    at processParams (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/router/index.js:582:12)
+    at next (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/router/index.js:291:5)
+    at internalNext (file:///home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/helmet/index.mjs:527:6)
+2026-06-16 00:09:26 [error]: Error: CORS blocked: origin not allowed
+    at origin (file:///home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/src/config/config.js:52:23)
+    at /home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/cors/lib/index.js:219:13
+    at optionsCallback (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/cors/lib/index.js:199:9)
+    at corsMiddleware (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/cors/lib/index.js:204:7)
+    at Layer.handleRequest (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/router/lib/layer.js:152:17)
+    at trimPrefix (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/router/index.js:342:13)
+    at /home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/router/index.js:297:9
+    at processParams (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/router/index.js:582:12)
+    at next (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/router/index.js:291:5)
+    at internalNext (file:///home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/helmet/index.mjs:527:6)
+2026-06-16 00:09:32 [error]: Error: CORS blocked: origin not allowed
+    at origin (file:///home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/src/config/config.js:52:23)
+    at /home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/cors/lib/index.js:219:13
+    at optionsCallback (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/cors/lib/index.js:199:9)
+    at corsMiddleware (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/cors/lib/index.js:204:7)
+    at Layer.handleRequest (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/router/lib/layer.js:152:17)
+    at trimPrefix (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/router/index.js:342:13)
+    at /home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/router/index.js:297:9
+    at processParams (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/router/index.js:582:12)
+    at next (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/router/index.js:291:5)
+    at internalNext (file:///home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/helmet/index.mjs:527:6)
+2026-06-16 00:09:34 [error]: Error: CORS blocked: origin not allowed
+    at origin (file:///home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/src/config/config.js:52:23)
+    at /home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/cors/lib/index.js:219:13
+    at optionsCallback (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/cors/lib/index.js:199:9)
+    at corsMiddleware (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/cors/lib/index.js:204:7)
+    at Layer.handleRequest (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/router/lib/layer.js:152:17)
+    at trimPrefix (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/router/index.js:342:13)
+    at /home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/router/index.js:297:9
+    at processParams (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/router/index.js:582:12)
+    at next (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/router/index.js:291:5)
+    at internalNext (file:///home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/helmet/index.mjs:527:6)
+2026-06-16 00:09:47 [error]: Error: CORS blocked: origin not allowed
+    at origin (file:///home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/src/config/config.js:52:23)
+    at /home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/cors/lib/index.js:219:13
+    at optionsCallback (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/cors/lib/index.js:199:9)
+    at corsMiddleware (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/cors/lib/index.js:204:7)
+    at Layer.handleRequest (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/router/lib/layer.js:152:17)
+    at trimPrefix (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/router/index.js:342:13)
+    at /home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/router/index.js:297:9
+    at processParams (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/router/index.js:582:12)
+    at next (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/router/index.js:291:5)
+    at internalNext (file:///home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/helmet/index.mjs:527:6)
+2026-06-16 00:09:54 [error]: Error: CORS blocked: origin not allowed
+    at origin (file:///home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/src/config/config.js:52:23)
+    at /home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/cors/lib/index.js:219:13
+    at optionsCallback (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/cors/lib/index.js:199:9)
+    at corsMiddleware (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/cors/lib/index.js:204:7)
+    at Layer.handleRequest (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/router/lib/layer.js:152:17)
+    at trimPrefix (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/router/index.js:342:13)
+    at /home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/router/index.js:297:9
+    at processParams (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/router/index.js:582:12)
+    at next (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/router/index.js:291:5)
+    at internalNext (file:///home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/helmet/index.mjs:527:6)
+2026-06-16 00:18:00 [error]: Error: CORS blocked: origin not allowed
+    at origin (file:///home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/src/config/config.js:52:23)
+    at /home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/cors/lib/index.js:219:13
+    at optionsCallback (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/cors/lib/index.js:199:9)
+    at corsMiddleware (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/cors/lib/index.js:204:7)
+    at Layer.handleRequest (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/router/lib/layer.js:152:17)
+    at trimPrefix (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/router/index.js:342:13)
+    at /home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/router/index.js:297:9
+    at processParams (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/router/index.js:582:12)
+    at next (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/router/index.js:291:5)
+    at internalNext (file:///home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/helmet/index.mjs:527:6)
+2026-06-16 00:18:04 [error]: Error: CORS blocked: origin not allowed
+    at origin (file:///home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/src/config/config.js:52:23)
+    at /home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/cors/lib/index.js:219:13
+    at optionsCallback (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/cors/lib/index.js:199:9)
+    at corsMiddleware (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/cors/lib/index.js:204:7)
+    at Layer.handleRequest (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/router/lib/layer.js:152:17)
+    at trimPrefix (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/router/index.js:342:13)
+    at /home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/router/index.js:297:9
+    at processParams (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/router/index.js:582:12)
+    at next (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/router/index.js:291:5)
+    at internalNext (file:///home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/helmet/index.mjs:527:6)
+2026-06-16 00:18:07 [error]: Error: CORS blocked: origin not allowed
+    at origin (file:///home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/src/config/config.js:52:23)
+    at /home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/cors/lib/index.js:219:13
+    at optionsCallback (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/cors/lib/index.js:199:9)
+    at corsMiddleware (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/cors/lib/index.js:204:7)
+    at Layer.handleRequest (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/router/lib/layer.js:152:17)
+    at trimPrefix (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/router/index.js:342:13)
+    at /home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/router/index.js:297:9
+    at processParams (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/router/index.js:582:12)
+    at next (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/router/index.js:291:5)
+    at internalNext (file:///home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/helmet/index.mjs:527:6)
+2026-06-16 00:23:16 [error]: Error: CORS blocked: origin not allowed
+    at origin (file:///home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/src/config/config.js:52:23)
+    at /home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/cors/lib/index.js:219:13
+    at optionsCallback (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/cors/lib/index.js:199:9)
+    at corsMiddleware (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/cors/lib/index.js:204:7)
+    at Layer.handleRequest (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/router/lib/layer.js:152:17)
+    at trimPrefix (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/router/index.js:342:13)
+    at /home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/router/index.js:297:9
+    at processParams (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/router/index.js:582:12)
+    at next (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/router/index.js:291:5)
+    at internalNext (file:///home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/helmet/index.mjs:527:6)
+2026-06-16 00:23:21 [error]: Error: CORS blocked: origin not allowed
+    at origin (file:///home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/src/config/config.js:52:23)
+    at /home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/cors/lib/index.js:219:13
+    at optionsCallback (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/cors/lib/index.js:199:9)
+    at corsMiddleware (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/cors/lib/index.js:204:7)
+    at Layer.handleRequest (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/router/lib/layer.js:152:17)
+    at trimPrefix (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/router/index.js:342:13)
+    at /home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/router/index.js:297:9
+    at processParams (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/router/index.js:582:12)
+    at next (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/router/index.js:291:5)
+    at internalNext (file:///home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/helmet/index.mjs:527:6)
+2026-06-16 00:24:41 [error]: Error: CORS blocked: origin not allowed
+    at origin (file:///home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/src/config/config.js:52:23)
+    at /home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/cors/lib/index.js:219:13
+    at optionsCallback (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/cors/lib/index.js:199:9)
+    at corsMiddleware (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/cors/lib/index.js:204:7)
+    at Layer.handleRequest (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/router/lib/layer.js:152:17)
+    at trimPrefix (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/router/index.js:342:13)
+    at /home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/router/index.js:297:9
+    at processParams (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/router/index.js:582:12)
+    at next (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/router/index.js:291:5)
+    at internalNext (file:///home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/helmet/index.mjs:527:6)
+2026-06-16 00:24:52 [error]: Error: CORS blocked: origin not allowed
+    at origin (file:///home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/src/config/config.js:52:23)
+    at /home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/cors/lib/index.js:219:13
+    at optionsCallback (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/cors/lib/index.js:199:9)
+    at corsMiddleware (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/cors/lib/index.js:204:7)
+    at Layer.handleRequest (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/router/lib/layer.js:152:17)
+    at trimPrefix (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/router/index.js:342:13)
+    at /home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/router/index.js:297:9
+    at processParams (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/router/index.js:582:12)
+    at next (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/router/index.js:291:5)
+    at internalNext (file:///home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/helmet/index.mjs:527:6)
+2026-06-16 00:29:48 [error]: Error: Route /admin/queues/queue/ not found
+    at notFound (file:///home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/src/middleware/errorHandler.js:43:17)
+    at Layer.handleRequest (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/router/lib/layer.js:152:17)
+    at trimPrefix (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/router/index.js:342:13)
+    at /home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/router/index.js:297:9
+    at processParams (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/router/index.js:582:12)
+    at next (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/router/index.js:291:5)
+    at Immediate.<anonymous> (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/express/lib/application.js:235:9)
+    at Immediate._onImmediate (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/router/index.js:688:15)
+    at process.processImmediate (node:internal/timers:506:21)
+2026-06-16 01:07:27 [error]: Prisma Error: 
+Invalid `prisma.notification.create()` invocation:
+
+{
+  data: {
+    shiftId: "285e5a7b-b99e-4c8a-811c-05bb7a6423e8",
+    type: "DUTY_8HR",
+    message: "Shift 123456 has crossed 8 hours of duty.",
+    read: false,
++   title: String
+  }
+}
+
+Argument `title` is missing.
+2026-06-16 01:07:29 [error]: Prisma Error: 
+Invalid `prisma.notification.create()` invocation:
+
+{
+  data: {
+    shiftId: "285e5a7b-b99e-4c8a-811c-05bb7a6423e8",
+    type: "DUTY_10HR",
+    message: "Shift 123456 has crossed 10 hours of duty.",
+    read: false,
++   title: String
+  }
+}
+
+Argument `title` is missing.
+2026-06-16 01:07:29 [error]: Prisma Error: 
+Invalid `prisma.notification.create()` invocation:
+
+{
+  data: {
+    shiftId: "285e5a7b-b99e-4c8a-811c-05bb7a6423e8",
+    type: "DUTY_12HR",
+    message: "Shift 123456 has crossed 12 hours of duty.",
+    read: false,
++   title: String
+  }
+}
+
+Argument `title` is missing.
+2026-06-16 01:09:57 [error]: Prisma Error: 
+Invalid `prisma.notification.create()` invocation:
+
+{
+  data: {
+    shiftId: "aa1bbb07-ac81-475c-ae63-854536b62977",
+    type: "DUTY_12HR",
+    message: "Shift 123456 has crossed 12 hours of duty.",
+    read: false,
++   title: String
+  }
+}
+
+Argument `title` is missing.
+2026-06-16 01:09:57 [error]: Prisma Error: 
+Invalid `prisma.notification.create()` invocation:
+
+{
+  data: {
+    shiftId: "aa1bbb07-ac81-475c-ae63-854536b62977",
+    type: "DUTY_8HR",
+    message: "Shift 123456 has crossed 8 hours of duty.",
+    read: false,
++   title: String
+  }
+}
+
+Argument `title` is missing.
+2026-06-16 01:09:57 [error]: Prisma Error: 
+Invalid `prisma.notification.create()` invocation:
+
+{
+  data: {
+    shiftId: "aa1bbb07-ac81-475c-ae63-854536b62977",
+    type: "DUTY_10HR",
+    message: "Shift 123456 has crossed 10 hours of duty.",
+    read: false,
++   title: String
+  }
+}
+
+Argument `title` is missing.
+2026-06-16 01:14:11 [error]: Prisma Error: 
+Invalid `prisma.notification.create()` invocation:
+
+{
+  data: {
+    shiftId: "d75e50d5-0a67-400e-a29c-2fce22203018",
+    type: "DUTY_8HR",
+    title: "Duty Hour Alert - 8 Hours",
+    message: "Shift 123456 has crossed 8 hours of duty.",
+    read: false,
++   dutyHours: Float
+  }
+}
+
+Argument `dutyHours` is missing.
+2026-06-16 01:14:13 [error]: Prisma Error: 
+Invalid `prisma.notification.create()` invocation:
+
+{
+  data: {
+    shiftId: "d75e50d5-0a67-400e-a29c-2fce22203018",
+    type: "DUTY_10HR",
+    title: "Duty Hour Alert - 10 Hours",
+    message: "Shift 123456 has crossed 10 hours of duty.",
+    read: false,
++   dutyHours: Float
+  }
+}
+
+Argument `dutyHours` is missing.
+2026-06-16 01:14:13 [error]: Prisma Error: 
+Invalid `prisma.notification.create()` invocation:
+
+{
+  data: {
+    shiftId: "d75e50d5-0a67-400e-a29c-2fce22203018",
+    type: "DUTY_12HR",
+    title: "Duty Hour Alert - 12 Hours",
+    message: "Shift 123456 has crossed 12 hours of duty.",
+    read: false,
++   dutyHours: Float
+  }
+}
+
+Argument `dutyHours` is missing.
+2026-06-16 01:18:46 [error]: Prisma Error: 
+Invalid `prisma.notification.create()` invocation:
+
+{
+  data: {
+    shiftId: "5de64a9a-0ff8-49c8-a88f-32363546d719",
+    type: "DUTY_8HR",
+    title: "Duty Hour Alert - 8 Hours",
+    message: "Shift for PP BOY BSCS has crossed 8 hours of duty.",
+    read: false,
+    ~~~~
+?   id?: String,
+?   status?: NotificationStatus,
+?   sentAt?: DateTime | Null,
+?   acknowledgedAt?: DateTime | Null,
+?   responseAction?: String | Null,
+?   responseTime?: DateTime | Null,
+?   responseBy?: String | Null,
+?   metadata?: NullableJsonNullValueInput | Json,
+?   createdAt?: DateTime,
+?   updatedAt?: DateTime,
+?   priority?: Int,
+?   targetDivision?: String | Null,
+?   targetUsers?: NotificationCreatetargetUsersInput | String[]
+  }
+}
+
+Unknown argument `read`. Did you mean `id`? Available options are marked with ?.
+2026-06-16 01:18:48 [error]: Prisma Error: 
+Invalid `prisma.notification.create()` invocation:
+
+{
+  data: {
+    shiftId: "5de64a9a-0ff8-49c8-a88f-32363546d719",
+    type: "DUTY_12HR",
+    title: "Duty Hour Alert - 12 Hours",
+    message: "Shift for PP BOY BSCS has crossed 12 hours of duty.",
+    read: false,
+    ~~~~
+?   id?: String,
+?   status?: NotificationStatus,
+?   sentAt?: DateTime | Null,
+?   acknowledgedAt?: DateTime | Null,
+?   responseAction?: String | Null,
+?   responseTime?: DateTime | Null,
+?   responseBy?: String | Null,
+?   metadata?: NullableJsonNullValueInput | Json,
+?   createdAt?: DateTime,
+?   updatedAt?: DateTime,
+?   priority?: Int,
+?   targetDivision?: String | Null,
+?   targetUsers?: NotificationCreatetargetUsersInput | String[]
+  }
+}
+
+Unknown argument `read`. Did you mean `id`? Available options are marked with ?.
+2026-06-16 01:18:48 [error]: Prisma Error: 
+Invalid `prisma.notification.create()` invocation:
+
+{
+  data: {
+    shiftId: "5de64a9a-0ff8-49c8-a88f-32363546d719",
+    type: "DUTY_10HR",
+    title: "Duty Hour Alert - 10 Hours",
+    message: "Shift for PP BOY BSCS has crossed 10 hours of duty.",
+    read: false,
+    ~~~~
+?   id?: String,
+?   status?: NotificationStatus,
+?   sentAt?: DateTime | Null,
+?   acknowledgedAt?: DateTime | Null,
+?   responseAction?: String | Null,
+?   responseTime?: DateTime | Null,
+?   responseBy?: String | Null,
+?   metadata?: NullableJsonNullValueInput | Json,
+?   createdAt?: DateTime,
+?   updatedAt?: DateTime,
+?   priority?: Int,
+?   targetDivision?: String | Null,
+?   targetUsers?: NotificationCreatetargetUsersInput | String[]
+  }
+}
+
+Unknown argument `read`. Did you mean `id`? Available options are marked with ?.
+2026-06-16 01:21:20 [error]: Prisma Error: 
+Invalid `prisma.notification.create()` invocation:
+
+{
+  data: {
+    shiftId: "48c05713-131a-42d7-b4fb-691ed6ffce0c",
+    type: "DUTY_8HR",
+    title: "Duty Hour Alert - 8 Hours",
+    message: "Shift for PP BOY BSCS has crossed 8 hours of duty.",
+    read: false,
+    ~~~~
+?   id?: String,
+?   status?: NotificationStatus,
+?   sentAt?: DateTime | Null,
+?   acknowledgedAt?: DateTime | Null,
+?   responseAction?: String | Null,
+?   responseTime?: DateTime | Null,
+?   responseBy?: String | Null,
+?   metadata?: NullableJsonNullValueInput | Json,
+?   createdAt?: DateTime,
+?   updatedAt?: DateTime,
+?   priority?: Int,
+?   targetDivision?: String | Null,
+?   targetUsers?: NotificationCreatetargetUsersInput | String[]
+  }
+}
+
+Unknown argument `read`. Did you mean `id`? Available options are marked with ?.
+2026-06-16 01:21:20 [error]: Prisma Error: 
+Invalid `prisma.notification.create()` invocation:
+
+{
+  data: {
+    shiftId: "48c05713-131a-42d7-b4fb-691ed6ffce0c",
+    type: "DUTY_12HR",
+    title: "Duty Hour Alert - 12 Hours",
+    message: "Shift for PP BOY BSCS has crossed 12 hours of duty.",
+    read: false,
+    ~~~~
+?   id?: String,
+?   status?: NotificationStatus,
+?   sentAt?: DateTime | Null,
+?   acknowledgedAt?: DateTime | Null,
+?   responseAction?: String | Null,
+?   responseTime?: DateTime | Null,
+?   responseBy?: String | Null,
+?   metadata?: NullableJsonNullValueInput | Json,
+?   createdAt?: DateTime,
+?   updatedAt?: DateTime,
+?   priority?: Int,
+?   targetDivision?: String | Null,
+?   targetUsers?: NotificationCreatetargetUsersInput | String[]
+  }
+}
+
+Unknown argument `read`. Did you mean `id`? Available options are marked with ?.
+2026-06-16 01:21:20 [error]: Prisma Error: 
+Invalid `prisma.notification.create()` invocation:
+
+{
+  data: {
+    shiftId: "48c05713-131a-42d7-b4fb-691ed6ffce0c",
+    type: "DUTY_10HR",
+    title: "Duty Hour Alert - 10 Hours",
+    message: "Shift for PP BOY BSCS has crossed 10 hours of duty.",
+    read: false,
+    ~~~~
+?   id?: String,
+?   status?: NotificationStatus,
+?   sentAt?: DateTime | Null,
+?   acknowledgedAt?: DateTime | Null,
+?   responseAction?: String | Null,
+?   responseTime?: DateTime | Null,
+?   responseBy?: String | Null,
+?   metadata?: NullableJsonNullValueInput | Json,
+?   createdAt?: DateTime,
+?   updatedAt?: DateTime,
+?   priority?: Int,
+?   targetDivision?: String | Null,
+?   targetUsers?: NotificationCreatetargetUsersInput | String[]
+  }
+}
+
+Unknown argument `read`. Did you mean `id`? Available options are marked with ?.
+2026-06-16 02:13:29 [error]: Error: Invalid token
+    at file:///home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/src/middleware/auth.js:69:13
+    at file:///home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/src/middleware/errorHandler.js:49:19
+    at Layer.handleRequest (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/router/lib/layer.js:152:17)
+    at trimPrefix (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/router/index.js:342:13)
+    at /home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/router/index.js:297:9
+    at processParams (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/router/index.js:582:12)
+    at next (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/router/index.js:291:5)
+    at router.handle (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/router/index.js:186:3)
+    at router (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/router/index.js:60:12)
+    at Layer.handleRequest (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/router/lib/layer.js:152:17)
+2026-06-16 02:14:08 [error]: Error: Route /api/auth/login not found
+    at notFound (file:///home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/src/middleware/errorHandler.js:43:17)
+    at Layer.handleRequest (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/router/lib/layer.js:152:17)
+    at trimPrefix (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/router/index.js:342:13)
+    at /home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/router/index.js:297:9
+    at processParams (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/router/index.js:582:12)
+    at next (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/router/index.js:291:5)
+    at file:///home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/express-rate-limit/dist/index.mjs:913:7
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async file:///home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/express-rate-limit/dist/index.mjs:796:5

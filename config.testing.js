@@ -2,7 +2,7 @@ export const TESTING_MODE = process.env.TESTING_MODE === 'true';
 
 // Monitoring interval
 export const MONITORING_INTERVAL = TESTING_MODE 
-  ? 60 * 1000  // 60 s in testing mode
+  ? 30 * 60 * 1000  // 30 min in testing mode
   : 15 * 60 * 1000; // 15 min in production
 
 export const ALERT_THRESHOLDS = {

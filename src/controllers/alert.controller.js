@@ -237,3 +237,36 @@ export const completeShiftController = async (req, res) => {
     });
   }
 };
+
+
+// New ALERT CONTROLLER after having BullMQ worker for shift alerts
+
+
+export const getAllAlertNotifications = async (req, res) => {
+  try {
+    const notifications = await prisma.notification.findMany({
+      orderBy: { createdAt: 'desc' },
+      include: {
+        shift: {
+          select: {
+            id: true,
+            trainNumber: true,
+            signOnDateTime: true,
+          },
+        },
+      },
+    });
+
+    res.status(200).json({
+      success: true,
+      data: notifications,
+    });
+  } catch (error) {
+    console.error('Error fetching notifications:', error);
+    res.status(500).json({
+      success: false,
+      message: 'Failed to fetch notifications',
+      error: process.env.NODE_ENV === 'development' ? error.message : undefined,
+    });
+  }
+};

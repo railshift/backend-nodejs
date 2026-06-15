@@ -129,6 +129,11 @@ model Shift {
   trainManager         Staff          @relation("TrainManager", fields: [trainManagerId], references: [id])
   updatedBy            User?          @relation("UpdatedBy", fields: [updatedById], references: [id])
 
+  // Queue Job ids
+  eightHourJobId  String?
+  tenHourJobId    String?
+  twelveHourJobId String?
+
   @@index([trainNumber])
   @@index([locoPilotId])
   @@index([trainManagerId])
@@ -163,7 +168,6 @@ model Notification {
   type           NotificationType
   title          String
   message        String
-  dutyHours      Float
   status         NotificationStatus @default(PENDING)
   sentAt         DateTime?
   acknowledgedAt DateTime?
@@ -262,10 +266,8 @@ enum DutyLogType {
 
 enum NotificationType {
   DUTY_8HR
-  DUTY_9HR
-  DUTY_11HR
+  DUTY_10HR
   DUTY_12HR
-  DUTY_14HR
   RELIEF_PLANNED
   SHIFT_COMPLETED
   CUSTOM
