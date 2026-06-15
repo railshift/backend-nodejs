@@ -41,11 +41,6 @@ export const createShiftValidation = [
     .notEmpty()
     .withMessage('Train manager name is required'),
   
-  body('trainArrivalDateTime')
-    .notEmpty()
-    .withMessage('Train arrival date time is required')
-    .isISO8601()
-    .withMessage('Invalid date time format'),
   
   body('signOnDateTime')
     .notEmpty()

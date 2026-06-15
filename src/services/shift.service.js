@@ -141,7 +141,6 @@ class ShiftService {
           locomotiveId: locomotive.id,
           locoPilotId: locoPilot.id,
           trainManagerId: trainManager.id,
-          trainArrivalDateTime: new Date(data.trainArrivalDateTime),
           signOnDateTime: new Date(data.signOnDateTime),
           timeOfTO: data.timeOfTO ? new Date(data.timeOfTO) : null,
           departureDateTime: data.departureDateTime ? new Date(data.departureDateTime) : null,
@@ -283,16 +282,6 @@ class ShiftService {
 
       if (filters.trainManagerId) {
         where.trainManagerId = filters.trainManagerId;
-      }
-
-      if (filters.startDate || filters.endDate) {
-        where.trainArrivalDateTime = {};
-        if (filters.startDate) {
-          where.trainArrivalDateTime.gte = new Date(filters.startDate);
-        }
-        if (filters.endDate) {
-          where.trainArrivalDateTime.lte = new Date(filters.endDate);
-        }
       }
 
       const skip = (page - 1) * limit;

@@ -1,18 +1,199 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
 generator client {
   provider = "prisma-client-js"
   output   = "../src/generated/prisma"
 }
 
 datasource db {
-  provider = "postgresql"  // "sqlite" for Development
+  provider = "postgresql"
   url      = env("DATABASE_URL")
 }
 
-// USER MANAGEMENT
-// ============================================
+model User {
+  id              String              @id @default(uuid())
+  employeeId      String              @unique
+  name            String
+  email           String              @unique
+  phone           String?
+  password        String
+  role            UserRole            @default(USER)
+  status          UserStatus          @default(INACTIVE)
+  createdAt       DateTime            @default(now())
+  updatedAt       DateTime            @updatedAt
+  lastLogin       DateTime?
+  division        String?
+  isVerified      Boolean             @default(false)
+  rejectedAt      DateTime?
+  rejectedBy      String?
+  rejectionReason String?
+  verifiedAt      DateTime?
+  verifiedBy      String?
+  resetOtp        String?
+  resetOtpExpiry  DateTime?
+  priority        Int                 @default(0)
+  designation     UserNewDesignation?
+  createdShifts   Shift[]             @relation("CreatedBy")
+  updatedShifts   Shift[]             @relation("UpdatedBy")
+
+  @@index([employeeId])
+  @@index([email])
+  @@index([isVerified])
+  @@index([status])
+  @@map("users")
+}
+
+model Staff {
+  id            String      @id @default(uuid())
+  employeeId    String      @unique
+  name          String
+  staffType     StaffType
+  phone         String?
+  email         String?
+  homeStation   String?
+  status        StaffStatus @default(AVAILABLE)
+  autoCreated   Boolean     @default(false)
+  createdAt     DateTime    @default(now())
+  updatedAt     DateTime    @updatedAt
+  division      String?
+  dutyLogs      DutyLog[]
+  pilotShifts   Shift[]     @relation("LocoPilot")
+  managerShifts Shift[]     @relation("TrainManager")
+
+  @@index([employeeId])
+  @@index([name])
+  @@index([status])
+  @@index([staffType])
+  @@map("staff")
+}
+
+model Locomotive {
+  id           String   @id @default(uuid())
+  locomotiveNo String   @unique
+  status       String?  @default("ACTIVE")
+  autoCreated  Boolean  @default(false)
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+  shifts       Shift[]
+
+  @@index([locomotiveNo])
+  @@map("locomotives")
+}
+
+model Shift {
+  id                   String         @id @default(uuid())
+  trainNumber          String
+  trainName            String?
+  locomotiveId         String
+  locoPilotId          String
+  trainManagerId       String
+  timeOfTO             DateTime?
+  signOnStation        String
+  signOffStation       String?
+  section              String
+  dutyType             dutyType?
+  dutyHours            Float?
+  status               ShiftStatus    @default(SCHEDULED)
+  reliefRequired       Boolean        @default(false)
+  reliefPlanned        Boolean        @default(false)
+  reliefTime           DateTime?
+  reliefReason         String?
+  createdById          String
+  updatedById          String?
+  createdAt            DateTime       @default(now())
+  updatedAt            DateTime       @updatedAt
+  alert10HrResponse    String?
+  alert10HrSent        Boolean        @default(false)
+  alert10HrSentAt      DateTime?
+  alert11HrResponse    String?
+  alert11HrSent        Boolean        @default(false)
+  alert11HrSentAt      DateTime?
+  alert14HrResponse    String?
+  alert14HrSent        Boolean        @default(false)
+  alert14HrSentAt      DateTime?
+  alert7HrSent         Boolean        @default(false)
+  alert7HrSentAt       DateTime?
+  alert8HrResponse     String?
+  alert8HrSent         Boolean        @default(false)
+  alert8HrSentAt       DateTime?
+  alert9HrResponse     String?
+  alert9HrSent         Boolean        @default(false)
+  alert9HrSentAt       DateTime?
+  departureDateTime    DateTime?
+  signOffDateTime      DateTime?
+  signOnDateTime       DateTime
+  trainArrivalDateTime DateTime?
+  dutyLogs             DutyLog[]
+  notifications        Notification[]
+  createdBy            User           @relation("CreatedBy", fields: [createdById], references: [id])
+  locoPilot            Staff          @relation("LocoPilot", fields: [locoPilotId], references: [id])
+  locomotive           Locomotive     @relation(fields: [locomotiveId], references: [id])
+  trainManager         Staff          @relation("TrainManager", fields: [trainManagerId], references: [id])
+  updatedBy            User?          @relation("UpdatedBy", fields: [updatedById], references: [id])
+
+  @@index([trainNumber])
+  @@index([locoPilotId])
+  @@index([trainManagerId])
+  @@index([status])
+  @@index([signOnDateTime])
+  @@map("shifts")
+}
+
+model DutyLog {
+  id             String      @id @default(uuid())
+  shiftId        String
+  staffId        String
+  logType        DutyLogType
+  logTime        DateTime    @default(now())
+  dutyHoursAtLog Float?
+  remarks        String?
+  metadata       Json?
+  createdAt      DateTime    @default(now())
+  shift          Shift       @relation(fields: [shiftId], references: [id], onDelete: Cascade)
+  staff          Staff       @relation(fields: [staffId], references: [id])
+
+  @@index([shiftId])
+  @@index([staffId])
+  @@index([logType])
+  @@index([logTime])
+  @@map("duty_logs")
+}
+
+model Notification {
+  id             String             @id @default(uuid())
+  shiftId        String
+  type           NotificationType
+  title          String
+  message        String
+  dutyHours      Float
+  status         NotificationStatus @default(PENDING)
+  sentAt         DateTime?
+  acknowledgedAt DateTime?
+  responseAction String?
+  responseTime   DateTime?
+  responseBy     String?
+  metadata       Json?
+  createdAt      DateTime           @default(now())
+  updatedAt      DateTime           @updatedAt
+  priority       Int                @default(0)
+  targetDivision String?
+  targetUsers    String[]
+  shift          Shift              @relation(fields: [shiftId], references: [id], onDelete: Cascade)
+
+  @@index([shiftId])
+  @@index([type])
+  @@index([status])
+  @@index([createdAt])
+  @@map("notifications")
+}
+
+model SystemConfig {
+  id          String   @id @default(uuid())
+  key         String   @unique
+  value       String
+  description String?
+  updatedAt   DateTime @updatedAt
+
+  @@map("system_config")
+}
 
 enum UserRole {
   SUPERADMIN
@@ -26,56 +207,11 @@ enum UserStatus {
   SUSPENDED
 }
 
-enum UserDesignation {
-  X
-  Y
-  Z
+enum UserNewDesignation {
+  OFFICER
+  SUPERVISOR
+  CHASER
 }
-
-model User {
-  id            String      @id @default(uuid())
-  employeeId    String      @unique
-  name          String
-  email         String      @unique
-  phone         String?
-  password      String
-  role          UserRole    @default(USER)
-  status        UserStatus  @default(INACTIVE)
-  
-  // Verification & Approval
-  isVerified    Boolean     @default(false)
-  verifiedAt    DateTime?
-  verifiedBy    String?     // Employee ID of SUPERADMIN
-  rejectedAt    DateTime?
-  rejectedBy    String?     // Employee ID of SUPERADMIN
-  rejectionReason String?
-  
-  // Additional Info
-  division      String?          // Railway division/department (important for alert routing)
-  designation   UserDesignation? // Alert notification designation (X, Y, Z)
-  priority      Int              @default(0) // Priority level for alert notifications (0=normal, 1=high, 2=urgent)
-  
-  // Password Reset
-  resetOtp      String?
-  resetOtpExpiry DateTime?
-  
-  createdAt     DateTime    @default(now())
-  updatedAt     DateTime    @updatedAt
-  lastLogin     DateTime?
-  
-  // Relations
-  createdShifts Shift[]     @relation("CreatedBy")
-  updatedShifts Shift[]     @relation("UpdatedBy")
-  
-  @@index([employeeId])
-  @@index([email])
-  @@index([isVerified])
-  @@index([status])
-  @@map("users")
-}
-
-// RAILWAY STAFF (Loco Pilots & Train Managers)
-// ==================================================================
 
 enum StaffType {
   LOCO_PILOT
@@ -90,59 +226,6 @@ enum StaffStatus {
   INACTIVE
 }
 
-model Staff {
-  id              String        @id @default(uuid())
-  employeeId      String        @unique 
-  name            String
-  staffType       StaffType
-  phone           String?
-  email           String?
-  homeStation     String?
-  division        String?       // Railway division for alert routing
-  status          StaffStatus   @default(AVAILABLE)
-  
-  // Auto-created during shift entry
-  autoCreated     Boolean       @default(false) 
-  
-  createdAt       DateTime      @default(now())
-  updatedAt       DateTime      @updatedAt
-  
-  // Relations
-  pilotShifts     Shift[]       @relation("LocoPilot")
-  managerShifts   Shift[]       @relation("TrainManager")
-  dutyLogs        DutyLog[]
-  
-  @@index([employeeId])
-  @@index([name])
-  @@index([status])
-  @@index([staffType])
-  @@map("staff")
-}
-
-// TRAIN & LOCOMOTIVE
-// ============================================
-
-model Locomotive {
-  id              String      @id @default(uuid())
-  locomotiveNo    String      @unique  
-  status          String?     @default("ACTIVE")
-  
-  // Auto-created during shift entry
-  autoCreated     Boolean     @default(false) 
-  
-  createdAt       DateTime    @default(now())
-  updatedAt       DateTime    @updatedAt
-  
-  // Relations
-  shifts          Shift[]
-  
-  @@index([locomotiveNo])
-  @@map("locomotives")
-}
-
-// SHIFT MANAGEMENT
-// ================================================
-
 enum ShiftStatus {
   SCHEDULED
   IN_PROGRESS
@@ -150,94 +233,12 @@ enum ShiftStatus {
   RELIEF_PLANNED
   CANCELLED
 }
+
 enum dutyType {
-    SP
-    WR
-    LR
+  SP
+  WR
+  LR
 }
-
-model Shift {
-  id                String        @id @default(uuid())
-  
-  // Train & Locomotive Info
-  trainNumber       String
-  trainName         String?     
-  locomotive        Locomotive    @relation(fields: [locomotiveId], references: [id])
-  locomotiveId      String
-  
-  // Staff Assignment
-  locoPilot         Staff         @relation("LocoPilot", fields: [locoPilotId], references: [id])
-  locoPilotId       String
-  trainManager      Staff         @relation("TrainManager", fields: [trainManagerId], references: [id])
-  trainManagerId    String
-  
-  // Time Tracking (DateTime stores both date and time)
-  trainArrivalDateTime  DateTime      // Train arrival date + time
-  signOnDateTime        DateTime      // Sign on date + time
-  timeOfTO              DateTime?     // Time of Take Over
-  departureDateTime     DateTime?     // Departure date + time
-  signOffDateTime       DateTime?     // Sign off date + time
-
-  signOnStation         String
-  signOffStation        String?
-
-  section           String
-  
-  // Duty Hours Calculation
-  dutyType          dutyType?
-  dutyHours         Float?        // Calculated duty hours , after end of the shift
-  
-  // Status
-  status            ShiftStatus   @default(SCHEDULED)
-  
-  // Alert Tracking
-  alert7HrSent      Boolean       @default(false)
-  alert7HrSentAt    DateTime?
-  alert8HrSent      Boolean       @default(false)
-  alert8HrSentAt    DateTime?
-  alert8HrResponse  String?       // "PLAN_RELIEF" or "RELIEF_NOT_REQUIRED"
-  alert9HrSent      Boolean       @default(false)
-  alert9HrSentAt    DateTime?
-  alert9HrResponse  String?       // "CREW_RELIEVED" or "CREW_NOT_BOOKED"
-  alert10HrSent     Boolean       @default(false)
-  alert10HrSentAt   DateTime?
-  alert10HrResponse String?       // To be decided
-  alert11HrSent     Boolean       @default(false)
-  alert11HrSentAt   DateTime?
-  alert11HrResponse String?       // "KEEP_ON" or "CREW_ALREADY_RELIEVED"
-  alert14HrSent     Boolean       @default(false)
-  alert14HrSentAt   DateTime?
-  alert14HrResponse String?       // To be decided
-  
-  // Relief Information
-  reliefRequired    Boolean       @default(false)
-  reliefPlanned     Boolean       @default(false)
-  reliefTime        DateTime?
-  reliefReason      String?
-  
-  // Audit
-  createdBy         User          @relation("CreatedBy", fields: [createdById], references: [id])
-  createdById       String
-  updatedBy         User?         @relation("UpdatedBy", fields: [updatedById], references: [id])
-  updatedById       String?
-  createdAt         DateTime      @default(now())
-  updatedAt         DateTime      @updatedAt
-  
-  // Relations
-  notifications     Notification[]
-  dutyLogs          DutyLog[]
-  
-  @@index([trainNumber])
-  @@index([locoPilotId])
-  @@index([trainManagerId])
-  @@index([status])
-  @@index([signOnDateTime])
-  @@index([trainArrivalDateTime])
-  @@map("shifts")
-}
-
-// DUTY LOG (Detailed tracking of duty hours)
-// ------------------------------------------------
 
 enum DutyLogType {
   SIGN_ON
@@ -259,32 +260,6 @@ enum DutyLogType {
   RELEASE
 }
 
-model DutyLog {
-  id              String        @id @default(uuid())
-  shift           Shift         @relation(fields: [shiftId], references: [id], onDelete: Cascade)
-  shiftId         String
-  staff           Staff         @relation(fields: [staffId], references: [id])
-  staffId         String
-  
-  logType         DutyLogType
-  logTime         DateTime      @default(now())
-  dutyHoursAtLog  Float?        // Duty hours at the time of this log
-  remarks         String?
-  metadata        Json?         // For storing additional data
-  
-  createdAt       DateTime      @default(now())
-  
-  @@index([shiftId])
-  @@index([staffId])
-  @@index([logType])
-  @@index([logTime])
-  @@map("duty_logs")
-}
-
-
-// NOTIFICATION SYSTEM
-// -------------------###########################
-
 enum NotificationType {
   DUTY_8HR
   DUTY_9HR
@@ -303,50 +278,8 @@ enum NotificationStatus {
   FAILED
 }
 
-model Notification {
-  id              String              @id @default(uuid())
-  shift           Shift               @relation(fields: [shiftId], references: [id], onDelete: Cascade)
-  shiftId         String
-  
-  type            NotificationType
-  title           String
-  message         String
-  dutyHours       Float
-  
-  // Division-based routing
-  targetDivision  String?         // Target specific division
-  targetUsers     String[]        // Target specific user IDs
-  priority        Int             @default(0) // 0=normal, 1=high, 2=urgent
-  
-  status          NotificationStatus  @default(PENDING)
-  sentAt          DateTime?
-  acknowledgedAt  DateTime?
-  
-  // Response from notification (for 9hr alert)
-  responseAction  String?           // for ex "RELIEF_PLANNED" or "RELIEF_NOT_REQUIRED"
-  responseTime    DateTime?
-  responseBy      String?
-  
-  metadata        Json?
-  createdAt       DateTime            @default(now())
-  updatedAt       DateTime            @updatedAt
-  
-  @@index([shiftId])
-  @@index([type])
-  @@index([status])
-  @@index([createdAt])
-  @@map("notifications")
-}
-
-// SYSTEM CONFIGURATION
-// =================================================
-
-model SystemConfig {
-  id              String      @id @default(uuid())
-  key             String      @unique
-  value           String
-  description     String?
-  updatedAt       DateTime    @updatedAt
-  
-  @@map("system_config")
+enum UserDesignation {
+  X
+  Y
+  Z
 }

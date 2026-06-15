@@ -7154,3 +7154,116 @@ Timed out fetching a new connection from the connection pool. More info: http://
     at router.handle (/home/ranapoddar/Documents/railway-project/RailwayProject-node-backend/node_modules/router/index.js:186:3)
     at router (/home/ranapoddar/Documents/railway-project/RailwayProject-node-backend/node_modules/router/index.js:60:12)
     at Layer.handleRequest (/home/ranapoddar/Documents/railway-project/RailwayProject-node-backend/node_modules/router/lib/layer.js:152:17)
+2026-06-13 21:49:01 [error]: Prisma Error: Error in PostgreSQL connection: Error { kind: Closed, cause: None }
+2026-06-15 12:38:34 [error]: Error: Invalid email or password
+    at AuthService.login (file:///home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/src/services/auth.service.js:116:15)
+    at async file:///home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/src/controllers/auth.controller.js:21:18
+2026-06-15 12:38:40 [error]: Error: secretOrPrivateKey must have a value
+    at module.exports [as sign] (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/jsonwebtoken/sign.js:111:20)
+    at AuthService.generateTokens (file:///home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/src/services/auth.service.js:11:29)
+    at AuthService.login (file:///home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/src/services/auth.service.js:120:27)
+    at async file:///home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/src/controllers/auth.controller.js:21:18
+2026-06-15 12:40:39 [error]: Error: secretOrPrivateKey must have a value
+    at module.exports [as sign] (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/jsonwebtoken/sign.js:111:20)
+    at AuthService.generateTokens (file:///home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/src/services/auth.service.js:11:29)
+    at AuthService.login (file:///home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/src/services/auth.service.js:120:27)
+    at async file:///home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/src/controllers/auth.controller.js:21:18
+2026-06-15 13:18:21 [error]: [{"field":"trainArrivalDateTime","message":"Train arrival date time is required"},{"field":"trainArrivalDateTime","message":"Invalid date time format"}]
+2026-06-15 13:20:34 [error]: PrismaClientValidationError: 
+Invalid `prisma.shift.create()` invocation:
+
+{
+  data: {
+    trainNumber: "123456",
+    trainName: "Hatia Express",
+    locomotiveId: "3e25b085-4d3b-4a78-bbea-57328f22561e",
+    locoPilotId: "940edf89-32cf-421b-a88d-1eb00b4bb97f",
+    trainManagerId: "4b90fee2-d0a7-4a47-abd9-7f1689fd9908",
+    trainArrivalDateTime: new Date("Invalid Date"),
+                          ~~~~~~~~~~~~~~~~~~~~~~~~
+    signOnDateTime: new Date("2026-06-15T07:40:00.000Z"),
+    timeOfTO: new Date("2026-06-15T07:40:00.000Z"),
+    departureDateTime: new Date("2026-06-15T07:40:00.000Z"),
+    signOnStation: "HTE",
+    signOffStation: null,
+    section: "HTE/HWH",
+    dutyType: undefined,
+    signOffDateTime: null,
+    dutyHours: 0.18,
+    status: "IN_PROGRESS",
+    createdById: "c5149b48-867e-41d2-a67e-6f9fe6cd880e"
+  },
+  include: {
+    locomotive: true,
+    locoPilot: true,
+    trainManager: true,
+    createdBy: {
+      select: {
+        id: true,
+        name: true,
+        employeeId: true
+      }
+    }
+  }
+}
+
+Invalid value for argument `trainArrivalDateTime`: Provided Date object is invalid. Expected Date.
+    at Nn (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/src/generated/prisma/runtime/library.js:33:1363)
+    at e.throwValidationError (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/src/generated/prisma/runtime/library.js:33:10051)
+    at Sa (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/src/generated/prisma/runtime/library.js:33:7488)
+    at Ra (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/src/generated/prisma/runtime/library.js:33:8741)
+    at Sa (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/src/generated/prisma/runtime/library.js:33:8272)
+    at Ra (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/src/generated/prisma/runtime/library.js:33:8741)
+    at Et (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/src/generated/prisma/runtime/library.js:33:5845)
+    at $n (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/src/generated/prisma/runtime/library.js:33:5747)
+    at /home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/src/generated/prisma/runtime/library.js:134:10104
+    at Object.runInChildSpan (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/src/generated/prisma/runtime/library.js:125:1549)
+2026-06-15 13:20:34 [error]: PrismaClientValidationError: 
+Invalid `prisma.shift.create()` invocation:
+
+{
+  data: {
+    trainNumber: "123456",
+    trainName: "Hatia Express",
+    locomotiveId: "3e25b085-4d3b-4a78-bbea-57328f22561e",
+    locoPilotId: "940edf89-32cf-421b-a88d-1eb00b4bb97f",
+    trainManagerId: "4b90fee2-d0a7-4a47-abd9-7f1689fd9908",
+    trainArrivalDateTime: new Date("Invalid Date"),
+                          ~~~~~~~~~~~~~~~~~~~~~~~~
+    signOnDateTime: new Date("2026-06-15T07:40:00.000Z"),
+    timeOfTO: new Date("2026-06-15T07:40:00.000Z"),
+    departureDateTime: new Date("2026-06-15T07:40:00.000Z"),
+    signOnStation: "HTE",
+    signOffStation: null,
+    section: "HTE/HWH",
+    dutyType: undefined,
+    signOffDateTime: null,
+    dutyHours: 0.18,
+    status: "IN_PROGRESS",
+    createdById: "c5149b48-867e-41d2-a67e-6f9fe6cd880e"
+  },
+  include: {
+    locomotive: true,
+    locoPilot: true,
+    trainManager: true,
+    createdBy: {
+      select: {
+        id: true,
+        name: true,
+        employeeId: true
+      }
+    }
+  }
+}
+
+Invalid value for argument `trainArrivalDateTime`: Provided Date object is invalid. Expected Date.
+    at Nn (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/src/generated/prisma/runtime/library.js:33:1363)
+    at e.throwValidationError (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/src/generated/prisma/runtime/library.js:33:10051)
+    at Sa (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/src/generated/prisma/runtime/library.js:33:7488)
+    at Ra (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/src/generated/prisma/runtime/library.js:33:8741)
+    at Sa (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/src/generated/prisma/runtime/library.js:33:8272)
+    at Ra (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/src/generated/prisma/runtime/library.js:33:8741)
+    at Et (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/src/generated/prisma/runtime/library.js:33:5845)
+    at $n (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/src/generated/prisma/runtime/library.js:33:5747)
+    at /home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/src/generated/prisma/runtime/library.js:134:10104
+    at Object.runInChildSpan (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/src/generated/prisma/runtime/library.js:125:1549)

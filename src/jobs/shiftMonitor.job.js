@@ -55,7 +55,7 @@ export const monitorShifts = async (io) => {
             orderBy: { priority: 'desc' },
           });
 
-          // Filter admins based on designation (X, Y, Z for now) threshold
+          // Filter admins based on designation (OFFICER, SUPERVISOR, CHASER for now) threshold
           const targetAdmins = allAdmins.filter(admin => {
             if (admin.role === 'SUPERADMIN') return true;
             if (admin.role === 'ADMIN' && admin.designation) {
@@ -98,15 +98,15 @@ export const monitorShifts = async (io) => {
 
 /**
  * Get alert threshold for admin designation
- * X designation: all alerts (7HR+)
- * Y designation: 10HR alerts and above
- * Z designation: 12HR alerts and above
+ * OFFICER designation: all alerts (7HR+)
+ * SUPERVISOR designation: 10HR alerts and above
+ * CHASER designation: 12HR alerts and above
  */
 const getAlertThresholdForDesignation = (designation) => {
   const thresholds = {
-    'X': 7,   // All alerts from 7HR++
-    'Y': 10,  // Alerts >= 10HR
-    'Z': 12,  // Alerts >=   12HR
+    'OFFICER': 7,   // All alerts from 7HR++
+    'SUPERVISOR': 10,  // Alerts >= 10HR
+    'CHASER': 12,  // Alerts >=   12HR
   };
   return thresholds[designation] || 7; // Default to 7 if unknown
 };
