@@ -4,7 +4,6 @@ import logger from './utils/logger.js';
 import prisma from './config/database.js';
 import redisClient from './config/redis.js';
 import seedDatabase from './utils/seed.js';
-import { startShiftMonitoring, stopShiftMonitoring } from './jobs/shiftMonitor.job.js';
 import { logConfiguration } from '../config.testing.js';
 
 // Initialize Database Connections
@@ -89,14 +88,6 @@ async function startServer() {
     // Log testing 
     logConfiguration(logger);
 
-    // Start shift monitoring job 
-    if (config.features.monitoringEnabled) {  ////checking config that needed or not 
-      monitoringIntervalId = startShiftMonitoring(io);
-      logger.info('Shift monitoring job started');
-    } else {
-      logger.info('Monitoring disabled (monitoringEnabled=false)');
-    }
-
     // Start HTTP server
     const server = httpServer.listen(config.port, () => {
       logger.info('='.repeat(50));
@@ -141,10 +132,6 @@ async function gracefulShutdown(signal) {
   logger.info(`\n${signal} received. Starting graceful shutdown...`);
 
   try {
-    // Stop shift monitoring job
-    if (monitoringIntervalId) {
-      stopShiftMonitoring(monitoringIntervalId);
-    }
 
     // Close HTTP server
     httpServer.close(() => {

@@ -5,6 +5,8 @@ import compression from 'compression';
 import morgan from 'morgan';
 import { createServer } from 'http';
 import { Server } from 'socket.io';
+import redisClient from './config/redis.js';
+import { redis } from './config/redis.js';
 
 import config from './config/config.js';
 import logger from './utils/logger.js';
@@ -19,6 +21,9 @@ import authRoutes from './routes/auth.routes.js';
 import shiftRoutes from './routes/shift.routes.js';
 import userRoutes from './routes/user.routes.js';
 import dashboardRoutes from './routes/dashboard.routes.js';
+import alertRoutes from './routes/alert.routes.js';
+
+import { serverAdapter } from './config/bullBoard.js';
 
 const app = express();
 const httpServer = createServer(app);
@@ -104,6 +109,15 @@ app.get('/health', (req, res) => {
   });
 });
 
+app.get('/redis', async (req, res) => {
+  const reply = await redis.ping();
+  res.status(200).json({
+    success: true,
+    message: 'Redis is available',
+    redisStatus: reply === 'PONG' ? 'connected' : 'not connected',
+  });
+    });
+
 // Prometheus metrics endpoint
 app.get('/metrics', async (req, res) => {
   try {
@@ -131,6 +145,11 @@ app.use(`${API_PREFIX}/auth`, authRoutes);
 app.use(`${API_PREFIX}/shifts`, shiftRoutes);
 app.use(`${API_PREFIX}/users`, userRoutes);
 app.use(`${API_PREFIX}/dashboard`, dashboardRoutes);
+app.use(`${API_PREFIX}/alerts`, alertRoutes);
+app.use(
+  '/admin/queues',
+  serverAdapter.getRouter()
+);
 
 
 // 404 handler

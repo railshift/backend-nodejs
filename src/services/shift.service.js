@@ -2,6 +2,7 @@ import prisma from '../config/database.js';
 import logger from '../utils/logger.js';
 import ApiError from '../middleware/errorHandler.js';
 import * as dutyHoursService from './dutyHours.service.js';
+import { scheduleShiftAlerts } from './shiftAlertService.js';
 
 class ShiftService {
   // Find or create locomotive
@@ -201,6 +202,19 @@ class ShiftService {
       });
 
       logger.info(`Shift created successfully: ${shift.id}`);
+      const alertJobs = await scheduleShiftAlerts(shift);
+
+      // Update shift with alert job IDs
+      await prisma.shift.update({
+        where: {
+          id: shift.id,
+          },
+         data: {
+          eightHourJobId: alertJobs['8Hour'],
+          tenHourJobId: alertJobs['10Hour'],
+          twelveHourJobId: alertJobs['12Hour'],
+          },
+          });
       return shift;
     } catch (error) {
       logger.error('Error creating shift:', error);

@@ -188,6 +188,25 @@ class RedisClient {
 
 const redisClient = new RedisClient();
 
+export const redis = new Redis({
+  host: config.redis.host,
+  port: config.redis.port,
+  password: config.redis.password,
+  db: config.redis.db,
+  retryStrategy: (times) => {
+    if (times > 3) {
+      logger.warn('Redis connection failed after 3 attempts. Running without Redis.');
+      return null; 
+    }
+    const delay = Math.min(times * 1000, 3000);
+    return delay;
+  },
+  maxRetriesPerRequest: 3,
+  lazyConnect: true, // Don't connect immediately
+  enableReadyCheck: false,
+  showFriendlyErrorStack: true,
+})
+
 // shutdown
 process.on('beforeExit', async () => {
   await redisClient.disconnect();
