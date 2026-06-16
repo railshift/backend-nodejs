@@ -9,7 +9,6 @@
     "start": "node src/index.js",
     "worker": "node worker.js",
     "production": "node worker.js & node src/index.js",
-
     "build": "prisma generate && prisma migrate deploy",
     "prisma:generate": "prisma generate",
     "prisma:migrate": "prisma migrate dev",
