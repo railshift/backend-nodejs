@@ -143,6 +143,7 @@ class ShiftService {
           locoPilotId: locoPilot.id,
           trainManagerId: trainManager.id,
           signOnDateTime: new Date(data.signOnDateTime),
+          trainArrivalDateTime: new Date(data.trainArrivalDateTime),
           timeOfTO: data.timeOfTO ? new Date(data.timeOfTO) : null,
           departureDateTime: data.departureDateTime ? new Date(data.departureDateTime) : null,
           signOnStation: data.signOnStation,
@@ -405,6 +406,9 @@ class ShiftService {
       if (data.signOffStation) {
         updateData.signOffStation = data.signOffStation;
       }
+      if (data.trainArrivalDateTime) {
+        updateData.trainArrivalDateTime = new Date(data.trainArrivalDateTime);
+      }
 
       if (data.section) {
         updateData.section = data.section;
@@ -580,7 +584,7 @@ class ShiftService {
         
         if (dutyHours >= 14) alertLevel = 'critical';
         else if (dutyHours >= 12) alertLevel = 'high';
-        else if (dutyHours >= 9) alertLevel = 'warning';
+        else if (dutyHours >= 10) alertLevel = 'warning';
         else if (dutyHours >= 8) alertLevel = 'info';
 
         return {
