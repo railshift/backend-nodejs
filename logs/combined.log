@@ -13060,3 +13060,17 @@ Please make sure your database server is running at `ep-snowy-dust-am423xhp-pool
 2026-06-16 12:01:17 [info]: Metrics: http://localhost:8000/metrics
 2026-06-16 12:01:17 [info]:  Socket.io enabled on port: 8000
 2026-06-16 12:01:17 [info]: ==================================================
+2026-06-16 12:10:57 [info]: Prisma Info: Starting a postgresql pool with 9 connections.
+2026-06-16 12:10:59 [info]: Database connected successfully (ep-snowy-dust-am423xhp-pooler.c-5.us-east-1.aws.neon.tech)
+2026-06-16 12:10:59 [info]: Redis connected successfully
+2026-06-16 12:10:59 [info]: Redis connected successfully
+2026-06-16 12:10:59 [info]: ==================================================
+2026-06-16 12:10:59 [info]: Railway Shift Management System
+2026-06-16 12:10:59 [info]: ==================================================
+2026-06-16 12:10:59 [info]: Environment: development
+2026-06-16 12:10:59 [info]: Server running on port: 8000
+2026-06-16 12:10:59 [info]: API URL: http://localhost:8000/api/v1
+2026-06-16 12:10:59 [info]:  Health Check: http://localhost:8000/health
+2026-06-16 12:10:59 [info]: Metrics: http://localhost:8000/metrics
+2026-06-16 12:10:59 [info]:  Socket.io enabled on port: 8000
+2026-06-16 12:10:59 [info]: ==================================================
