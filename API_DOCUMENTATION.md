@@ -778,7 +778,9 @@ GET /shifts?status=IN_PROGRESS&page=1&limit=20
 
         "dutyType": "SP",
 
-## 🚨 Alert Endpoints        "lobbySignOn": true,
+## 🚨 Alert Endpoints        
+
+"lobbySignOn": true,
 
         "lobbySignOff": null,
 

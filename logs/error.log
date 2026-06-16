@@ -7836,3 +7836,9 @@ Unknown argument `read`. Did you mean `id`? Available options are marked with ?.
     at file:///home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/express-rate-limit/dist/index.mjs:913:7
     at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
     at async file:///home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/express-rate-limit/dist/index.mjs:796:5
+2026-06-16 10:44:52 [error]: Error: Connection is closed.
+    at RedisClient.disconnect (file:///home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/src/config/redis.js:70:25)
+    at gracefulShutdown (file:///home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/src/index.js:146:23)
+2026-06-16 11:50:16 [error]: Database connection failed (attempt 1/8) Can't reach database server at `ep-snowy-dust-am423xhp-pooler.c-5.us-east-1.aws.neon.tech:5432`
+
+Please make sure your database server is running at `ep-snowy-dust-am423xhp-pooler.c-5.us-east-1.aws.neon.tech:5432`.

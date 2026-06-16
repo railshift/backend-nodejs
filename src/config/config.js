@@ -16,10 +16,10 @@ export const config = {
   // Redis
   redis: {
     enabled: process.env.REDIS_ENABLED === 'true',
-    host: process.env.REDIS_HOST || 'localhost',
-    port: parseInt(process.env.REDIS_PORT, 10) || 6379,
-    password: process.env.REDIS_PASSWORD || undefined,
-    db: parseInt(process.env.REDIS_DB, 10) || 0,
+    host: process.env.REDISHOST || 'localhost',
+    port: parseInt(process.env.REDISPORT, 10) || 6379,
+    password: process.env.REDISPASSWORD || undefined,
+    db: parseInt(process.env.REDISDB, 10) || 0,
   },
 
   // JWT
