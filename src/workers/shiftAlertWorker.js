@@ -1,7 +1,6 @@
 import { Worker } from 'bullmq';
 import { bullmqConnection } from '../config/bullmq.js';
 import prisma from '../config/database.js';
-import { title } from 'node:process';
 
 
 console.log('🚀 Shift Alert Worker Started');
