@@ -12743,3 +12743,27 @@ SIGINT received. Starting graceful shutdown...
 2026-06-16 02:31:12 [info]: GET /api/queues 304 - 0.004s
 2026-06-16 02:31:14 [info]: Alert summary retrieved for user c5149b48-867e-41d2-a67e-6f9fe6cd880e: 0 alerts
 2026-06-16 02:31:14 [info]: GET /alerts-summary 304 - 2.512s
+2026-06-16 02:32:12 [info]: GET /api/queues 304 - 0.014s
+2026-06-16 02:32:15 [info]: Alert summary retrieved for user c5149b48-867e-41d2-a67e-6f9fe6cd880e: 0 alerts
+2026-06-16 02:32:15 [info]: GET /alerts-summary 304 - 2.718s
+2026-06-16 02:33:12 [info]: GET /api/queues 304 - 0.007s
+2026-06-16 02:33:14 [info]: Alert summary retrieved for user c5149b48-867e-41d2-a67e-6f9fe6cd880e: 0 alerts
+2026-06-16 02:33:14 [info]: GET /alerts-summary 304 - 1.866s
+2026-06-16 02:34:12 [info]: GET /api/queues 304 - 0.010s
+2026-06-16 02:34:17 [info]: Alert summary retrieved for user c5149b48-867e-41d2-a67e-6f9fe6cd880e: 0 alerts
+2026-06-16 02:34:17 [info]: GET /alerts-summary 304 - 5.344s
+2026-06-16 02:35:12 [info]: GET /api/queues 304 - 0.007s
+2026-06-16 02:35:14 [info]: Alert summary retrieved for user c5149b48-867e-41d2-a67e-6f9fe6cd880e: 0 alerts
+2026-06-16 02:35:14 [info]: GET /alerts-summary 304 - 2.241s
+2026-06-16 02:36:12 [info]: GET /api/queues 304 - 0.003s
+2026-06-16 02:36:14 [info]: Alert summary retrieved for user c5149b48-867e-41d2-a67e-6f9fe6cd880e: 0 alerts
+2026-06-16 02:36:14 [info]: GET /alerts-summary 304 - 2.358s
+2026-06-16 02:37:12 [info]: GET /api/queues 304 - 0.003s
+2026-06-16 02:37:14 [info]: Alert summary retrieved for user c5149b48-867e-41d2-a67e-6f9fe6cd880e: 0 alerts
+2026-06-16 02:37:14 [info]: GET /alerts-summary 304 - 2.369s
+2026-06-16 02:38:12 [info]: GET /api/queues 304 - 0.005s
+2026-06-16 02:38:14 [info]: Alert summary retrieved for user c5149b48-867e-41d2-a67e-6f9fe6cd880e: 0 alerts
+2026-06-16 02:38:14 [info]: GET /alerts-summary 304 - 2.121s
+2026-06-16 02:39:12 [info]: GET /api/queues 304 - 0.004s
+2026-06-16 02:39:14 [info]: Alert summary retrieved for user c5149b48-867e-41d2-a67e-6f9fe6cd880e: 0 alerts
+2026-06-16 02:39:14 [info]: GET /alerts-summary 304 - 2.181s
