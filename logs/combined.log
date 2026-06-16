@@ -13002,3 +13002,61 @@ Please make sure your database server is running at `ep-snowy-dust-am423xhp-pool
 2026-06-16 11:50:21 [info]: Metrics: http://localhost:8000/metrics
 2026-06-16 11:50:21 [info]:  Socket.io enabled on port: 8000
 2026-06-16 11:50:21 [info]: ==================================================
+2026-06-16 12:00:40 [info]: Prisma Info: Starting a postgresql pool with 9 connections.
+2026-06-16 12:00:42 [info]: Database connected successfully (ep-snowy-dust-am423xhp-pooler.c-5.us-east-1.aws.neon.tech)
+2026-06-16 12:00:42 [info]: Redis connected successfully
+2026-06-16 12:00:42 [info]: Redis connected successfully
+2026-06-16 12:00:42 [info]: ==================================================
+2026-06-16 12:00:42 [info]: Railway Shift Management System
+2026-06-16 12:00:42 [info]: ==================================================
+2026-06-16 12:00:42 [info]: Environment: development
+2026-06-16 12:00:42 [info]: Server running on port: 8000
+2026-06-16 12:00:42 [info]: API URL: http://localhost:8000/api/v1
+2026-06-16 12:00:42 [info]:  Health Check: http://localhost:8000/health
+2026-06-16 12:00:42 [info]: Metrics: http://localhost:8000/metrics
+2026-06-16 12:00:42 [info]:  Socket.io enabled on port: 8000
+2026-06-16 12:00:42 [info]: ==================================================
+2026-06-16 12:00:45 [info]: Prisma Info: Starting a postgresql pool with 9 connections.
+2026-06-16 12:00:49 [info]: Prisma Info: Starting a postgresql pool with 9 connections.
+2026-06-16 12:00:51 [info]: Database connected successfully (ep-snowy-dust-am423xhp-pooler.c-5.us-east-1.aws.neon.tech)
+2026-06-16 12:00:51 [info]: Redis connected successfully
+2026-06-16 12:00:51 [info]: Redis connected successfully
+2026-06-16 12:00:51 [info]: ==================================================
+2026-06-16 12:00:51 [info]: Railway Shift Management System
+2026-06-16 12:00:51 [info]: ==================================================
+2026-06-16 12:00:51 [info]: Environment: development
+2026-06-16 12:00:51 [info]: Server running on port: 8000
+2026-06-16 12:00:51 [info]: API URL: http://localhost:8000/api/v1
+2026-06-16 12:00:51 [info]:  Health Check: http://localhost:8000/health
+2026-06-16 12:00:51 [info]: Metrics: http://localhost:8000/metrics
+2026-06-16 12:00:51 [info]:  Socket.io enabled on port: 8000
+2026-06-16 12:00:51 [info]: ==================================================
+2026-06-16 12:00:59 [info]: Prisma Info: Starting a postgresql pool with 9 connections.
+2026-06-16 12:01:00 [info]: Prisma Info: Starting a postgresql pool with 9 connections.
+2026-06-16 12:01:02 [info]: Database connected successfully (ep-snowy-dust-am423xhp-pooler.c-5.us-east-1.aws.neon.tech)
+2026-06-16 12:01:02 [info]: Redis connected successfully
+2026-06-16 12:01:02 [info]: Redis connected successfully
+2026-06-16 12:01:02 [info]: ==================================================
+2026-06-16 12:01:02 [info]: Railway Shift Management System
+2026-06-16 12:01:02 [info]: ==================================================
+2026-06-16 12:01:02 [info]: Environment: development
+2026-06-16 12:01:02 [info]: Server running on port: 8000
+2026-06-16 12:01:02 [info]: API URL: http://localhost:8000/api/v1
+2026-06-16 12:01:02 [info]:  Health Check: http://localhost:8000/health
+2026-06-16 12:01:02 [info]: Metrics: http://localhost:8000/metrics
+2026-06-16 12:01:02 [info]:  Socket.io enabled on port: 8000
+2026-06-16 12:01:02 [info]: ==================================================
+2026-06-16 12:01:15 [info]: Prisma Info: Starting a postgresql pool with 9 connections.
+2026-06-16 12:01:17 [info]: Database connected successfully (ep-snowy-dust-am423xhp-pooler.c-5.us-east-1.aws.neon.tech)
+2026-06-16 12:01:17 [info]: Redis connected successfully
+2026-06-16 12:01:17 [info]: Redis connected successfully
+2026-06-16 12:01:17 [info]: ==================================================
+2026-06-16 12:01:17 [info]: Railway Shift Management System
+2026-06-16 12:01:17 [info]: ==================================================
+2026-06-16 12:01:17 [info]: Environment: development
+2026-06-16 12:01:17 [info]: Server running on port: 8000
+2026-06-16 12:01:17 [info]: API URL: http://localhost:8000/api/v1
+2026-06-16 12:01:17 [info]:  Health Check: http://localhost:8000/health
+2026-06-16 12:01:17 [info]: Metrics: http://localhost:8000/metrics
+2026-06-16 12:01:17 [info]:  Socket.io enabled on port: 8000
+2026-06-16 12:01:17 [info]: ==================================================
