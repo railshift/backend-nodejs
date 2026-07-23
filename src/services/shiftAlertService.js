@@ -26,8 +26,7 @@ export const scheduleShiftAlerts = async (shift) => {
         thresholdHours: hours,
       },
       {
-        // delay : delay,
-        delay: 20000, // 20 seconds for testing
+        delay: delay,
       }
     );
 

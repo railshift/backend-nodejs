@@ -1,6 +1,7 @@
 import { Worker } from 'bullmq';
 import { bullmqConnection } from '../config/bullmq.js';
 import prisma from '../config/database.js';
+import { sendNotificationToDevices } from '../services/fcmService.js';
 
 
 console.log(' Shift Alert Worker Started');
@@ -38,7 +39,7 @@ export const shiftAlertWorker = new Worker(
         }
     
     // creating database record for the alert
-    await prisma.notification.create({
+    const notification = await prisma.notification.create({
         data: 
             { 
             shiftId: shift.id,
@@ -48,14 +49,14 @@ export const shiftAlertWorker = new Worker(
              },
     });
 
-    // Socket Event Emit
-    io.emit('shift:duty-alert', {
-        shiftId: shift.id,
-        trainNumber: shift.trainNumber,
-        thresholdHours: thresholdHours,
-        locoPilot: shift.locoPilot.name,
-        trainManager: shift.trainManager.name,
-    });
+    // Socket Event Emit (TODO: configure socket emitter in worker)
+    // io.emit('shift:duty-alert', {
+    //     shiftId: shift.id,
+    //     trainNumber: shift.trainNumber,
+    //     thresholdHours: thresholdHours,
+    //     locoPilot: shift.locoPilot.name,
+    //     trainManager: shift.trainManager.name,
+    // });
             //   socket.on(
 //              'shift:duty-alert',
 //                 (data) => {
@@ -93,9 +94,9 @@ const users = await prisma.user.findMany({
   title: notification.title,
   body: notification.message,
   data: {
-    shiftId,
-    notificationId: notification.id,
-    type: notification.type,
+    shiftId: String(shiftId),
+    notificationId: String(notification.id),
+    type: String(notification.type),
   },
 });
 
