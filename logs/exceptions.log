@@ -377,3 +377,34 @@
     at doWrite (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/readable-stream/lib/_stream_writable.js:390:139)
     at writeOrBuffer (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/readable-stream/lib/_stream_writable.js:381:5)
     at Writable.write (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/readable-stream/lib/_stream_writable.js:302:11)
+2026-07-24 02:18:19 [error]: Error: ENOENT: no such file or directory, open './dutyhours-node-firebase-adminsdk-fbsvc-6ae4fff253.json'
+    at Object.readFileSync (node:fs:440:20)
+    at file:///home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/src/config/firebase.js:5:6
+    at ModuleJob.run (node:internal/modules/esm/module_job:413:25)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:660:26)
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:101:5)
+2026-07-24 02:19:53 [error]: Error: ENOENT: no such file or directory, open './dutyhours-node-firebase-adminsdk-fbsvc-6ae4fff253.json'
+    at Object.readFileSync (node:fs:440:20)
+    at file:///home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/src/config/firebase.js:5:6
+    at ModuleJob.run (node:internal/modules/esm/module_job:413:25)
+    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:660:26)
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:101:5)
+2026-07-24 02:20:02 [error]: Error: ENOENT: no such file or directory, open './dutyhours-node-firebase-adminsdk-fbsvc-6ae4fff253.json'
+    at Object.readFileSync (node:fs:440:20)
+    at file:///home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/src/config/firebase.js:5:6
+    at ModuleJob.run (node:internal/modules/esm/module_job:413:25)
+    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:660:26)
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:101:5)
+2026-07-24 02:20:12 [error]: Error: ENOENT: no such file or directory, open './dutyhours-node-firebase-adminsdk-fbsvc-6ae4fff253.json'
+    at Object.readFileSync (node:fs:440:20)
+    at file:///home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/src/config/firebase.js:5:6
+    at ModuleJob.run (node:internal/modules/esm/module_job:413:25)
+    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:660:26)
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:101:5)
+2026-07-24 02:20:47 [error]: Error: ENOENT: no such file or directory, open './dutyhours-node-firebase-adminsdk-fbsvc-6ae4fff253.json'
+    at Object.readFileSync (node:fs:440:20)
+    at file:///home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/src/config/firebase.js:5:6
+    at ModuleJob.run (node:internal/modules/esm/module_job:413:25)
+    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:660:26)
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:101:5)

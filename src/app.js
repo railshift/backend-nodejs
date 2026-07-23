@@ -22,7 +22,7 @@ import shiftRoutes from './routes/shift.routes.js';
 import userRoutes from './routes/user.routes.js';
 import dashboardRoutes from './routes/dashboard.routes.js';
 import alertRoutes from './routes/alert.routes.js';
-// import fcmRoutes from './routes/fcm.routes.js';
+import fcmRoutes from './routes/fcm.routes.js';
 
 
 import { serverAdapter } from './config/bullBoard.js';
@@ -149,13 +149,13 @@ app.use(`${API_PREFIX}/shifts`, shiftRoutes);
 app.use(`${API_PREFIX}/users`, userRoutes);
 app.use(`${API_PREFIX}/dashboard`, dashboardRoutes);
 app.use(`${API_PREFIX}/alerts`, alertRoutes);
-// app.use(`${API_PREFIX}/fcm`, fcmRoutes);
+app.use(`${API_PREFIX}/fcm`, fcmRoutes);
 
 // for bullMQ Admin pannel
-// app.use(
-//   '/admin/queues',
-//   serverAdapter.getRouter()
-// );
+app.use(
+  '/admin/queues',
+  serverAdapter.getRouter()
+);
 
 
 // 404 handler

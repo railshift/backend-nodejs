@@ -67036,3 +67036,61 @@ SIGINT received. Starting graceful shutdown...
 2026-07-24 01:41:22 [info]: Alert summary retrieved for user c5149b48-867e-41d2-a67e-6f9fe6cd880e: 0 alerts
 2026-07-24 01:41:22 [info]: GET /alerts-summary 304 - 1.113s
 2026-07-24 01:41:24 [info]: GET / 304 - 2.277s
+2026-07-24 01:47:56 [info]: GET / 304 - 3.873s
+2026-07-24 01:50:18 [info]: GET / 304 - 2.165s
+2026-07-24 01:54:08 [info]: Recent activities retrieved for user c5149b48-867e-41d2-a67e-6f9fe6cd880e
+2026-07-24 01:54:08 [info]: GET /recent-activities 200 - 1.742s
+2026-07-24 01:54:09 [info]: Alert summary retrieved for user c5149b48-867e-41d2-a67e-6f9fe6cd880e: 0 alerts
+2026-07-24 01:54:09 [info]: GET /alerts-summary 304 - 2.800s
+2026-07-24 01:54:09 [info]: Alert summary retrieved for user c5149b48-867e-41d2-a67e-6f9fe6cd880e: 0 alerts
+2026-07-24 01:54:10 [info]: GET /alerts-summary 304 - 0.854s
+2026-07-24 01:54:10 [info]: GET / 200 - 1.089s
+2026-07-24 01:54:10 [info]: Alert summary retrieved for user c5149b48-867e-41d2-a67e-6f9fe6cd880e: 0 alerts
+2026-07-24 01:54:10 [info]: Dashboard stats retrieved for user c5149b48-867e-41d2-a67e-6f9fe6cd880e
+2026-07-24 02:21:24 [info]: Prisma Info: Starting a postgresql pool with 9 connections.
+2026-07-24 02:21:25 [info]: Database connected successfully (ep-floral-voice-azm4fi5g-pooler.c-3.ap-southeast-1.aws.neon.tech)
+2026-07-24 02:21:25 [info]: Redis connected successfully
+2026-07-24 02:21:25 [info]: Redis connected successfully
+2026-07-24 02:21:25 [info]: ==================================================
+2026-07-24 02:21:25 [info]: Railway Shift Management System
+2026-07-24 02:21:25 [info]: ==================================================
+2026-07-24 02:21:25 [info]: Environment: development
+2026-07-24 02:21:25 [info]: Server running on port: 8000
+2026-07-24 02:21:25 [info]: API URL: http://localhost:8000/api/v1
+2026-07-24 02:21:25 [info]:  Health Check: http://localhost:8000/health
+2026-07-24 02:21:25 [info]: Metrics: http://localhost:8000/metrics
+2026-07-24 02:21:25 [info]:  Socket.io enabled on port: 8000
+2026-07-24 02:21:25 [info]: ==================================================
+2026-07-24 02:23:37 [info]: Prisma Info: Starting a postgresql pool with 9 connections.
+2026-07-24 02:23:38 [info]: Database connected successfully (ep-floral-voice-azm4fi5g-pooler.c-3.ap-southeast-1.aws.neon.tech)
+2026-07-24 02:23:38 [info]: Redis connected successfully
+2026-07-24 02:23:38 [info]: Redis connected successfully
+2026-07-24 02:23:38 [info]: ==================================================
+2026-07-24 02:23:38 [info]: Railway Shift Management System
+2026-07-24 02:23:38 [info]: ==================================================
+2026-07-24 02:23:38 [info]: Environment: development
+2026-07-24 02:23:38 [info]: Server running on port: 8000
+2026-07-24 02:23:38 [info]: API URL: http://localhost:8000/api/v1
+2026-07-24 02:23:38 [info]:  Health Check: http://localhost:8000/health
+2026-07-24 02:23:38 [info]: Metrics: http://localhost:8000/metrics
+2026-07-24 02:23:38 [info]:  Socket.io enabled on port: 8000
+2026-07-24 02:23:38 [info]: ==================================================
+2026-07-24 02:24:28 [info]: Prisma Info: Starting a postgresql pool with 9 connections.
+2026-07-24 02:24:29 [info]: Database connected successfully (ep-floral-voice-azm4fi5g-pooler.c-3.ap-southeast-1.aws.neon.tech)
+2026-07-24 02:24:29 [info]: Redis connected successfully
+2026-07-24 02:24:29 [info]: Redis connected successfully
+2026-07-24 02:24:29 [info]: ==================================================
+2026-07-24 02:24:29 [info]: Railway Shift Management System
+2026-07-24 02:24:29 [info]: ==================================================
+2026-07-24 02:24:29 [info]: Environment: development
+2026-07-24 02:24:29 [info]: Server running on port: 8000
+2026-07-24 02:24:29 [info]: API URL: http://localhost:8000/api/v1
+2026-07-24 02:24:29 [info]:  Health Check: http://localhost:8000/health
+2026-07-24 02:24:29 [info]: Metrics: http://localhost:8000/metrics
+2026-07-24 02:24:29 [info]:  Socket.io enabled on port: 8000
+2026-07-24 02:24:29 [info]: ==================================================
+2026-07-24 02:24:33 [info]: 
+SIGINT received. Starting graceful shutdown...
+2026-07-24 02:24:33 [info]: HTTP server closed
+2026-07-24 02:24:33 [info]: Database disconnected
+2026-07-24 02:24:33 [info]: Redis disconnected
