@@ -244,7 +244,33 @@ export const completeShiftController = async (req, res) => {
 
 export const getAllAlertNotifications = async (req, res) => {
   try {
+    const { shiftId, trainNumber, type, status } = req.query;
+
+    const where = {};
+
+    if (shiftId) {
+      where.shiftId = shiftId;
+    }
+
+    if (trainNumber) {
+      where.shift = {
+        trainNumber: {
+          contains: trainNumber,
+          mode: 'insensitive',
+        },
+      };
+    }
+
+    if (type) {
+      where.type = type;
+    }
+
+    if (status) {
+      where.status = status;
+    }
+
     const notifications = await prisma.notification.findMany({
+      where,
       orderBy: { createdAt: 'desc' },
       include: {
         shift: {
@@ -252,6 +278,7 @@ export const getAllAlertNotifications = async (req, res) => {
             id: true,
             trainNumber: true,
             signOnDateTime: true,
+            status: true,
           },
         },
       },
