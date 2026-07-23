@@ -33,6 +33,7 @@ model User {
   designation     UserNewDesignation?
   createdShifts   Shift[]             @relation("CreatedBy")
   updatedShifts   Shift[]             @relation("UpdatedBy")
+  diviceTokens     DeviceToken[]
 
   @@index([employeeId])
   @@index([email])
@@ -197,6 +198,20 @@ model SystemConfig {
   updatedAt   DateTime @updatedAt
 
   @@map("system_config")
+}
+
+model DeviceToken {
+  id         String @id @default(uuid())
+
+  userId     String
+
+  token      String @unique
+
+  platform   String?
+
+  createdAt  DateTime @default(now())
+
+  user       User @relation(fields: [userId], references: [id])
 }
 
 enum UserRole {
