@@ -3,7 +3,7 @@ import { bullmqConnection } from '../config/bullmq.js';
 import prisma from '../config/database.js';
 
 
-console.log('🚀 Shift Alert Worker Started');
+console.log(' Shift Alert Worker Started');
 console.log('shiftAlertWorker.js loaded');
 
 export const shiftAlertWorker = new Worker(
@@ -66,6 +66,38 @@ export const shiftAlertWorker = new Worker(
 
 
     // send FCM
+const users = await prisma.user.findMany({
+      where: {
+      role: {
+        in: [
+          'USER',
+          'ADMIN',
+        ],
+      },
+    },
+
+    include: {
+      deviceTokens: true,
+    },
+  });
+
+  const deviceTokens =
+  await prisma.deviceToken.findMany({
+    include: {
+      user: true,
+    },
+  });
+
+  await sendNotificationToDevices({
+  deviceTokens,
+  title: notification.title,
+  body: notification.message,
+  data: {
+    shiftId,
+    notificationId: notification.id,
+    type: notification.type,
+  },
+});
 
 
   },

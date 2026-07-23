@@ -1,4 +1,4 @@
-import { httpServer, io } from './app.js';
+import { httpServer } from './app.js';
 import config from './config/config.js';
 import logger from './utils/logger.js';
 import prisma from './config/database.js';
@@ -177,4 +177,6 @@ process.on('SIGINT', () => gracefulShutdown('SIGINT'));
 
 
 
-startServer();
+startServer()
+  .then(() => console.log('START SERVER FINISHED'))
+  .catch(console.error);

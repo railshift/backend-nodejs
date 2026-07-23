@@ -5,8 +5,8 @@ import { TESTING_MODE, TIME_DIVISOR, TIME_UNIT } from '../../config.testing.js';
 /**
  * Calculate duty hours (or minutes in testing mode) from sign-on time
  */
-export const calculateDutyHours = (signOnDateTime) => {
-  const now = new Date();
+export const calculateDutyHours = (signOnDateTime, endTime = new Date()) => {
+  const now = new Date(endTime);
   const signOn = new Date(signOnDateTime);
   const diffMs = now - signOn;
   const dutyTime = diffMs / TIME_DIVISOR;
@@ -325,7 +325,7 @@ export const completeShift = async (shiftId, signOffData) => {
   }
 
   // Calculate duty hours
-  const dutyHours = calculateDutyHours(shift.signOnDateTime);
+  const dutyHours = calculateDutyHours(shift.signOnDateTime, signOffDateTime);
 
   const updatedShift = await prisma.shift.update({
     where: { id: shiftId },
