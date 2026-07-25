@@ -119,10 +119,10 @@ class ShiftService {
         const busyStaff = [];
         activeShifts.forEach(shift => {
           if (shift.locoPilotId === locoPilot.id) {
-            busyStaff.push(`Loco Pilot ${locoPilot.name}`);
+            busyStaff.push(`Loco Pilot ${locoPilot.name} (ID: ${locoPilot.employeeId})`);
           }
           if (shift.trainManagerId === trainManager.id) {
-            busyStaff.push(`Train Manager ${trainManager.name}`);
+            busyStaff.push(`Train Manager ${trainManager.name} (ID: ${trainManager.employeeId})`);
           }
         });
         throw new ApiError(
