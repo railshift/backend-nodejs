@@ -67333,3 +67333,43 @@ SIGINT received. Starting graceful shutdown...
 2026-07-25 13:31:08 [info]: Metrics: http://localhost:8000/metrics
 2026-07-25 13:31:08 [info]:  Socket.io enabled on port: 8000
 2026-07-25 13:31:08 [info]: ==================================================
+2026-07-25 13:45:06 [error]: Prisma Error: 
+Invalid `prisma.user.findUnique()` invocation:
+
+
+Can't reach database server at `ep-floral-voice-azm4fi5g-pooler.c-3.ap-southeast-1.aws.neon.tech:5432`
+
+Please make sure your database server is running at `ep-floral-voice-azm4fi5g-pooler.c-3.ap-southeast-1.aws.neon.tech:5432`.
+2026-07-25 13:45:06 [error]: PrismaClientKnownRequestError: 
+Invalid `prisma.user.findUnique()` invocation:
+
+
+Can't reach database server at `ep-floral-voice-azm4fi5g-pooler.c-3.ap-southeast-1.aws.neon.tech:5432`
+
+Please make sure your database server is running at `ep-floral-voice-azm4fi5g-pooler.c-3.ap-southeast-1.aws.neon.tech:5432`.
+    at ei.handleRequestError (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/src/generated/prisma/runtime/library.js:125:7268)
+    at ei.handleAndLogRequestError (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/src/generated/prisma/runtime/library.js:125:6593)
+    at ei.request (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/src/generated/prisma/runtime/library.js:125:6300)
+    at async a (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/src/generated/prisma/runtime/library.js:134:9551)
+    at async file:///home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/src/middleware/auth.js:44:18
+2026-07-25 13:45:06 [info]: GET /api/v1/dashboard/alerts-summary 500 - 98.330s
+2026-07-25 14:17:49 [error]: Prisma Error: 
+Invalid `prisma.user.findUnique()` invocation:
+
+
+Can't reach database server at `ep-floral-voice-azm4fi5g-pooler.c-3.ap-southeast-1.aws.neon.tech:5432`
+
+Please make sure your database server is running at `ep-floral-voice-azm4fi5g-pooler.c-3.ap-southeast-1.aws.neon.tech:5432`.
+2026-07-25 14:17:49 [error]: PrismaClientKnownRequestError: 
+Invalid `prisma.user.findUnique()` invocation:
+
+
+Can't reach database server at `ep-floral-voice-azm4fi5g-pooler.c-3.ap-southeast-1.aws.neon.tech:5432`
+
+Please make sure your database server is running at `ep-floral-voice-azm4fi5g-pooler.c-3.ap-southeast-1.aws.neon.tech:5432`.
+    at ei.handleRequestError (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/src/generated/prisma/runtime/library.js:125:7268)
+    at ei.handleAndLogRequestError (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/src/generated/prisma/runtime/library.js:125:6593)
+    at ei.request (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/src/generated/prisma/runtime/library.js:125:6300)
+    at async a (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/src/generated/prisma/runtime/library.js:134:9551)
+    at async file:///home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/src/middleware/auth.js:44:18
+2026-07-25 14:17:49 [info]: GET /api/v1/dashboard/alerts-summary 500 - 5.017s
