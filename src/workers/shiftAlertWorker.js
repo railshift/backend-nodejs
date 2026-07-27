@@ -45,7 +45,7 @@ export const shiftAlertWorker = new Worker(
             shiftId: shift.id,
             type: `DUTY_${thresholdHours}HR`,
             title: `Duty Hour Alert - ${thresholdHours} Hours`,
-            message: `Shift for ${shift.trainName} has crossed ${thresholdHours} hours of duty.`,
+            message: `Shift for ${shift.trainNumber} has crossed ${thresholdHours} hours of duty.`,
              },
     });
 
