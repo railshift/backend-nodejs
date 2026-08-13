@@ -12,10 +12,11 @@ export const getDashboardStats = async (req, res) => {
     const userId = req.user.id;
     const userRole = req.user.role;
 
-      const now = new Date();
-    const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
-    const thisWeekStart = new Date(today);
-    thisWeekStart.setDate(today.getDate() - today.getDay()); // Start of week (Sunday)
+    const now = new Date();
+    const last24Hours = new Date(now.getTime() - 24 * 60 * 60 * 1000);
+    const startOfDay = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+    const thisWeekStart = new Date(startOfDay);
+    thisWeekStart.setDate(startOfDay.getDate() - startOfDay.getDay()); //  week (Sunday)
     const thisMonthStart = new Date(now.getFullYear(), now.getMonth(), 1);
 
     // Base query filters based on role
@@ -26,7 +27,7 @@ export const getDashboardStats = async (req, res) => {
             { trainManagerId: userId }
           ]
         }
-      : {}; // Admin/SuperAdmin can see all
+      : {}; // Admin/SUPERADMINN can see all
 
     // 1. Total Shifts  Statistics
     const [
@@ -45,32 +46,45 @@ export const getDashboardStats = async (req, res) => {
       prisma.shift.count({ where: { ...baseFilter, status: 'CANCELLED' } })
     ]);
 
-    // 2. Today's Statistics
-    const [todayShifts, todayCompleted, todayActive] = await Promise.all([
+    // 2. Today's Statistics (Last 24 Hours)
+    const [todayShifts, todayCompleted, todayActive, todayCompletedWithHours] = await Promise.all([
       prisma.shift.count({
         where: {
           ...baseFilter,
-          createdAt: { gte: today }
+          createdAt: { gte: last24Hours }
         }
       }),
       prisma.shift.count({
         where: {
           ...baseFilter,
           status: 'COMPLETED',
-          signOffDateTime: { gte: today }
+          signOffDateTime: { gte: last24Hours }
         }
       }),
       prisma.shift.count({
         where: {
           ...baseFilter,
           status: 'IN_PROGRESS',
-          signOnDateTime: { gte: today }
+          signOnDateTime: { gte: last24Hours }
         }
+      }),
+      prisma.shift.findMany({
+        where: {
+          ...baseFilter,
+          status: 'COMPLETED',
+          signOffDateTime: { gte: last24Hours },
+          dutyHours: { not: null }
+        },
+        select: { id: true, trainNumber: true, dutyHours: true }
       })
     ]);
 
+    const todayAvgDutyHours = todayCompletedWithHours.length > 0
+      ? (todayCompletedWithHours.reduce((sum, s) => sum + (s.dutyHours || 0), 0) / todayCompletedWithHours.length)
+      : 0;
+
     // 3. This Week's Statistics
-    const [weekShifts, weekCompleted] = await Promise.all([
+    const [weekShifts, weekCompleted, weekCompletedWithHours] = await Promise.all([
       prisma.shift.count({
         where: {
           ...baseFilter,
@@ -83,11 +97,24 @@ export const getDashboardStats = async (req, res) => {
           status: 'COMPLETED',
           signOffDateTime: { gte: thisWeekStart }
         }
+      }),
+      prisma.shift.findMany({
+        where: {
+          ...baseFilter,
+          status: 'COMPLETED',
+          signOffDateTime: { gte: thisWeekStart },
+          dutyHours: { not: null }
+        },
+        select: { id: true, trainNumber: true, dutyHours: true }
       })
     ]);
 
+    const weekAvgDutyHours = weekCompletedWithHours.length > 0
+      ? (weekCompletedWithHours.reduce((sum, s) => sum + (s.dutyHours || 0), 0) / weekCompletedWithHours.length)
+      : 0;
+
     // 4. This Month's Statistics
-    const [monthShifts, monthCompleted] = await Promise.all([
+    const [monthShifts, monthCompleted, monthCompletedWithHours] = await Promise.all([
       prisma.shift.count({
         where: {
           ...baseFilter,
@@ -100,8 +127,21 @@ export const getDashboardStats = async (req, res) => {
           status: 'COMPLETED',
           signOffDateTime: { gte: thisMonthStart }
         }
+      }),
+      prisma.shift.findMany({
+        where: {
+          ...baseFilter,
+          status: 'COMPLETED',
+          signOffDateTime: { gte: thisMonthStart },
+          dutyHours: { not: null }
+        },
+        select: { id: true, trainNumber: true, dutyHours: true }
       })
     ]);
+
+    const monthAvgDutyHours = monthCompletedWithHours.length > 0
+      ? (monthCompletedWithHours.reduce((sum, s) => sum + (s.dutyHours || 0), 0) / monthCompletedWithHours.length)
+      : 0;
 
     // 5. Alert Statistics
     const alertStats = await prisma.shift.findMany({
@@ -145,6 +185,23 @@ export const getDashboardStats = async (req, res) => {
       }
     });
 
+    const workloadDistribution = {
+      '0-4 hrs': 0,
+      '4-8 hrs': 0,
+      '8-10 hrs': 0,
+      '10-12 hrs': 0,
+      '12+ hrs': 0
+    };
+
+    completedShiftsWithHours.forEach(s => {
+      const h = s.dutyHours || 0;
+      if (h <= 4) workloadDistribution['0-4 hrs']++;
+      else if (h <= 8) workloadDistribution['4-8 hrs']++;
+      else if (h <= 10) workloadDistribution['8-10 hrs']++;
+      else if (h <= 12) workloadDistribution['10-12 hrs']++;
+      else workloadDistribution['12+ hrs']++;
+    });
+
     const dutyHoursStats = {
       totalShifts: completedShiftsWithHours.length,
       totalHours: completedShiftsWithHours.reduce((sum, s) => sum + (s.dutyHours || 0), 0),
@@ -163,7 +220,7 @@ export const getDashboardStats = async (req, res) => {
     const currentActiveShifts = await prisma.shift.findMany({
       where: {
         ...baseFilter,
-        status: { in: ['IN_PROGRESS', 'RELIEF_PLANNED'] },
+        status: 'IN_PROGRESS',
         signOffDateTime: null
       },
       select: {
@@ -226,14 +283,62 @@ export const getDashboardStats = async (req, res) => {
       take: 5
     });
 
-    // 11. Shifts by Duty Type
-    const shiftsByDutyType = await prisma.shift.groupBy({
-      by: ['dutyType'],
-      where: baseFilter,
+    // 11. Top Trains by Duty Count
+    const topTrainsByDuty = await prisma.shift.groupBy({
+      by: ['trainNumber'],
+      where: {
+        ...baseFilter,
+        status: 'COMPLETED',
+        dutyHours: { not: null }
+      },
       _count: {
         id: true
-      }
+      },
+      _avg: {
+        dutyHours: true
+      },
+      orderBy: {
+        _count: {
+          id: 'desc'
+        }
+      },
+      take: 5
     });
+
+    const processDutyStats = (shifts) => {
+      const result = {
+        total: shifts.length,
+        average: 0,
+        highest: 0,
+        highestShift: null,
+        breakdown: {
+          '< 8 hrs': 0,
+          '8-10 hrs': 0,
+          '10-12 hrs': 0,
+          '12+ hrs': 0
+        }
+      };
+
+      if (shifts.length > 0) {
+        let sum = 0;
+        shifts.forEach(s => {
+          const h = s.dutyHours || 0;
+          sum += h;
+          if (h > result.highest) {
+            result.highest = h;
+            result.highestShift = { id: s.id, trainNumber: s.trainNumber };
+          }
+
+          if (h < 8) result.breakdown['< 8 hrs']++;
+          else if (h <= 10) result.breakdown['8-10 hrs']++;
+          else if (h <= 12) result.breakdown['10-12 hrs']++;
+          else result.breakdown['12+ hrs']++;
+        });
+        result.average = parseFloat((sum / shifts.length).toFixed(2));
+        result.highest = parseFloat(result.highest.toFixed(2));
+      }
+      return result;
+    };
 
     // Compile response
     const stats = {
@@ -248,17 +353,25 @@ export const getDashboardStats = async (req, res) => {
       today: {
         shiftsCreated: todayShifts,
         shiftsCompleted: todayCompleted,
-        activeShifts: todayActive
+        activeShifts: todayActive,
+        averageHours: parseFloat(todayAvgDutyHours.toFixed(2))
       },
       thisWeek: {
         shiftsCreated: weekShifts,
-        shiftsCompleted: weekCompleted
+        shiftsCompleted: weekCompleted,
+        averageHours: parseFloat(weekAvgDutyHours.toFixed(2))
       },
       thisMonth: {
         shiftsCreated: monthShifts,
-        shiftsCompleted: monthCompleted
+        shiftsCompleted: monthCompleted,
+        averageHours: parseFloat(monthAvgDutyHours.toFixed(2))
       },
       alerts: alertCounts,
+      dutyStats: {
+        today: processDutyStats(todayCompletedWithHours),
+        thisWeek: processDutyStats(weekCompletedWithHours),
+        thisMonth: processDutyStats(monthCompletedWithHours)
+      },
       dutyHours: {
         ...dutyHoursStats,
         averageHours: parseFloat(dutyHoursStats.averageHours.toFixed(2)),
@@ -266,18 +379,20 @@ export const getDashboardStats = async (req, res) => {
         maxHours: parseFloat(dutyHoursStats.maxHours.toFixed(2)),
         minHours: parseFloat(dutyHoursStats.minHours.toFixed(2))
       },
+      workloadDistribution,
       activeShiftsDetails: activeShiftsWithDutyHours.map(shift => ({
         ...shift,
         currentDutyHours: parseFloat(shift.currentDutyHours.toFixed(2))
-      })),
+      })).sort((a, b) => b.currentDutyHours - a.currentDutyHours),
       staff: staffStats,
       topSections: shiftsBySection.map(s => ({
         section: s.section,
         count: s._count.id
       })),
-      dutyTypeDistribution: shiftsByDutyType.map(s => ({
-        dutyType: s.dutyType,
-        count: s._count.id
+      topTrains: topTrainsByDuty.map(t => ({
+        trainNumber: t.trainNumber,
+        count: t._count.id,
+        averageHours: t._avg.dutyHours ? parseFloat(t._avg.dutyHours.toFixed(2)) : 0
       }))
     };
 

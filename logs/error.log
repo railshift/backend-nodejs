@@ -8646,3 +8646,200 @@ Please make sure your database server is running at `ep-floral-voice-azm4fi5g-po
     at ei.request (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/src/generated/prisma/runtime/library.js:125:6300)
     at async a (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/src/generated/prisma/runtime/library.js:134:9551)
     at async file:///home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/src/middleware/auth.js:44:18
+2026-08-13 23:36:48 [error]: Error: Invalid token
+    at file:///home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/src/middleware/auth.js:69:13
+    at file:///home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/src/middleware/errorHandler.js:49:19
+    at Layer.handleRequest (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/router/lib/layer.js:152:17)
+    at trimPrefix (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/router/index.js:342:13)
+    at /home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/router/index.js:297:9
+    at processParams (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/router/index.js:582:12)
+    at next (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/router/index.js:291:5)
+    at router.handle (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/router/index.js:186:3)
+    at router (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/router/index.js:60:12)
+    at Layer.handleRequest (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/router/lib/layer.js:152:17)
+2026-08-13 23:36:48 [error]: Error: Invalid token
+    at file:///home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/src/middleware/auth.js:69:13
+    at file:///home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/src/middleware/errorHandler.js:49:19
+    at Layer.handleRequest (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/router/lib/layer.js:152:17)
+    at trimPrefix (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/router/index.js:342:13)
+    at /home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/router/index.js:297:9
+    at processParams (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/router/index.js:582:12)
+    at next (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/router/index.js:291:5)
+    at router.handle (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/router/index.js:186:3)
+    at router (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/router/index.js:60:12)
+    at Layer.handleRequest (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/router/lib/layer.js:152:17)
+2026-08-13 23:36:48 [error]: Error: Invalid token
+    at file:///home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/src/middleware/auth.js:69:13
+    at file:///home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/src/middleware/errorHandler.js:49:19
+    at Layer.handleRequest (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/router/lib/layer.js:152:17)
+    at trimPrefix (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/router/index.js:342:13)
+    at /home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/router/index.js:297:9
+    at processParams (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/router/index.js:582:12)
+    at next (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/router/index.js:291:5)
+    at router.handle (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/router/index.js:186:3)
+    at router (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/router/index.js:60:12)
+    at Layer.handleRequest (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/router/lib/layer.js:152:17)
+2026-08-13 23:36:48 [error]: Error: Route /auth/refresh not found
+    at notFound (file:///home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/src/middleware/errorHandler.js:43:17)
+    at Layer.handleRequest (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/router/lib/layer.js:152:17)
+    at trimPrefix (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/router/index.js:342:13)
+    at /home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/router/index.js:297:9
+    at processParams (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/router/index.js:582:12)
+    at next (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/router/index.js:291:5)
+    at read (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/body-parser/lib/read.js:42:5)
+    at urlencodedParser (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/body-parser/lib/types/urlencoded.js:51:5)
+    at Layer.handleRequest (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/router/lib/layer.js:152:17)
+    at trimPrefix (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/router/index.js:342:13)
+2026-08-13 23:36:48 [error]: Error: Route /auth/refresh not found
+    at notFound (file:///home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/src/middleware/errorHandler.js:43:17)
+    at Layer.handleRequest (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/router/lib/layer.js:152:17)
+    at trimPrefix (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/router/index.js:342:13)
+    at /home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/router/index.js:297:9
+    at processParams (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/router/index.js:582:12)
+    at next (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/router/index.js:291:5)
+    at read (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/body-parser/lib/read.js:42:5)
+    at urlencodedParser (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/body-parser/lib/types/urlencoded.js:51:5)
+    at Layer.handleRequest (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/router/lib/layer.js:152:17)
+    at trimPrefix (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/router/index.js:342:13)
+2026-08-13 23:36:48 [error]: Error: Route /auth/refresh not found
+    at notFound (file:///home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/src/middleware/errorHandler.js:43:17)
+    at Layer.handleRequest (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/router/lib/layer.js:152:17)
+    at trimPrefix (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/router/index.js:342:13)
+    at /home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/router/index.js:297:9
+    at processParams (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/router/index.js:582:12)
+    at next (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/router/index.js:291:5)
+    at read (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/body-parser/lib/read.js:42:5)
+    at urlencodedParser (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/body-parser/lib/types/urlencoded.js:51:5)
+    at Layer.handleRequest (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/router/lib/layer.js:152:17)
+    at trimPrefix (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/router/index.js:342:13)
+2026-08-13 23:36:49 [error]: Error: Not authorized, no token provided
+    at file:///home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/src/middleware/auth.js:21:11
+    at file:///home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/src/middleware/errorHandler.js:49:19
+    at Layer.handleRequest (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/router/lib/layer.js:152:17)
+    at trimPrefix (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/router/index.js:342:13)
+    at /home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/router/index.js:297:9
+    at processParams (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/router/index.js:582:12)
+    at next (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/router/index.js:291:5)
+    at router.handle (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/router/index.js:186:3)
+    at router (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/router/index.js:60:12)
+    at Layer.handleRequest (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/router/lib/layer.js:152:17)
+2026-08-13 23:36:49 [error]: Error: Not authorized, no token provided
+    at file:///home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/src/middleware/auth.js:21:11
+    at file:///home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/src/middleware/errorHandler.js:49:19
+    at Layer.handleRequest (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/router/lib/layer.js:152:17)
+    at trimPrefix (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/router/index.js:342:13)
+    at /home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/router/index.js:297:9
+    at processParams (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/router/index.js:582:12)
+    at next (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/router/index.js:291:5)
+    at router.handle (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/router/index.js:186:3)
+    at router (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/router/index.js:60:12)
+    at Layer.handleRequest (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/router/lib/layer.js:152:17)
+2026-08-13 23:36:49 [error]: Error: Not authorized, no token provided
+    at file:///home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/src/middleware/auth.js:21:11
+    at file:///home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/src/middleware/errorHandler.js:49:19
+    at Layer.handleRequest (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/router/lib/layer.js:152:17)
+    at trimPrefix (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/router/index.js:342:13)
+    at /home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/router/index.js:297:9
+    at processParams (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/router/index.js:582:12)
+    at next (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/router/index.js:291:5)
+    at router.handle (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/router/index.js:186:3)
+    at router (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/router/index.js:60:12)
+    at Layer.handleRequest (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/router/lib/layer.js:152:17)
+2026-08-13 23:36:54 [error]: Error: Not authorized, no token provided
+    at file:///home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/src/middleware/auth.js:21:11
+    at file:///home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/src/middleware/errorHandler.js:49:19
+    at Layer.handleRequest (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/router/lib/layer.js:152:17)
+    at next (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/router/lib/route.js:157:13)
+    at Route.dispatch (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/router/lib/route.js:117:3)
+    at handle (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/router/index.js:435:11)
+    at Layer.handleRequest (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/router/lib/layer.js:152:17)
+    at /home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/router/index.js:295:15
+    at processParams (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/router/index.js:582:12)
+    at next (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/router/index.js:291:5)
+2026-08-13 23:36:54 [error]: Error: Not authorized, no token provided
+    at file:///home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/src/middleware/auth.js:21:11
+    at file:///home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/src/middleware/errorHandler.js:49:19
+    at Layer.handleRequest (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/router/lib/layer.js:152:17)
+    at trimPrefix (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/router/index.js:342:13)
+    at /home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/router/index.js:297:9
+    at processParams (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/router/index.js:582:12)
+    at next (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/router/index.js:291:5)
+    at router.handle (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/router/index.js:186:3)
+    at router (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/router/index.js:60:12)
+    at Layer.handleRequest (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/router/lib/layer.js:152:17)
+2026-08-13 23:36:54 [error]: Error: Not authorized, no token provided
+    at file:///home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/src/middleware/auth.js:21:11
+    at file:///home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/src/middleware/errorHandler.js:49:19
+    at Layer.handleRequest (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/router/lib/layer.js:152:17)
+    at trimPrefix (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/router/index.js:342:13)
+    at /home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/router/index.js:297:9
+    at processParams (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/router/index.js:582:12)
+    at next (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/router/index.js:291:5)
+    at router.handle (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/router/index.js:186:3)
+    at router (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/router/index.js:60:12)
+    at Layer.handleRequest (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/router/lib/layer.js:152:17)
+2026-08-13 23:36:54 [error]: Error: Not authorized, no token provided
+    at file:///home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/src/middleware/auth.js:21:11
+    at file:///home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/src/middleware/errorHandler.js:49:19
+    at Layer.handleRequest (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/router/lib/layer.js:152:17)
+    at trimPrefix (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/router/index.js:342:13)
+    at /home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/router/index.js:297:9
+    at processParams (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/router/index.js:582:12)
+    at next (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/router/index.js:291:5)
+    at router.handle (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/router/index.js:186:3)
+    at router (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/router/index.js:60:12)
+    at Layer.handleRequest (/home/ranapoddar/Documents/railway-project/newgithub/dutyhrs-backend-nodejs/node_modules/router/lib/layer.js:152:17)
+2026-08-14 00:06:01 [error]: Prisma Error: Error in PostgreSQL connection: Error { kind: Closed, cause: None }
+2026-08-14 00:06:01 [error]: Prisma Error: Error in PostgreSQL connection: Error { kind: Closed, cause: None }
+2026-08-14 00:06:01 [error]: Prisma Error: Error in PostgreSQL connection: Error { kind: Closed, cause: None }
+2026-08-14 00:06:01 [error]: Prisma Error: Error in PostgreSQL connection: Error { kind: Closed, cause: None }
+2026-08-14 00:06:01 [error]: Prisma Error: Error in PostgreSQL connection: Error { kind: Closed, cause: None }
+2026-08-14 00:06:01 [error]: Prisma Error: Error in PostgreSQL connection: Error { kind: Closed, cause: None }
+2026-08-14 00:07:56 [error]: Database connection failed (attempt 1/8) Can't reach database server at `ep-floral-voice-azm4fi5g-pooler.c-3.ap-southeast-1.aws.neon.tech:5432`
+
+Please make sure your database server is running at `ep-floral-voice-azm4fi5g-pooler.c-3.ap-southeast-1.aws.neon.tech:5432`.
+2026-08-14 00:08:03 [error]: Database connection failed (attempt 2/8) Can't reach database server at `ep-floral-voice-azm4fi5g-pooler.c-3.ap-southeast-1.aws.neon.tech:5432`
+
+Please make sure your database server is running at `ep-floral-voice-azm4fi5g-pooler.c-3.ap-southeast-1.aws.neon.tech:5432`.
+2026-08-14 00:08:13 [error]: Database connection failed (attempt 3/8) Can't reach database server at `ep-floral-voice-azm4fi5g-pooler.c-3.ap-southeast-1.aws.neon.tech:5432`
+
+Please make sure your database server is running at `ep-floral-voice-azm4fi5g-pooler.c-3.ap-southeast-1.aws.neon.tech:5432`.
+2026-08-14 00:08:24 [error]: Database connection failed (attempt 4/8) Can't reach database server at `ep-floral-voice-azm4fi5g-pooler.c-3.ap-southeast-1.aws.neon.tech:5432`
+
+Please make sure your database server is running at `ep-floral-voice-azm4fi5g-pooler.c-3.ap-southeast-1.aws.neon.tech:5432`.
+2026-08-14 00:08:37 [error]: Database connection failed (attempt 5/8) Can't reach database server at `ep-floral-voice-azm4fi5g-pooler.c-3.ap-southeast-1.aws.neon.tech:5432`
+
+Please make sure your database server is running at `ep-floral-voice-azm4fi5g-pooler.c-3.ap-southeast-1.aws.neon.tech:5432`.
+2026-08-14 00:08:52 [error]: Database connection failed (attempt 6/8) Can't reach database server at `ep-floral-voice-azm4fi5g-pooler.c-3.ap-southeast-1.aws.neon.tech:5432`
+
+Please make sure your database server is running at `ep-floral-voice-azm4fi5g-pooler.c-3.ap-southeast-1.aws.neon.tech:5432`.
+2026-08-14 00:09:09 [error]: Database connection failed (attempt 7/8) Can't reach database server at `ep-floral-voice-azm4fi5g-pooler.c-3.ap-southeast-1.aws.neon.tech:5432`
+
+Please make sure your database server is running at `ep-floral-voice-azm4fi5g-pooler.c-3.ap-southeast-1.aws.neon.tech:5432`.
+2026-08-14 00:09:28 [error]: Database connection failed (attempt 8/8) Can't reach database server at `ep-floral-voice-azm4fi5g-pooler.c-3.ap-southeast-1.aws.neon.tech:5432`
+
+Please make sure your database server is running at `ep-floral-voice-azm4fi5g-pooler.c-3.ap-southeast-1.aws.neon.tech:5432`.
+2026-08-14 00:10:12 [error]: Database connection failed (attempt 1/8) Can't reach database server at `ep-floral-voice-azm4fi5g-pooler.c-3.ap-southeast-1.aws.neon.tech:5432`
+
+Please make sure your database server is running at `ep-floral-voice-azm4fi5g-pooler.c-3.ap-southeast-1.aws.neon.tech:5432`.
+2026-08-14 00:10:20 [error]: Database connection failed (attempt 2/8) Can't reach database server at `ep-floral-voice-azm4fi5g-pooler.c-3.ap-southeast-1.aws.neon.tech:5432`
+
+Please make sure your database server is running at `ep-floral-voice-azm4fi5g-pooler.c-3.ap-southeast-1.aws.neon.tech:5432`.
+2026-08-14 00:11:51 [error]: Database connection failed (attempt 1/8) Can't reach database server at `ep-floral-voice-azm4fi5g-pooler.c-3.ap-southeast-1.aws.neon.tech:5432`
+
+Please make sure your database server is running at `ep-floral-voice-azm4fi5g-pooler.c-3.ap-southeast-1.aws.neon.tech:5432`.
+2026-08-14 00:11:58 [error]: Database connection failed (attempt 2/8) Can't reach database server at `ep-floral-voice-azm4fi5g-pooler.c-3.ap-southeast-1.aws.neon.tech:5432`
+
+Please make sure your database server is running at `ep-floral-voice-azm4fi5g-pooler.c-3.ap-southeast-1.aws.neon.tech:5432`.
+2026-08-14 00:12:07 [error]: Database connection failed (attempt 3/8) Can't reach database server at `ep-floral-voice-azm4fi5g-pooler.c-3.ap-southeast-1.aws.neon.tech:5432`
+
+Please make sure your database server is running at `ep-floral-voice-azm4fi5g-pooler.c-3.ap-southeast-1.aws.neon.tech:5432`.
+2026-08-14 00:12:18 [error]: Database connection failed (attempt 4/8) Can't reach database server at `ep-floral-voice-azm4fi5g-pooler.c-3.ap-southeast-1.aws.neon.tech:5432`
+
+Please make sure your database server is running at `ep-floral-voice-azm4fi5g-pooler.c-3.ap-southeast-1.aws.neon.tech:5432`.
+2026-08-14 00:14:18 [error]: Database connection failed (attempt 1/8) Can't reach database server at `ep-floral-voice-azm4fi5g-pooler.c-3.ap-southeast-1.aws.neon.tech:5432`
+
+Please make sure your database server is running at `ep-floral-voice-azm4fi5g-pooler.c-3.ap-southeast-1.aws.neon.tech:5432`.
+2026-08-14 00:14:25 [error]: Database connection failed (attempt 2/8) Can't reach database server at `ep-floral-voice-azm4fi5g-pooler.c-3.ap-southeast-1.aws.neon.tech:5432`
+
+Please make sure your database server is running at `ep-floral-voice-azm4fi5g-pooler.c-3.ap-southeast-1.aws.neon.tech:5432`.
